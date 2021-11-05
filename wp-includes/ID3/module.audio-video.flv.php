@@ -53,10 +53,6 @@
 //                                                            ///
 /////////////////////////////////////////////////////////////////
 
-if (!defined('GETID3_INCLUDEPATH')) { // prevent path-exposing attacks that access modules directly on public webservers
-	exit;
-}
-
 define('GETID3_FLV_TAG_AUDIO',          8);
 define('GETID3_FLV_TAG_VIDEO',          9);
 define('GETID3_FLV_TAG_META',          18);
@@ -601,6 +597,7 @@ class AMFReader
 			// null
 			case 6:
 				return null;
+				break;
 
 			// Mixed array
 			case 8:

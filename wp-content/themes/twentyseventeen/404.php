@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
+ * @since WP-1.0
  * @version 1.0
  */
 
@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -31,5 +31,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div><!-- .wrap -->
 
-<?php
-get_footer();
+<?php get_footer();

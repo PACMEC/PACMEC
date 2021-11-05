@@ -7,11 +7,11 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
+ * @since WP-1.0
  * @version 1.0
  */
 
@@ -19,11 +19,10 @@ get_header(); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/page/content', 'page' );
 
@@ -32,12 +31,11 @@ get_header(); ?>
 					comments_template();
 				endif;
 
-			endwhile; // End the loop.
+			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .wrap -->
 
-<?php
-get_footer();
+<?php get_footer();

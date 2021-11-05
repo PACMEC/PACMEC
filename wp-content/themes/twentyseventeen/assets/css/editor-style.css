@@ -24,7 +24,7 @@ Description: Used to style the TinyMCE editor.
 body {
 	background-color: #fff;
 	color: #333;
-	margin: auto 20px;
+	margin: 20px 40px;
 	max-width: 580px;
 }
 
@@ -149,6 +149,7 @@ pre {
 	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
+	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
 }
@@ -231,8 +232,21 @@ ul {
 	list-style: disc;
 }
 
+ol {
+	counter-reset: item;
+}
+
 ol > li {
+	display: block;
 	position: relative;
+}
+
+ol > li:before {
+	content: counter(item);
+	counter-increment: item;
+	font-weight: 800;
+	left: -1.5em;
+	position: absolute;
 }
 
 li > ul,
@@ -319,6 +333,7 @@ a img {
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
+	width: inherit;  /* Make images fill their parent's space. Solves IE8. */
 	max-width: 100%; /* Adhere to container width. */
 }
 
@@ -563,6 +578,10 @@ object {
 
 .rtl th {
 	text-align: right;
+}
+
+.rtl ol {
+	counter-reset: item;
 }
 
 .rtl ol > li:before {

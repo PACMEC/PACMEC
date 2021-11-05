@@ -2,21 +2,21 @@
 /**
  * Locale API: WP_Locale_Switcher class
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage i18n
- * @since 4.7.0
+ * @since WP-4.7.0
  */
 
 /**
  * Core class used for switching locales.
  *
- * @since 4.7.0
+ * @since WP-4.7.0
  */
 class WP_Locale_Switcher {
 	/**
 	 * Locale stack.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 * @var string[]
 	 */
 	private $locales = array();
@@ -24,7 +24,7 @@ class WP_Locale_Switcher {
 	/**
 	 * Original locale.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 * @var string
 	 */
 	private $original_locale;
@@ -32,7 +32,7 @@ class WP_Locale_Switcher {
 	/**
 	 * Holds all available languages.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 * @var array An array of language codes (file names without the .mo extension).
 	 */
 	private $available_languages = array();
@@ -42,10 +42,10 @@ class WP_Locale_Switcher {
 	 *
 	 * Stores the original locale as well as a list of all available languages.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 */
 	public function __construct() {
-		$this->original_locale     = determine_locale();
+		$this->original_locale     = is_admin() ? get_user_locale() : get_locale();
 		$this->available_languages = array_merge( array( 'en_US' ), get_available_languages() );
 	}
 
@@ -53,8 +53,6 @@ class WP_Locale_Switcher {
 	 * Initializes the locale switcher.
 	 *
 	 * Hooks into the {@see 'locale'} filter to change the locale on the fly.
-	 *
-	 * @since 4.7.0
 	 */
 	public function init() {
 		add_filter( 'locale', array( $this, 'filter_locale' ) );
@@ -63,13 +61,13 @@ class WP_Locale_Switcher {
 	/**
 	 * Switches the translations according to the given locale.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
 	 * @param string $locale The locale to switch to.
 	 * @return bool True on success, false on failure.
 	 */
 	public function switch_to_locale( $locale ) {
-		$current_locale = determine_locale();
+		$current_locale = is_admin() ? get_user_locale() : get_locale();
 		if ( $current_locale === $locale ) {
 			return false;
 		}
@@ -85,7 +83,7 @@ class WP_Locale_Switcher {
 		/**
 		 * Fires when the locale is switched.
 		 *
-		 * @since 4.7.0
+		 * @since WP-4.7.0
 		 *
 		 * @param string $locale The new locale.
 		 */
@@ -97,7 +95,7 @@ class WP_Locale_Switcher {
 	/**
 	 * Restores the translations according to the previous locale.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
 	 * @return string|false Locale on success, false on failure.
 	 */
@@ -121,7 +119,7 @@ class WP_Locale_Switcher {
 		/**
 		 * Fires when the locale is restored to the previous one.
 		 *
-		 * @since 4.7.0
+		 * @since WP-4.7.0
 		 *
 		 * @param string $locale          The new locale.
 		 * @param string $previous_locale The previous locale.
@@ -134,7 +132,7 @@ class WP_Locale_Switcher {
 	/**
 	 * Restores the translations according to the original locale.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
 	 * @return string|false Locale on success, false on failure.
 	 */
@@ -151,7 +149,7 @@ class WP_Locale_Switcher {
 	/**
 	 * Whether switch_to_locale() is in effect.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
 	 * @return bool True if the locale has been switched, false otherwise.
 	 */
@@ -160,11 +158,11 @@ class WP_Locale_Switcher {
 	}
 
 	/**
-	 * Filters the locale of the WordPress installation.
+	 * Filters the locale of the PACMEC installation.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
-	 * @param string $locale The locale of the WordPress installation.
+	 * @param string $locale The locale of the PACMEC installation.
 	 * @return string The locale currently being switched to.
 	 */
 	public function filter_locale( $locale ) {
@@ -182,7 +180,7 @@ class WP_Locale_Switcher {
 	 *
 	 * When switching to a locale, translations for this locale must be loaded from scratch.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
 	 * @global Mo[] $l10n An array of all currently loaded text domains.
 	 *
@@ -211,9 +209,9 @@ class WP_Locale_Switcher {
 	 * Loads the translations, changes the global `$wp_locale` object and updates
 	 * all post type labels.
 	 *
-	 * @since 4.7.0
+	 * @since WP-4.7.0
 	 *
-	 * @global WP_Locale $wp_locale WordPress date and time locale object.
+	 * @global WP_Locale $wp_locale The PACMEC date and time locale object.
 	 *
 	 * @param string $locale The locale to change to.
 	 */
@@ -228,7 +226,7 @@ class WP_Locale_Switcher {
 		/**
 		 * Fires when the locale is switched to or restored.
 		 *
-		 * @since 4.7.0
+		 * @since WP-4.7.0
 		 *
 		 * @param string $locale The new locale.
 		 */

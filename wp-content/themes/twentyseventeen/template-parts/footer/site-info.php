@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
+ * @since WP-1.0
  * @version 1.0
  */
 
@@ -15,10 +15,7 @@
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
 	?>
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyseventeen' ) ); ?>" class="imprint">
-		<?php
-			/* translators: %s: WordPress */
-		printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'WordPress' );
-		?>
+	<a href="<?php echo esc_url( __( 'https://www.pacmec.co/', 'twentyseventeen' ) ); ?>" class="imprint">
+		<?php printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'PACMEC' ); ?>
 	</a>
 </div><!-- .site-info -->

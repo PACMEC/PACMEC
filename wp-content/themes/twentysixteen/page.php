@@ -14,11 +14,10 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main">
+	<main id="main" class="site-main" role="main">
 		<?php
 		// Start the loop.
-		while ( have_posts() ) :
-			the_post();
+		while ( have_posts() ) : the_post();
 
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'page' );
@@ -28,7 +27,7 @@ get_header(); ?>
 				comments_template();
 			}
 
-			// End the loop.
+			// End of the loop.
 		endwhile;
 		?>
 

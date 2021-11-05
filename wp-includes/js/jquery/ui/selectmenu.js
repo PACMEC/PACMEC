@@ -1,51 +1,36 @@
 /*!
- * jQuery UI Selectmenu 1.13.0
+ * jQuery UI Selectmenu 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/selectmenu
  */
-
-//>>label: Selectmenu
-//>>group: Widgets
-/* eslint-disable max-len */
-//>>description: Duplicates and extends the functionality of a native HTML select element, allowing it to be customizable in behavior and appearance far beyond the limitations of a native select.
-/* eslint-enable max-len */
-//>>docs: http://api.jqueryui.com/selectmenu/
-//>>demos: http://jqueryui.com/selectmenu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/selectmenu.css, ../../themes/base/button.css
-//>>css.theme: ../../themes/base/theme.css
-
-( function( factory ) {
-	"use strict";
-
+(function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 
 		// AMD. Register as an anonymous module.
-		define( [
+		define([
 			"jquery",
-			"./menu",
-			"./core"
+			"./core",
+			"./widget",
+			"./position",
+			"./menu"
 		], factory );
 	} else {
 
 		// Browser globals
 		factory( jQuery );
 	}
-} )( function( $ ) {
-"use strict";
+}(function( $ ) {
 
-return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
-	version: "1.13.0",
+return $.widget( "ui.selectmenu", {
+	version: "1.11.4",
 	defaultElement: "<select>",
 	options: {
 		appendTo: null,
-		classes: {
-			"ui-selectmenu-button-open": "ui-corner-top",
-			"ui-selectmenu-button-closed": "ui-corner-all"
-		},
 		disabled: null,
 		icons: {
 			button: "ui-icon-triangle-1-s"
@@ -55,9 +40,9 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			at: "left bottom",
 			collision: "none"
 		},
-		width: false,
+		width: null,
 
-		// Callbacks
+		// callbacks
 		change: null,
 		close: null,
 		focus: null,
@@ -75,66 +60,64 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 
 		this._drawButton();
 		this._drawMenu();
-		this._bindFormResetHandler();
 
-		this._rendered = false;
-		this.menuItems = $();
+		if ( this.options.disabled ) {
+			this.disable();
+		}
 	},
 
 	_drawButton: function() {
-		var icon,
-			that = this,
-			item = this._parseOption(
-				this.element.find( "option:selected" ),
-				this.element[ 0 ].selectedIndex
-			);
+		var that = this;
 
 		// Associate existing label with the new button
-		this.labels = this.element.labels().attr( "for", this.ids.button );
-		this._on( this.labels, {
+		this.label = $( "label[for='" + this.ids.element + "']" ).attr( "for", this.ids.button );
+		this._on( this.label, {
 			click: function( event ) {
-				this.button.trigger( "focus" );
+				this.button.focus();
 				event.preventDefault();
 			}
-		} );
+		});
 
 		// Hide original select element
 		this.element.hide();
 
 		// Create button
 		this.button = $( "<span>", {
+			"class": "ui-selectmenu-button ui-widget ui-state-default ui-corner-all",
 			tabindex: this.options.disabled ? -1 : 0,
 			id: this.ids.button,
 			role: "combobox",
 			"aria-expanded": "false",
 			"aria-autocomplete": "list",
 			"aria-owns": this.ids.menu,
-			"aria-haspopup": "true",
-			title: this.element.attr( "title" )
-		} )
+			"aria-haspopup": "true"
+		})
 			.insertAfter( this.element );
 
-		this._addClass( this.button, "ui-selectmenu-button ui-selectmenu-button-closed",
-			"ui-button ui-widget" );
+		$( "<span>", {
+			"class": "ui-icon " + this.options.icons.button
+		})
+			.prependTo( this.button );
 
-		icon = $( "<span>" ).appendTo( this.button );
-		this._addClass( icon, "ui-selectmenu-icon", "ui-icon " + this.options.icons.button );
-		this.buttonItem = this._renderButtonItem( item )
+		this.buttonText = $( "<span>", {
+			"class": "ui-selectmenu-text"
+		})
 			.appendTo( this.button );
 
-		if ( this.options.width !== false ) {
-			this._resizeButton();
-		}
+		this._setText( this.buttonText, this.element.find( "option:selected" ).text() );
+		this._resizeButton();
 
 		this._on( this.button, this._buttonEvents );
 		this.button.one( "focusin", function() {
 
 			// Delay rendering the menu items until the button receives focus.
 			// The menu may have already been rendered via a programmatic open.
-			if ( !that._rendered ) {
+			if ( !that.menuItems ) {
 				that._refreshMenu();
 			}
-		} );
+		});
+		this._hoverable( this.button );
+		this._focusable( this.button );
 	},
 
 	_drawMenu: function() {
@@ -145,24 +128,23 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			"aria-hidden": "true",
 			"aria-labelledby": this.ids.button,
 			id: this.ids.menu
-		} );
+		});
 
 		// Wrap menu
-		this.menuWrap = $( "<div>" ).append( this.menu );
-		this._addClass( this.menuWrap, "ui-selectmenu-menu", "ui-front" );
-		this.menuWrap.appendTo( this._appendTo() );
+		this.menuWrap = $( "<div>", {
+			"class": "ui-selectmenu-menu ui-front"
+		})
+			.append( this.menu )
+			.appendTo( this._appendTo() );
 
 		// Initialize menu widget
 		this.menuInstance = this.menu
-			.menu( {
-				classes: {
-					"ui-menu": "ui-corner-bottom"
-				},
+			.menu({
 				role: "listbox",
 				select: function( event, ui ) {
 					event.preventDefault();
 
-					// Support: IE8
+					// support: IE8
 					// If the item was selected via a click, the text selection
 					// will be destroyed in IE
 					that._setSelection();
@@ -184,8 +166,13 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 					that.button.attr( "aria-activedescendant",
 						that.menuItems.eq( item.index ).attr( "id" ) );
 				}
-			} )
+			})
 			.menu( "instance" );
+
+		// Adjust menu styles to dropdown
+		this.menu
+			.addClass( "ui-corner-bottom" )
+			.removeClass( "ui-corner-all" );
 
 		// Don't close the menu on mouseleave
 		this.menuInstance._off( this.menu, "mouseleave" );
@@ -203,37 +190,27 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 
 	refresh: function() {
 		this._refreshMenu();
-		this.buttonItem.replaceWith(
-			this.buttonItem = this._renderButtonItem(
-
-				// Fall back to an empty object in case there are no options
-				this._getSelectedItem().data( "ui-selectmenu-item" ) || {}
-			)
-		);
-		if ( this.options.width === null ) {
+		this._setText( this.buttonText, this._getSelectedItem().text() );
+		if ( !this.options.width ) {
 			this._resizeButton();
 		}
 	},
 
 	_refreshMenu: function() {
+		this.menu.empty();
+
 		var item,
 			options = this.element.find( "option" );
 
-		this.menu.empty();
+		if ( !options.length ) {
+			return;
+		}
 
 		this._parseOptions( options );
 		this._renderMenu( this.menu, this.items );
 
 		this.menuInstance.refresh();
-		this.menuItems = this.menu.find( "li" )
-			.not( ".ui-selectmenu-optgroup" )
-				.find( ".ui-menu-item-wrapper" );
-
-		this._rendered = true;
-
-		if ( !options.length ) {
-			return;
-		}
+		this.menuItems = this.menu.find( "li" ).not( ".ui-selectmenu-optgroup" );
 
 		item = this._getSelectedItem();
 
@@ -251,18 +228,13 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		}
 
 		// If this is the first time the menu is being opened, render the items
-		if ( !this._rendered ) {
+		if ( !this.menuItems ) {
 			this._refreshMenu();
 		} else {
 
 			// Menu clears focus on close, reset focus to selected item
-			this._removeClass( this.menu.find( ".ui-state-active" ), null, "ui-state-active" );
+			this.menu.find( ".ui-state-focus" ).removeClass( "ui-state-focus" );
 			this.menuInstance.focus( null, this._getSelectedItem() );
-		}
-
-		// If there are no options, don't open the menu
-		if ( !this.menuItems.length ) {
-			return;
 		}
 
 		this.isOpen = true;
@@ -301,38 +273,26 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		return this.menu;
 	},
 
-	_renderButtonItem: function( item ) {
-		var buttonItem = $( "<span>" );
-
-		this._setText( buttonItem, item.label );
-		this._addClass( buttonItem, "ui-selectmenu-text" );
-
-		return buttonItem;
-	},
-
 	_renderMenu: function( ul, items ) {
 		var that = this,
 			currentOptgroup = "";
 
 		$.each( items, function( index, item ) {
-			var li;
-
 			if ( item.optgroup !== currentOptgroup ) {
-				li = $( "<li>", {
+				$( "<li>", {
+					"class": "ui-selectmenu-optgroup ui-menu-divider" +
+						( item.element.parent( "optgroup" ).prop( "disabled" ) ?
+							" ui-state-disabled" :
+							"" ),
 					text: item.optgroup
-				} );
-				that._addClass( li, "ui-selectmenu-optgroup", "ui-menu-divider" +
-					( item.element.parent( "optgroup" ).prop( "disabled" ) ?
-						" ui-state-disabled" :
-						"" ) );
-
-				li.appendTo( ul );
+				})
+					.appendTo( ul );
 
 				currentOptgroup = item.optgroup;
 			}
 
 			that._renderItemData( ul, item );
-		} );
+		});
 	},
 
 	_renderItemData: function( ul, item ) {
@@ -340,17 +300,14 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_renderItem: function( ul, item ) {
-		var li = $( "<li>" ),
-			wrapper = $( "<div>", {
-				title: item.element.attr( "title" )
-			} );
+		var li = $( "<li>" );
 
 		if ( item.disabled ) {
-			this._addClass( li, null, "ui-state-disabled" );
+			li.addClass( "ui-state-disabled" );
 		}
-		this._setText( wrapper, item.label );
+		this._setText( li, item.label );
 
-		return li.append( wrapper ).appendTo( ul );
+		return li.appendTo( ul );
 	},
 
 	_setText: function( element, value ) {
@@ -366,9 +323,9 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			filter = ".ui-menu-item";
 
 		if ( this.isOpen ) {
-			item = this.menuItems.eq( this.focusIndex ).parent( "li" );
+			item = this.menuItems.eq( this.focusIndex );
 		} else {
-			item = this.menuItems.eq( this.element[ 0 ].selectedIndex ).parent( "li" );
+			item = this.menuItems.eq( this.element[ 0 ].selectedIndex );
 			filter += ":not(.ui-state-disabled)";
 		}
 
@@ -384,7 +341,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_getSelectedItem: function() {
-		return this.menuItems.eq( this.element[ 0 ].selectedIndex ).parent( "li" );
+		return this.menuItems.eq( this.element[ 0 ].selectedIndex );
 	},
 
 	_toggle: function( event ) {
@@ -403,12 +360,12 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			selection.removeAllRanges();
 			selection.addRange( this.range );
 
-		// Support: IE8
+		// support: IE8
 		} else {
 			this.range.select();
 		}
 
-		// Support: IE
+		// support: IE
 		// Setting the text selection kills the button focus in IE, but
 		// restoring the focus doesn't kill the selection.
 		this.button.focus();
@@ -420,8 +377,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 				return;
 			}
 
-			if ( !$( event.target ).closest( ".ui-selectmenu-menu, #" +
-				$.escapeSelector( this.ids.button ) ).length ) {
+			if ( !$( event.target ).closest( ".ui-selectmenu-menu, #" + this.ids.button ).length ) {
 				this.close( event );
 			}
 		}
@@ -439,7 +395,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 					this.range = selection.getRangeAt( 0 );
 				}
 
-			// Support: IE8
+			// support: IE8
 			} else {
 				this.range = document.selection.createRange();
 			}
@@ -453,54 +409,54 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		keydown: function( event ) {
 			var preventDefault = true;
 			switch ( event.keyCode ) {
-			case $.ui.keyCode.TAB:
-			case $.ui.keyCode.ESCAPE:
-				this.close( event );
-				preventDefault = false;
-				break;
-			case $.ui.keyCode.ENTER:
-				if ( this.isOpen ) {
-					this._selectFocusedItem( event );
-				}
-				break;
-			case $.ui.keyCode.UP:
-				if ( event.altKey ) {
-					this._toggle( event );
-				} else {
+				case $.ui.keyCode.TAB:
+				case $.ui.keyCode.ESCAPE:
+					this.close( event );
+					preventDefault = false;
+					break;
+				case $.ui.keyCode.ENTER:
+					if ( this.isOpen ) {
+						this._selectFocusedItem( event );
+					}
+					break;
+				case $.ui.keyCode.UP:
+					if ( event.altKey ) {
+						this._toggle( event );
+					} else {
+						this._move( "prev", event );
+					}
+					break;
+				case $.ui.keyCode.DOWN:
+					if ( event.altKey ) {
+						this._toggle( event );
+					} else {
+						this._move( "next", event );
+					}
+					break;
+				case $.ui.keyCode.SPACE:
+					if ( this.isOpen ) {
+						this._selectFocusedItem( event );
+					} else {
+						this._toggle( event );
+					}
+					break;
+				case $.ui.keyCode.LEFT:
 					this._move( "prev", event );
-				}
-				break;
-			case $.ui.keyCode.DOWN:
-				if ( event.altKey ) {
-					this._toggle( event );
-				} else {
+					break;
+				case $.ui.keyCode.RIGHT:
 					this._move( "next", event );
-				}
-				break;
-			case $.ui.keyCode.SPACE:
-				if ( this.isOpen ) {
-					this._selectFocusedItem( event );
-				} else {
-					this._toggle( event );
-				}
-				break;
-			case $.ui.keyCode.LEFT:
-				this._move( "prev", event );
-				break;
-			case $.ui.keyCode.RIGHT:
-				this._move( "next", event );
-				break;
-			case $.ui.keyCode.HOME:
-			case $.ui.keyCode.PAGE_UP:
-				this._move( "first", event );
-				break;
-			case $.ui.keyCode.END:
-			case $.ui.keyCode.PAGE_DOWN:
-				this._move( "last", event );
-				break;
-			default:
-				this.menu.trigger( event );
-				preventDefault = false;
+					break;
+				case $.ui.keyCode.HOME:
+				case $.ui.keyCode.PAGE_UP:
+					this._move( "first", event );
+					break;
+				case $.ui.keyCode.END:
+				case $.ui.keyCode.PAGE_DOWN:
+					this._move( "last", event );
+					break;
+				default:
+					this.menu.trigger( event );
+					preventDefault = false;
 			}
 
 			if ( preventDefault ) {
@@ -510,7 +466,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_selectFocusedItem: function( event ) {
-		var item = this.menuItems.eq( this.focusIndex ).parent( "li" );
+		var item = this.menuItems.eq( this.focusIndex );
 		if ( !item.hasClass( "ui-state-disabled" ) ) {
 			this._select( item.data( "ui-selectmenu-item" ), event );
 		}
@@ -521,7 +477,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 
 		// Change native select element
 		this.element[ 0 ].selectedIndex = item.index;
-		this.buttonItem.replaceWith( this.buttonItem = this._renderButtonItem( item ) );
+		this._setText( this.buttonText, item.label );
 		this._setAria( item );
 		this._trigger( "select", event, { item: item } );
 
@@ -535,18 +491,18 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	_setAria: function( item ) {
 		var id = this.menuItems.eq( item.index ).attr( "id" );
 
-		this.button.attr( {
+		this.button.attr({
 			"aria-labelledby": id,
 			"aria-activedescendant": id
-		} );
+		});
 		this.menu.attr( "aria-activedescendant", id );
 	},
 
 	_setOption: function( key, value ) {
 		if ( key === "icons" ) {
-			var icon = this.button.find( "span.ui-icon" );
-			this._removeClass( icon, null, this.options.icons.button )
-				._addClass( icon, null, value.button );
+			this.button.find( "span.ui-icon" )
+				.removeClass( this.options.icons.button )
+				.addClass( value.button );
 		}
 
 		this._super( key, value );
@@ -555,24 +511,23 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			this.menuWrap.appendTo( this._appendTo() );
 		}
 
+		if ( key === "disabled" ) {
+			this.menuInstance.option( "disabled", value );
+			this.button
+				.toggleClass( "ui-state-disabled", value )
+				.attr( "aria-disabled", value );
+
+			this.element.prop( "disabled", value );
+			if ( value ) {
+				this.button.attr( "tabindex", -1 );
+				this.close();
+			} else {
+				this.button.attr( "tabindex", 0 );
+			}
+		}
+
 		if ( key === "width" ) {
 			this._resizeButton();
-		}
-	},
-
-	_setOptionDisabled: function( value ) {
-		this._super( value );
-
-		this.menuInstance.option( "disabled", value );
-		this.button.attr( "aria-disabled", value );
-		this._toggleClass( this.button, null, "ui-state-disabled", value );
-
-		this.element.prop( "disabled", value );
-		if ( value ) {
-			this.button.attr( "tabindex", -1 );
-			this.close();
-		} else {
-			this.button.attr( "tabindex", 0 );
 		}
 	},
 
@@ -586,7 +541,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		}
 
 		if ( !element || !element[ 0 ] ) {
-			element = this.element.closest( ".ui-front, dialog" );
+			element = this.element.closest( ".ui-front" );
 		}
 
 		if ( !element.length ) {
@@ -597,31 +552,18 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_toggleAttr: function() {
-		this.button.attr( "aria-expanded", this.isOpen );
-
-		// We can't use two _toggleClass() calls here, because we need to make sure
-		// we always remove classes first and add them second, otherwise if both classes have the
-		// same theme class, it will be removed after we add it.
-		this._removeClass( this.button, "ui-selectmenu-button-" +
-			( this.isOpen ? "closed" : "open" ) )
-			._addClass( this.button, "ui-selectmenu-button-" +
-				( this.isOpen ? "open" : "closed" ) )
-			._toggleClass( this.menuWrap, "ui-selectmenu-open", null, this.isOpen );
-
+		this.button
+			.toggleClass( "ui-corner-top", this.isOpen )
+			.toggleClass( "ui-corner-all", !this.isOpen )
+			.attr( "aria-expanded", this.isOpen );
+		this.menuWrap.toggleClass( "ui-selectmenu-open", this.isOpen );
 		this.menu.attr( "aria-hidden", !this.isOpen );
 	},
 
 	_resizeButton: function() {
 		var width = this.options.width;
 
-		// For `width: false`, just remove inline style and stop
-		if ( width === false ) {
-			this.button.css( "width", "" );
-			return;
-		}
-
-		// For `width: null`, match the width of the original element
-		if ( width === null ) {
+		if ( !width ) {
 			width = this.element.show().outerWidth();
 			this.element.hide();
 		}
@@ -633,7 +575,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		this.menu.outerWidth( Math.max(
 			this.button.outerWidth(),
 
-			// Support: IE10
+			// support: IE10
 			// IE10 wraps long text (possibly a rounding bug)
 			// so we add 1px to avoid the wrapping
 			this.menu.width( "" ).outerWidth() + 1
@@ -641,47 +583,33 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 	},
 
 	_getCreateOptions: function() {
-		var options = this._super();
-
-		options.disabled = this.element.prop( "disabled" );
-
-		return options;
+		return { disabled: this.element.prop( "disabled" ) };
 	},
 
 	_parseOptions: function( options ) {
-		var that = this,
-			data = [];
-		options.each( function( index, item ) {
-			if ( item.hidden ) {
-				return;
-			}
-
-			data.push( that._parseOption( $( item ), index ) );
-		} );
+		var data = [];
+		options.each(function( index, item ) {
+			var option = $( item ),
+				optgroup = option.parent( "optgroup" );
+			data.push({
+				element: option,
+				index: index,
+				value: option.val(),
+				label: option.text(),
+				optgroup: optgroup.attr( "label" ) || "",
+				disabled: optgroup.prop( "disabled" ) || option.prop( "disabled" )
+			});
+		});
 		this.items = data;
 	},
 
-	_parseOption: function( option, index ) {
-		var optgroup = option.parent( "optgroup" );
-
-		return {
-			element: option,
-			index: index,
-			value: option.val(),
-			label: option.text(),
-			optgroup: optgroup.attr( "label" ) || "",
-			disabled: optgroup.prop( "disabled" ) || option.prop( "disabled" )
-		};
-	},
-
 	_destroy: function() {
-		this._unbindFormResetHandler();
 		this.menuWrap.remove();
 		this.button.remove();
 		this.element.show();
 		this.element.removeUniqueId();
-		this.labels.attr( "for", this.ids.element );
+		this.label.attr( "for", this.ids.element );
 	}
-} ] );
+});
 
-} );
+}));

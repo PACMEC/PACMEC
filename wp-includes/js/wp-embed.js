@@ -1,11 +1,10 @@
 /**
- * WordPress inline HTML embed
+ * PACMEC inline HTML embed
  *
- * @since 4.4.0
- * @output wp-includes/js/wp-embed.js
+ * @since WP-4.4.0
  *
  * This file cannot have ampersands in it. This is to ensure
- * it can be embedded in older versions of WordPress.
+ * it can be embedded in older versions of PACMEC.
  * See https://core.trac.wordpress.org/changeset/35708.
  */
 (function ( window, document ) {

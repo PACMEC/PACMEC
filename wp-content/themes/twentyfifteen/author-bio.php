@@ -13,7 +13,7 @@
 	<div class="author-avatar">
 		<?php
 		/**
-		 * Filters the author bio avatar size.
+		 * Filter the author bio avatar size.
 		 *
 		 * @since Twenty Fifteen 1.0
 		 *
@@ -31,10 +31,7 @@
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php
-				/* translators: %s: Author display name. */
-				printf( __( 'View all posts by %s', 'twentyfifteen' ), get_the_author() );
-				?>
+				<?php printf( __( 'View all posts by %s', 'twentyfifteen' ), get_the_author() ); ?>
 			</a>
 		</p><!-- .author-bio -->
 

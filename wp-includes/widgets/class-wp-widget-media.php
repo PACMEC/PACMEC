@@ -2,15 +2,15 @@
 /**
  * Widget API: WP_Media_Widget class
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Widgets
- * @since 4.8.0
+ * @since WP-4.8.0
  */
 
 /**
  * Core class that implements a media widget.
  *
- * @since 4.8.0
+ * @since WP-4.8.0
  *
  * @see WP_Widget
  */
@@ -19,24 +19,24 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Translation labels.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 * @var array
 	 */
 	public $l10n = array(
-		'add_to_widget'              => '',
-		'replace_media'              => '',
-		'edit_media'                 => '',
-		'media_library_state_multi'  => '',
+		'add_to_widget' => '',
+		'replace_media' => '',
+		'edit_media' => '',
+		'media_library_state_multi' => '',
 		'media_library_state_single' => '',
-		'missing_attachment'         => '',
-		'no_media_selected'          => '',
-		'add_media'                  => '',
+		'missing_attachment' => '',
+		'no_media_selected' => '',
+		'add_media' => '',
 	);
 
 	/**
 	 * Whether or not the widget has been registered yet.
 	 *
-	 * @since 4.8.1
+	 * @since WP-4.8.1
 	 * @var bool
 	 */
 	protected $registered = false;
@@ -44,7 +44,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Constructor.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @param string $id_base         Base ID for the widget, lowercase and unique.
 	 * @param string $name            Name for the widget displayed on the configuration page.
@@ -54,35 +54,31 @@ abstract class WP_Widget_Media extends WP_Widget {
 	 *                                for information on accepted arguments. Default empty array.
 	 */
 	public function __construct( $id_base, $name, $widget_options = array(), $control_options = array() ) {
-		$widget_opts = wp_parse_args(
-			$widget_options,
-			array(
-				'description'                 => __( 'A media item.' ),
-				'customize_selective_refresh' => true,
-				'show_instance_in_rest'       => true,
-				'mime_type'                   => '',
-			)
-		);
+		$widget_opts = wp_parse_args( $widget_options, array(
+			'description' => __( 'A media item.' ),
+			'customize_selective_refresh' => true,
+			'mime_type' => '',
+		) );
 
 		$control_opts = wp_parse_args( $control_options, array() );
 
 		$l10n_defaults = array(
-			'no_media_selected'          => __( 'No media selected' ),
-			'add_media'                  => _x( 'Add Media', 'label for button in the media widget' ),
-			'replace_media'              => _x( 'Replace Media', 'label for button in the media widget; should preferably not be longer than ~13 characters long' ),
-			'edit_media'                 => _x( 'Edit Media', 'label for button in the media widget; should preferably not be longer than ~13 characters long' ),
-			'add_to_widget'              => __( 'Add to Widget' ),
-			'missing_attachment'         => sprintf(
-				/* translators: %s: URL to media library. */
+			'no_media_selected' => __( 'No media selected' ),
+			'add_media' => _x( 'Add Media', 'label for button in the media widget' ),
+			'replace_media' => _x( 'Replace Media', 'label for button in the media widget; should preferably not be longer than ~13 characters long' ),
+			'edit_media' => _x( 'Edit Media', 'label for button in the media widget; should preferably not be longer than ~13 characters long' ),
+			'add_to_widget' => __( 'Add to Widget' ),
+			'missing_attachment' => sprintf(
+				/* translators: %s: URL to media library */
 				__( 'We can&#8217;t find that file. Check your <a href="%s">media library</a> and make sure it wasn&#8217;t deleted.' ),
 				esc_url( admin_url( 'upload.php' ) )
 			),
-			/* translators: %d: Widget count. */
-			'media_library_state_multi'  => _n_noop( 'Media Widget (%d)', 'Media Widget (%d)' ),
+			/* translators: %d: widget count */
+			'media_library_state_multi' => _n_noop( 'Media Widget (%d)', 'Media Widget (%d)' ),
 			'media_library_state_single' => __( 'Media Widget' ),
-			'unsupported_file_type'      => __( 'Looks like this isn&#8217;t the correct kind of file. Please link to an appropriate file instead.' ),
+			'unsupported_file_type' => __( 'Looks like this isn&#8217;t the correct kind of file. Please link to an appropriate file instead.' ),
 		);
-		$this->l10n    = array_merge( $l10n_defaults, array_filter( $this->l10n ) );
+		$this->l10n = array_merge( $l10n_defaults, array_filter( $this->l10n ) );
 
 		parent::__construct(
 			$id_base,
@@ -95,10 +91,10 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Add hooks while registering all widget instances of this widget class.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
-	 * @param int $number Optional. The unique order number of this widget instance
-	 *                    compared to other instances of the same class. Default -1.
+	 * @param integer $number Optional. The unique order number of this widget instance
+	 *                        compared to other instances of the same class. Default -1.
 	 */
 	public function _register_one( $number = -1 ) {
 		parent::_register_one( $number );
@@ -107,16 +103,14 @@ abstract class WP_Widget_Media extends WP_Widget {
 		}
 		$this->registered = true;
 
-		// Note that the widgets component in the customizer will also do
-		// the 'admin_print_scripts-widgets.php' action in WP_Customize_Widgets::print_scripts().
+		// Note that the widgets component in the customizer will also do the 'admin_print_scripts-widgets.php' action in WP_Customize_Widgets::print_scripts().
 		add_action( 'admin_print_scripts-widgets.php', array( $this, 'enqueue_admin_scripts' ) );
 
 		if ( $this->is_preview() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_preview_scripts' ) );
 		}
 
-		// Note that the widgets component in the customizer will also do
-		// the 'admin_footer-widgets.php' action in WP_Customize_Widgets::print_footer_scripts().
+		// Note that the widgets component in the customizer will also do the 'admin_footer-widgets.php' action in WP_Customize_Widgets::print_footer_scripts().
 		add_action( 'admin_footer-widgets.php', array( $this, 'render_control_template_scripts' ) );
 
 		add_filter( 'display_media_states', array( $this, 'display_media_state' ), 10, 2 );
@@ -125,34 +119,33 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Get schema for properties of a widget instance (item).
 	 *
-	 * @since 4.8.0
+	 * @since  WP-4.8.0
 	 *
 	 * @see WP_REST_Controller::get_item_schema()
 	 * @see WP_REST_Controller::get_additional_fields()
 	 * @link https://core.trac.wordpress.org/ticket/35574
-	 *
 	 * @return array Schema for properties.
 	 */
 	public function get_instance_schema() {
 		$schema = array(
 			'attachment_id' => array(
-				'type'        => 'integer',
-				'default'     => 0,
-				'minimum'     => 0,
+				'type' => 'integer',
+				'default' => 0,
+				'minimum' => 0,
 				'description' => __( 'Attachment post ID' ),
-				'media_prop'  => 'id',
+				'media_prop' => 'id',
 			),
-			'url'           => array(
-				'type'        => 'string',
-				'default'     => '',
-				'format'      => 'uri',
+			'url' => array(
+				'type' => 'string',
+				'default' => '',
+				'format' => 'uri',
 				'description' => __( 'URL to the media file' ),
 			),
-			'title'         => array(
-				'type'                  => 'string',
-				'default'               => '',
-				'sanitize_callback'     => 'sanitize_text_field',
-				'description'           => __( 'Title for the widget' ),
+			'title' => array(
+				'type' => 'string',
+				'default' => '',
+				'sanitize_callback' => 'sanitize_text_field',
+				'description' => __( 'Title for the widget' ),
 				'should_preview_update' => false,
 			),
 		);
@@ -160,10 +153,10 @@ abstract class WP_Widget_Media extends WP_Widget {
 		/**
 		 * Filters the media widget instance schema to add additional properties.
 		 *
-		 * @since 4.9.0
+		 * @since WP-4.9.0
 		 *
 		 * @param array           $schema Instance schema.
-		 * @param WP_Widget_Media $widget Widget object.
+		 * @param WP_Widget_Media $this   Widget object.
 		 */
 		$schema = apply_filters( "widget_{$this->id_base}_instance_schema", $schema, $this );
 
@@ -173,7 +166,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Determine if the supplied attachment is for a valid attachment post with the specified MIME type.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @param int|WP_Post $attachment Attachment post ID or object.
 	 * @param string      $mime_type  MIME type.
@@ -196,7 +189,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Sanitize a token list string, such as used in HTML rel and class attributes.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @link http://w3c.github.io/html/infrastructure.html#space-separated-tokens
 	 * @link https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
@@ -209,13 +202,13 @@ abstract class WP_Widget_Media extends WP_Widget {
 		}
 		$tokens = array_map( 'sanitize_html_class', $tokens );
 		$tokens = array_filter( $tokens );
-		return implode( ' ', $tokens );
+		return join( ' ', $tokens );
 	}
 
 	/**
 	 * Displays the widget on the front-end.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @see WP_Widget::widget()
 	 *
@@ -242,11 +235,11 @@ abstract class WP_Widget_Media extends WP_Widget {
 		/**
 		 * Filters the media widget instance prior to rendering the media.
 		 *
-		 * @since 4.8.0
+		 * @since WP-4.8.0
 		 *
 		 * @param array           $instance Instance data.
 		 * @param array           $args     Widget args.
-		 * @param WP_Widget_Media $widget   Widget object.
+		 * @param WP_Widget_Media $this     Widget object.
 		 */
 		$instance = apply_filters( "widget_{$this->id_base}_instance", $instance, $args, $this );
 
@@ -258,19 +251,17 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Sanitizes the widget form values as they are saved.
 	 *
-	 * @since 4.8.0
-	 * @since 5.9.0 Renamed `$instance` to `$old_instance` to match parent class
-	 *              for PHP 8 named parameter support.
+	 * @since WP-4.8.0
 	 *
 	 * @see WP_Widget::update()
 	 * @see WP_REST_Request::has_valid_params()
 	 * @see WP_REST_Request::sanitize_params()
 	 *
 	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
+	 * @param array $instance     Previously saved values from database.
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $instance ) {
 
 		$schema = $this->get_instance_schema();
 		foreach ( $schema as $field => $field_schema ) {
@@ -279,10 +270,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 			}
 			$value = $new_instance[ $field ];
 
-			/*
-			 * Workaround for rest_validate_value_from_schema() due to the fact that
-			 * rest_is_boolean( '' ) === false, while rest_is_boolean( '1' ) is true.
-			 */
+			// Workaround for rest_validate_value_from_schema() due to the fact that rest_is_boolean( '' ) === false, while rest_is_boolean( '1' ) is true.
 			if ( 'boolean' === $field_schema['type'] && '' === $value ) {
 				$value = false;
 			}
@@ -305,18 +293,19 @@ abstract class WP_Widget_Media extends WP_Widget {
 			if ( is_wp_error( $value ) ) {
 				continue;
 			}
-			$old_instance[ $field ] = $value;
+			$instance[ $field ] = $value;
 		}
 
-		return $old_instance;
+		return $instance;
 	}
 
 	/**
 	 * Render the media on the frontend.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @param array $instance Widget instance props.
+	 * @return string
 	 */
 	abstract public function render_media( $instance );
 
@@ -325,15 +314,15 @@ abstract class WP_Widget_Media extends WP_Widget {
 	 *
 	 * Note that the widget UI itself is rendered with JavaScript via `MediaWidgetControl#render()`.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @see \WP_Widget_Media::render_control_template_scripts() Where the JS template is located.
-	 *
 	 * @param array $instance Current settings.
+	 * @return void
 	 */
 	final public function form( $instance ) {
 		$instance_schema = $this->get_instance_schema();
-		$instance        = wp_array_slice_assoc(
+		$instance = wp_array_slice_assoc(
 			wp_parse_args( (array) $instance, wp_list_pluck( $instance_schema, 'default' ) ),
 			array_keys( $instance_schema )
 		);
@@ -345,16 +334,16 @@ abstract class WP_Widget_Media extends WP_Widget {
 				class="media-widget-instance-property"
 				name="<?php echo esc_attr( $this->get_field_name( $name ) ); ?>"
 				id="<?php echo esc_attr( $this->get_field_id( $name ) ); // Needed specifically by wpWidgets.appendTitle(). ?>"
-				value="<?php echo esc_attr( is_array( $value ) ? implode( ',', $value ) : (string) $value ); ?>"
+				value="<?php echo esc_attr( is_array( $value ) ? join( ',', $value ) : strval( $value ) ); ?>"
 			/>
-			<?php
+		<?php
 		endforeach;
 	}
 
 	/**
 	 * Filters the default media display states for items in the Media list table.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @param array   $states An array of media states.
 	 * @param WP_Post $post   The current attachment object.
@@ -390,14 +379,14 @@ abstract class WP_Widget_Media extends WP_Widget {
 	 * selective refresh, and so it is important to unconditionally enqueue them in
 	 * case a widget does get added.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 */
 	public function enqueue_preview_scripts() {}
 
 	/**
 	 * Loads the required scripts and styles for the widget control.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 */
 	public function enqueue_admin_scripts() {
 		wp_enqueue_media();
@@ -407,7 +396,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Render form template scripts.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 */
 	public function render_control_template_scripts() {
 		?>
@@ -419,9 +408,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 			</p>
 			<div class="media-widget-preview <?php echo esc_attr( $this->id_base ); ?>">
 				<div class="attachment-media-view">
-					<button type="button" class="select-media button-add-media not-selected">
-						<?php echo esc_html( $this->l10n['add_media'] ); ?>
-					</button>
+					<div class="placeholder"><?php echo esc_html( $this->l10n['no_media_selected'] ); ?></div>
 				</div>
 			</div>
 			<p class="media-widget-buttons">
@@ -433,6 +420,9 @@ abstract class WP_Widget_Media extends WP_Widget {
 					<?php echo esc_html( $this->l10n['replace_media'] ); ?>
 				</button>
 			<?php endif; ?>
+				<button type="button" class="button select-media not-selected">
+					<?php echo esc_html( $this->l10n['add_media'] ); ?>
+				</button>
 			</p>
 			<div class="media-widget-fields">
 			</div>
@@ -443,7 +433,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	/**
 	 * Whether the widget has content to show.
 	 *
-	 * @since 4.8.0
+	 * @since WP-4.8.0
 	 *
 	 * @param array $instance Widget instance props.
 	 * @return bool Whether widget has content.

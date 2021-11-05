@@ -2,15 +2,15 @@
 /**
  * Customize API: WP_Customize_Themes_Panel class
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Customize
- * @since 4.9.0
+ * @since WP-4.9.0
  */
 
 /**
  * Customize Themes Panel Class
  *
- * @since 4.9.0
+ * @since WP-4.9.0
  *
  * @see WP_Customize_Panel
  */
@@ -19,7 +19,7 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 	/**
 	 * Panel type.
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 * @var string
 	 */
 	public $type = 'themes';
@@ -31,7 +31,7 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 	 *
 	 * @see WP_Customize_Panel::print_template()
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 */
 	protected function render_template() {
 		?>
@@ -60,7 +60,7 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 	 * Class variables for this panel class are available in the `data` JS object;
 	 * export custom variables by overriding WP_Customize_Panel::json().
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 *
 	 * @see WP_Customize_Panel::print_template()
 	 */
@@ -71,11 +71,8 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 			<div class="accordion-section-title">
 				<span class="preview-notice">
 					<?php
-					printf(
-						/* translators: %s: Themes panel title in the Customizer. */
-						__( 'You are browsing %s' ),
-						'<strong class="panel-title">' . __( 'Themes' ) . '</strong>'
-					); // Separate strings for consistency with other panels.
+					/* translators: %s: themes panel title in the Customizer */
+					echo sprintf( __( 'You are browsing %s' ), '<strong class="panel-title">' . __( 'Themes' ) . '</strong>' ); // Separate strings for consistency with other panels.
 					?>
 				</span>
 				<?php if ( current_user_can( 'install_themes' ) && ! is_multisite() ) : ?>

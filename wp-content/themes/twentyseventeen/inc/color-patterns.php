@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
+ * @since WP-1.0
  */
 
 /**
@@ -14,16 +14,16 @@ function twentyseventeen_custom_colors_css() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 
 	/**
-	 * Filters Twenty Seventeen default saturation level.
+	 * Filter Twenty Seventeen default saturation level.
 	 *
 	 * @since Twenty Seventeen 1.0
 	 *
 	 * @param int $saturation Color saturation level.
 	 */
-	$saturation         = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 50 ) );
+	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 50 ) );
 	$reduced_saturation = ( .8 * $saturation ) . '%';
-	$saturation         = $saturation . '%';
-	$css                = '
+	$saturation = $saturation . '%';
+	$css = '
 /**
  * Twenty Seventeen: Color Patterns
  *
@@ -307,8 +307,8 @@ body.colors-custom,
 	color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
 }
 
-.colors-custom :not( .mejs-button ) > button:hover,
-.colors-custom :not( .mejs-button ) > button:focus,
+.colors-custom button:hover,
+.colors-custom button:focus,
 .colors-custom input[type="button"]:hover,
 .colors-custom input[type="button"]:focus,
 .colors-custom input[type="submit"]:hover,

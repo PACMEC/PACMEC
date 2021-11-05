@@ -2,17 +2,17 @@
 /**
  * Upgrader API: WP_Ajax_Upgrader_Skin class
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Upgrader
- * @since 4.6.0
+ * @since WP-4.6.0
  */
 
 /**
- * Upgrader Skin for Ajax WordPress upgrades.
+ * Upgrader Skin for Ajax PACMEC upgrades.
  *
  * This skin is designed to be used for Ajax updates.
  *
- * @since 4.6.0
+ * @since WP-4.6.0
  *
  * @see Automatic_Upgrader_Skin
  */
@@ -21,8 +21,7 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	/**
 	 * Holds the WP_Error object.
 	 *
-	 * @since 4.6.0
-	 *
+	 * @since WP-4.6.0
 	 * @var null|WP_Error
 	 */
 	protected $errors = null;
@@ -30,15 +29,9 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	/**
 	 * Constructor.
 	 *
-	 * Sets up the WordPress Ajax upgrader skin.
+	 * @since WP-4.6.0
 	 *
-	 * @since 4.6.0
-	 *
-	 * @see WP_Upgrader_Skin::__construct()
-	 *
-	 * @param array $args Optional. The WordPress Ajax upgrader skin arguments to
-	 *                    override default options. See WP_Upgrader_Skin::__construct().
-	 *                    Default empty array.
+	 * @param array $args Options for the upgrader, see WP_Upgrader_Skin::__construct().
 	 */
 	public function __construct( $args = array() ) {
 		parent::__construct( $args );
@@ -49,7 +42,7 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	/**
 	 * Retrieves the list of errors.
 	 *
-	 * @since 4.6.0
+	 * @since WP-4.6.0
 	 *
 	 * @return WP_Error Errors during an upgrade.
 	 */
@@ -60,7 +53,7 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	/**
 	 * Retrieves a string for error messages.
 	 *
-	 * @since 4.6.0
+	 * @since WP-4.6.0
 	 *
 	 * @return string Error messages during an upgrade.
 	 */
@@ -68,10 +61,8 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 		$messages = array();
 
 		foreach ( $this->errors->get_error_codes() as $error_code ) {
-			$error_data = $this->errors->get_error_data( $error_code );
-
-			if ( $error_data && is_string( $error_data ) ) {
-				$messages[] = $this->errors->get_error_message( $error_code ) . ' ' . esc_html( strip_tags( $error_data ) );
+			if ( $this->errors->get_error_data( $error_code ) && is_string( $this->errors->get_error_data( $error_code ) ) ) {
+				$messages[] = $this->errors->get_error_message( $error_code ) . ' ' . esc_html( strip_tags( $this->errors->get_error_data( $error_code ) ) );
 			} else {
 				$messages[] = $this->errors->get_error_message( $error_code );
 			}
@@ -81,16 +72,13 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	}
 
 	/**
-	 * Stores an error message about the upgrade.
+	 * Stores a log entry for an error.
 	 *
-	 * @since 4.6.0
-	 * @since 5.3.0 Formalized the existing `...$args` parameter by adding it
-	 *              to the function signature.
+	 * @since WP-4.6.0
 	 *
-	 * @param string|WP_Error $errors  Errors.
-	 * @param mixed           ...$args Optional text replacements.
+	 * @param string|WP_Error $errors Errors.
 	 */
-	public function error( $errors, ...$args ) {
+	public function error( $errors ) {
 		if ( is_string( $errors ) ) {
 			$string = $errors;
 			if ( ! empty( $this->upgrader->strings[ $string ] ) ) {
@@ -98,6 +86,8 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 			}
 
 			if ( false !== strpos( $string, '%' ) ) {
+				$args = func_get_args();
+				$args = array_splice( $args, 1 );
 				if ( ! empty( $args ) ) {
 					$string = vsprintf( $string, $args );
 				}
@@ -105,6 +95,7 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 
 			// Count existing errors to generate a unique error code.
 			$errors_count = count( $this->errors->get_error_codes() );
+
 			$this->errors->add( 'unknown_upgrade_error_' . ( $errors_count + 1 ), $string );
 		} elseif ( is_wp_error( $errors ) ) {
 			foreach ( $errors->get_error_codes() as $error_code ) {
@@ -112,27 +103,25 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 			}
 		}
 
-		parent::error( $errors, ...$args );
+		$args = func_get_args();
+		call_user_func_array( array( $this, 'parent::error' ), $args );
 	}
 
 	/**
-	 * Stores a message about the upgrade.
+	 * Stores a log entry.
 	 *
-	 * @since 4.6.0
-	 * @since 5.3.0 Formalized the existing `...$args` parameter by adding it
-	 *              to the function signature.
-	 * @since 5.9.0 Renamed `$data` to `$feedback` for PHP 8 named parameter support.
+	 * @since WP-4.6.0
 	 *
-	 * @param string|array|WP_Error $feedback Message data.
-	 * @param mixed                 ...$args  Optional text replacements.
+	 * @param string|array|WP_Error $data Log entry data.
 	 */
-	public function feedback( $feedback, ...$args ) {
-		if ( is_wp_error( $feedback ) ) {
-			foreach ( $feedback->get_error_codes() as $error_code ) {
-				$this->errors->add( $error_code, $feedback->get_error_message( $error_code ), $feedback->get_error_data( $error_code ) );
+	public function feedback( $data ) {
+		if ( is_wp_error( $data ) ) {
+			foreach ( $data->get_error_codes() as $error_code ) {
+				$this->errors->add( $error_code, $data->get_error_message( $error_code ), $data->get_error_data( $error_code ) );
 			}
 		}
 
-		parent::feedback( $feedback, ...$args );
+		$args = func_get_args();
+		call_user_func_array( array( $this, 'parent::feedback' ), $args );
 	}
 }

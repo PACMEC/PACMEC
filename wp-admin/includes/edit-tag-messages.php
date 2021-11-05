@@ -2,9 +2,9 @@
 /**
  * Edit Tags Administration: Messages
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Administration
- * @since 4.4.0
+ * @since WP-4.4.0
  */
 
 $messages = array();
@@ -42,15 +42,14 @@ $messages['post_tag'] = array(
 /**
  * Filters the messages displayed when a tag is updated.
  *
- * @since 3.7.0
+ * @since WP-3.7.0
  *
  * @param array $messages The messages to be displayed.
  */
 $messages = apply_filters( 'term_updated_messages', $messages );
 
 $message = false;
-if ( isset( $_REQUEST['message'] ) && (int) $_REQUEST['message'] ) {
-	$msg = (int) $_REQUEST['message'];
+if ( isset( $_REQUEST['message'] ) && ( $msg = (int) $_REQUEST['message'] ) ) {
 	if ( isset( $messages[ $taxonomy ][ $msg ] ) ) {
 		$message = $messages[ $taxonomy ][ $msg ];
 	} elseif ( ! isset( $messages[ $taxonomy ] ) && isset( $messages['_item'][ $msg ] ) ) {

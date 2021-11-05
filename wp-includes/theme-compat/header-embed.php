@@ -5,9 +5,9 @@
  * When a post is embedded in an iframe, this file is used to create the header output
  * if the active theme does not include a header-embed.php template.
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Theme_Compat
- * @since 4.5.0
+ * @since WP-4.5.0
  */
 
 if ( ! headers_sent() ) {
@@ -22,9 +22,9 @@ if ( ! headers_sent() ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php
 	/**
-	 * Prints scripts or data in the embed template head tag.
+	 * Prints scripts or data in the embed template <head> tag.
 	 *
-	 * @since 4.4.0
+	 * @since WP-4.4.0
 	 */
 	do_action( 'embed_head' );
 	?>

@@ -2,24 +2,22 @@
 /**
  * Customize API: WP_Customize_Nav_Menu_Locations_Control class
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Customize
- * @since 4.9.0
+ * @since WP-4.9.0
  */
 
 /**
  * Customize Nav Menu Locations Control Class.
  *
- * @since 4.9.0
- *
- * @see WP_Customize_Control
+ * @since WP-4.9.0
  */
 class WP_Customize_Nav_Menu_Locations_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 * @var string
 	 */
 	public $type = 'nav_menu_locations';
@@ -27,14 +25,14 @@ class WP_Customize_Nav_Menu_Locations_Control extends WP_Customize_Control {
 	/**
 	 * Don't render the control's content - it uses a JS template instead.
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 */
 	public function render_content() {}
 
 	/**
 	 * JS/Underscore template for the control UI.
 	 *
-	 * @since 4.9.0
+	 * @since WP-4.9.0
 	 */
 	public function content_template() {
 		if ( current_theme_supports( 'menus' ) ) :
@@ -46,19 +44,20 @@ class WP_Customize_Nav_Menu_Locations_Control extends WP_Customize_Control {
 					<# if ( data.isCreating ) { #>
 						<p>
 							<?php echo _x( 'Where do you want this menu to appear?', 'menu locations' ); ?>
-							<?php
-							printf(
-								/* translators: 1: Documentation URL, 2: Additional link attributes, 3: Accessibility text. */
-								_x( '(If you plan to use a menu <a href="%1$s" %2$s>widget%3$s</a>, skip this step.)', 'menu locations' ),
-								__( 'https://wordpress.org/support/article/wordpress-widgets/' ),
-								' class="external-link" target="_blank"',
-								sprintf(
-									'<span class="screen-reader-text"> %s</span>',
-									/* translators: Accessibility text. */
-									__( '(opens in a new tab)' )
-								)
-							);
-							?>
+							<em class="new-menu-locations-widget-note">
+								<?php
+								printf(
+									/* translators: 1: Codex URL, 2: additional link attributes, 3: accessibility text */
+									_x( '(If you plan to use a menu <a href="%1$s" %2$s>widget%3$s</a>, skip this step.)', 'menu locations' ),
+									__( 'https://codex.wordpress.org/WordPress_Widgets' ),
+									' class="external-link" target="_blank"',
+									sprintf( '<span class="screen-reader-text"> %s</span>',
+										/* translators: accessibility text */
+										__( '(opens in a new window)' )
+									)
+								);
+								?>
+							</em>
 						</p>
 					<# } else { #>
 						<p><?php echo _x( 'Here&#8217;s where this menu appears. If you&#8217;d like to change that, pick another location.', 'menu locations' ); ?></p>
@@ -74,9 +73,8 @@ class WP_Customize_Nav_Menu_Locations_Control extends WP_Customize_Control {
 								<?php echo $description; ?>
 								<span class="theme-location-set">
 									<?php
-									printf(
-										/* translators: %s: Menu name. */
-										_x( '(Current: %s)', 'menu location' ),
+									/* translators: %s: menu name */
+									printf( _x( '(Current: %s)', 'menu location' ),
 										'<span class="current-menu-location-name-' . esc_attr( $location ) . '"></span>'
 									);
 									?>

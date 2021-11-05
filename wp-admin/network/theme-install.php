@@ -2,16 +2,15 @@
 /**
  * Install theme network administration panel.
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Multisite
- * @since 3.1.0
+ * @since WP-3.1.0
  */
 
-if ( isset( $_GET['tab'] ) && ( 'theme-information' === $_GET['tab'] ) ) {
+if ( isset( $_GET['tab'] ) && ( 'theme-information' == $_GET['tab'] ) )
 	define( 'IFRAME_REQUEST', true );
-}
 
-/** Load WordPress Administration Bootstrap */
-require_once __DIR__ . '/admin.php';
+/** Load PACMEC Administration Bootstrap */
+require_once( dirname( __FILE__ ) . '/admin.php' );
 
-require ABSPATH . 'wp-admin/theme-install.php';
+require( ABSPATH . 'wp-admin/theme-install.php' );

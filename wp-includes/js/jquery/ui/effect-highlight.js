@@ -1,25 +1,18 @@
 /*!
- * jQuery UI Effects Highlight 1.13.0
+ * jQuery UI Effects Highlight 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/highlight-effect/
  */
-
-//>>label: Highlight Effect
-//>>group: Effects
-//>>description: Highlights the background of an element in a defined color for a custom duration.
-//>>docs: http://api.jqueryui.com/highlight-effect/
-//>>demos: http://jqueryui.com/effect/
-
-( function( factory ) {
-	"use strict";
-
+(function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 
 		// AMD. Register as an anonymous module.
-		define( [
+		define([
 			"jquery",
 			"./effect"
 		], factory );
@@ -28,32 +21,40 @@
 		// Browser globals
 		factory( jQuery );
 	}
-} )( function( $ ) {
-"use strict";
+}(function( $ ) {
 
-return $.effects.define( "highlight", "show", function( options, done ) {
-	var element = $( this ),
+return $.effects.effect.highlight = function( o, done ) {
+	var elem = $( this ),
+		props = [ "backgroundImage", "backgroundColor", "opacity" ],
+		mode = $.effects.setMode( elem, o.mode || "show" ),
 		animation = {
-			backgroundColor: element.css( "backgroundColor" )
+			backgroundColor: elem.css( "backgroundColor" )
 		};
 
-	if ( options.mode === "hide" ) {
+	if (mode === "hide") {
 		animation.opacity = 0;
 	}
 
-	$.effects.saveStyle( element );
+	$.effects.save( elem, props );
 
-	element
-		.css( {
+	elem
+		.show()
+		.css({
 			backgroundImage: "none",
-			backgroundColor: options.color || "#ffff99"
-		} )
+			backgroundColor: o.color || "#ffff99"
+		})
 		.animate( animation, {
 			queue: false,
-			duration: options.duration,
-			easing: options.easing,
-			complete: done
-		} );
-} );
+			duration: o.duration,
+			easing: o.easing,
+			complete: function() {
+				if ( mode === "hide" ) {
+					elem.hide();
+				}
+				$.effects.restore( elem, props );
+				done();
+			}
+		});
+};
 
-} );
+}));

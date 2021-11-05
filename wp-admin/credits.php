@@ -2,135 +2,64 @@
 /**
  * Credits administration panel.
  *
- * @package WordPress
+ * @package PACMEC
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
-require_once __DIR__ . '/admin.php';
-require_once __DIR__ . '/includes/credits.php';
+/** PACMEC Administration Bootstrap */
+require_once( dirname( __FILE__ ) . '/admin.php' );
 
-// Used in the HTML title tag.
 $title = __( 'Credits' );
 
-list( $display_version ) = explode( '-', get_bloginfo( 'version' ) );
-
-require_once ABSPATH . 'wp-admin/admin-header.php';
-
-$credits = wp_credits();
+include( ABSPATH . 'wp-admin/admin-header.php' );
 ?>
-<div class="wrap about__container">
+<div class="wrap about-wrap full-width-layout">
 
-	<div class="about__header">
-		<div class="about__header-title">
-			<h1>
-				<?php _e( 'Contributors' ); ?>
-			</h1>
-		</div>
+<h1><?php _e( 'Welcome to PACMEC!' ); ?></h1>
 
-		<div class="about__header-text">
-			<?php _e( 'WordPress 5.8 was created by a worldwide team of passionate individuals' ); ?>
-		</div>
+<p class="about-text">
+	<?php printf( __( 'Version %s' ), pacmec_version() ); ?>
+	<?php pacmec_dev_version_info(); ?>
+</p>
+<p class="about-text">
+	<?php printf(
+		/* translators: link to "business-focused CMS" article */
+		__( 'Thank you for using PACMEC, the <a href="%s">CMS for Creators</a>.' ),
+		'https://link.pacmec.co/the-cms-for-creators'
+	); ?>
+	<br>
+	<?php _e( 'Stable. Lightweight. Instantly Familiar.' ); ?>
+</p>
 
-		<nav class="about__header-navigation nav-tab-wrapper wp-clearfix" aria-label="<?php esc_attr_e( 'Secondary menu' ); ?>">
-			<a href="about.php" class="nav-tab"><?php _e( 'What&#8217;s New' ); ?></a>
-			<a href="credits.php" class="nav-tab nav-tab-active" aria-current="page"><?php _e( 'Credits' ); ?></a>
-			<a href="freedoms.php" class="nav-tab"><?php _e( 'Freedoms' ); ?></a>
-			<a href="privacy.php" class="nav-tab"><?php _e( 'Privacy' ); ?></a>
-		</nav>
-	</div>
+<div class="wp-badge"></div>
 
-	<div class="about__section has-1-column">
-		<div class="column aligncenter">
-			<?php if ( ! $credits ) : ?>
+<h2 class="nav-tab-wrapper wp-clearfix">
+	<a href="about.php" class="nav-tab"><?php _e( 'About' ); ?></a>
+	<a href="credits.php" class="nav-tab nav-tab-active"><?php _e( 'Credits' ); ?></a>
+	<a href="freedoms.php" class="nav-tab"><?php _e( 'Freedoms' ); ?></a>
+	<a href="freedoms.php?privacy-notice" class="nav-tab"><?php _e( 'Privacy' ); ?></a>
+</h2>
 
-			<p>
-				<?php
-				printf(
-					/* translators: 1: https://wordpress.org/about/ */
-					__( 'WordPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
-					__( 'https://wordpress.org/about/' )
-				);
-				?>
-				<br />
-				<a href="https://make.wordpress.org/"><?php _e( 'Get involved in WordPress.' ); ?></a>
-			</p>
-
-			<?php else : ?>
-
-			<p>
-				<?php _e( 'Want to see your name in lights on this page?' ); ?>
-				<br />
-				<a href="https://make.wordpress.org/"><?php _e( 'Get involved in WordPress.' ); ?></a>
-			</p>
-
-			<?php endif; ?>
-		</div>
-	</div>
-
+<div class="about-wrap-content">
 <?php
-if ( ! $credits ) {
-	echo '</div>';
-	require_once ABSPATH . 'wp-admin/admin-footer.php';
-	exit;
-}
+
+echo '<p class="about-description">' . sprintf(
+	/* translators: %s: https://www.pacmec.co/contributors/ */
+	__( 'PACMEC is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
+	'https://www.pacmec.co/contributors/'
+) . '</p>';
+
+echo '<p class="about-description">' . sprintf(
+	/* translators: %s: https://www.pacmec.co/get-involved/ */
+	__( 'Interested in helping out with development? <a href="%s">Get involved in PACMEC</a>.' ),
+	'https://www.pacmec.co/get-involved/'
+) . '</p>';
+
 ?>
-
-	<hr />
-
-	<div class="about__section">
-		<div class="column is-edge-to-edge">
-			<?php wp_credits_section_title( $credits['groups']['core-developers'] ); ?>
-			<?php wp_credits_section_list( $credits, 'core-developers' ); ?>
-			<?php wp_credits_section_list( $credits, 'contributing-developers' ); ?>
-		</div>
-	</div>
-
-	<hr />
-
-	<div class="about__section">
-		<div class="column">
-			<?php wp_credits_section_title( $credits['groups']['props'] ); ?>
-			<?php wp_credits_section_list( $credits, 'props' ); ?>
-		</div>
-	</div>
-
-	<hr />
-
-	<?php if ( isset( $credits['groups']['translators'] ) || isset( $credits['groups']['validators'] ) ) : ?>
-	<div class="about__section">
-		<div class="column">
-			<?php wp_credits_section_title( $credits['groups']['validators'] ); ?>
-			<?php wp_credits_section_list( $credits, 'validators' ); ?>
-			<?php wp_credits_section_list( $credits, 'translators' ); ?>
-		</div>
-	</div>
-
-	<hr />
-	<?php endif; ?>
-
-	<div class="about__section">
-		<div class="column">
-			<?php wp_credits_section_title( $credits['groups']['libraries'] ); ?>
-			<?php wp_credits_section_list( $credits, 'libraries' ); ?>
-		</div>
-	</div>
+</div>
 </div>
 <?php
 
-require_once ABSPATH . 'wp-admin/admin-footer.php';
+include( ABSPATH . 'wp-admin/admin-footer.php' );
 
 return;
-
-// These are strings returned by the API that we want to be translatable.
-__( 'Project Leaders' );
-/* translators: %s: The current WordPress version number. */
-__( 'Core Contributors to WordPress %s' );
-__( 'Noteworthy Contributors' );
-__( 'Cofounder, Project Lead' );
-__( 'Lead Developer' );
-__( 'Release Lead' );
-__( 'Release Design Lead' );
-__( 'Release Deputy' );
-__( 'Core Developer' );
-__( 'External Libraries' );

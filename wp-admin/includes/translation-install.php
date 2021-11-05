@@ -49,7 +49,7 @@ function translations_api( $type, $args = null ) {
 			$options['method'] = 'GET';
 			$url = add_query_arg(
 				$stats,
-				'https://api-v1.pacmec.com.co/translations/core/1.0.0/translations.json'
+				'https://pacmec.github.io/Endpoints/translations/core/1.0.0/translations.json'
 			);
 			$request = wp_remote_request( $url, $options );
 		} else {

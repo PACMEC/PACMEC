@@ -125,7 +125,7 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 	// for an upgrade from the base version, in this case `1.0.0-alpha1`.
 	$cp_base_version = preg_replace( '#\+migration\.\d+$#', '', $cp_version );
 
-	$url = 'https://api-v1.pacmec.com.co/upgrade/'
+	$url = 'https://pacmec.github.io/Endpoints/upgrade/'
 		. $cp_base_version . '.json'
 		. '?' . http_build_query( $query, null, '&' );
 
@@ -145,9 +145,9 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		trigger_error(
 			sprintf(
 				/* translators: %s: support forums URL */
-				__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please report this issue in our <a href="%s">support forum</a>.' ),
+				__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please report this issue in our <a href="%s">support forum</a>.' ),
 				'https://forums.pacmec.com.co/c/support/'
-			) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
+			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
 			headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 		);
 		return;

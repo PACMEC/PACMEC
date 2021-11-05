@@ -112,9 +112,9 @@ function get_core_checksums( $version, $locale ) {
 		trigger_error(
 			sprintf(
 				/* translators: %s: support forums URL */
-				__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+				__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
 				__( 'https://forums.pacmec.com.co/c/support' )
-			) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
+			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
 			headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 		);
 
@@ -570,7 +570,7 @@ function wp_theme_update_row( $theme_key, $theme ) {
 	 * row of the themes list table.
 	 *
 	 * The dynamic portion of the hook name, `$theme_key`, refers to
-	 * the theme slug as found in the PACMEC.net themes repository.
+	 * the theme slug as found in the pacmec.com.co themes repository.
 	 *
 	 * @since WP-3.1.0
 	 *

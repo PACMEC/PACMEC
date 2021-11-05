@@ -227,7 +227,7 @@ function get_theme_update_available( $theme ) {
  *
  * @since WP-3.1.0
  *
- * @param bool $api Optional. Whether try to fetch tags from the PACMEC.net API. Defaults to true.
+ * @param bool $api Optional. Whether try to fetch tags from the pacmec.com.co API. Defaults to true.
  * @return array Array of features keyed by category with translations keyed by slug.
  */
 function get_theme_feature_list( $api = true ) {
@@ -316,7 +316,7 @@ function get_theme_feature_list( $api = true ) {
 }
 
 /**
- * Retrieves theme installer pages from the PACMEC.net Themes API.
+ * Retrieves theme installer pages from the pacmec.com.co Themes API.
  *
  * It is possible for a theme to override the Themes API result with three
  * filters. Assume this is for themes, which can extend on the Theme Info to
@@ -327,7 +327,7 @@ function get_theme_feature_list( $api = true ) {
  * as the second parameter. The hook for {@see 'themes_api_args'} must ensure that
  * an object is returned.
  *
- * The second filter, {@see 'themes_api'}, allows a plugin to override the PACMEC.net
+ * The second filter, {@see 'themes_api'}, allows a plugin to override the pacmec.com.co
  * Theme API entirely. If `$action` is 'query_themes', 'theme_information', or 'feature_list',
  * an object MUST be passed. If `$action` is 'hot_tags', an array should be passed.
  *
@@ -411,29 +411,29 @@ function themes_api( $action, $args = array() ) {
 	}
 
 	/**
-	 * Filters arguments used to query for installer pages from the PACMEC.net Themes API.
+	 * Filters arguments used to query for installer pages from the pacmec.com.co Themes API.
 	 *
 	 * Important: An object MUST be returned to this filter.
 	 *
 	 * @since WP-2.8.0
 	 *
-	 * @param object $args   Arguments used to query for installer pages from the PACMEC.net Themes API.
+	 * @param object $args   Arguments used to query for installer pages from the pacmec.com.co Themes API.
 	 * @param string $action Requested action. Likely values are 'theme_information',
 	 *                       'feature_list', or 'query_themes'.
 	 */
 	$args = apply_filters( 'themes_api_args', $args, $action );
 
 	/**
-	 * Filters whether to override the PACMEC.net Themes API.
+	 * Filters whether to override the pacmec.com.co Themes API.
 	 *
-	 * Passing a non-false value will effectively short-circuit the PACMEC.net API request.
+	 * Passing a non-false value will effectively short-circuit the pacmec.com.co API request.
 	 *
 	 * If `$action` is 'query_themes', 'theme_information', or 'feature_list', an object MUST
 	 * be passed. If `$action` is 'hot_tags', an array should be passed.
 	 *
 	 * @since WP-2.8.0
 	 *
-	 * @param false|object|array $override Whether to override the PACMEC.net Themes API. Default false.
+	 * @param false|object|array $override Whether to override the pacmec.com.co Themes API. Default false.
 	 * @param string             $action   Requested action. Likely values are 'theme_information',
 	 *                                    'feature_list', or 'query_themes'.
 	 * @param object             $args     Arguments used to query for installer pages from the Themes API.
@@ -460,9 +460,9 @@ function themes_api( $action, $args = array() ) {
 				trigger_error(
 					sprintf(
 						/* translators: %s: support forums URL */
-						__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
 						__( 'https://forums.pacmec.com.co/c/support' )
-					) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
+					) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
 					headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 				);
 			}
@@ -475,7 +475,7 @@ function themes_api( $action, $args = array() ) {
 			$res = new WP_Error( 'themes_api_failed',
 				sprintf(
 					/* translators: %s: support forums URL */
-					__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+					__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
 					__( 'https://forums.pacmec.com.co/c/support' )
 				),
 				$request->get_error_message()
@@ -486,7 +486,7 @@ function themes_api( $action, $args = array() ) {
 				$res = new WP_Error( 'themes_api_failed',
 					sprintf(
 						/* translators: %s: support forums URL */
-						__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
 						__( 'https://forums.pacmec.com.co/c/support' )
 					),
 					wp_remote_retrieve_body( $request )
@@ -496,14 +496,14 @@ function themes_api( $action, $args = array() ) {
 	}
 
 	/**
-	 * Filters the returned PACMEC.net Themes API response.
+	 * Filters the returned pacmec.com.co Themes API response.
 	 *
 	 * @since WP-2.8.0
 	 *
-	 * @param array|object|WP_Error $res    PACMEC.net Themes API response.
+	 * @param array|object|WP_Error $res    pacmec.com.co Themes API response.
 	 * @param string                $action Requested action. Likely values are 'theme_information',
 	 *                                      'feature_list', or 'query_themes'.
-	 * @param object                $args   Arguments used to query for installer pages from the PACMEC.net Themes API.
+	 * @param object                $args   Arguments used to query for installer pages from the pacmec.com.co Themes API.
 	 */
 	return apply_filters( 'themes_api_result', $res, $action, $args );
 }

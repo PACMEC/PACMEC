@@ -41,7 +41,7 @@ define('DB_COLLATE', '');
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
- * You can generate these using the {@link https://api.pacmec.com.co/secret-key/1.0/salt/ PACMEC.net secret-key service}
+ * You can generate these using the {@link https://api.pacmec.com.co/secret-key/1.0/salt/ pacmec.com.co secret-key service}
  * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since WP-2.6.0

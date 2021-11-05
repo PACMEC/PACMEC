@@ -31,7 +31,7 @@ get_current_screen()->set_help_sidebar(
 );
 
 if ( current_user_can( 'install_plugins' ) ) {
-	// List of popular importer plugins from the PACMEC.net API.
+	// List of popular importer plugins from the pacmec.com.co API.
 	$popular_importers = wp_get_popular_importers();
 } else {
  	$popular_importers = array();
@@ -78,7 +78,7 @@ foreach ( $popular_importers as $pop_importer => $pop_data ) {
 	if ( isset( $importers[ $pop_data['importer-id'] ] ) )
 		continue;
 
-	// Fill the array of registered (already installed) importers with data of the popular importers from the PACMEC.net API.
+	// Fill the array of registered (already installed) importers with data of the popular importers from the pacmec.com.co API.
 	$importers[ $pop_data['importer-id'] ] = array( $pop_data['name'], $pop_data['description'], 'install' => $pop_data['plugin-slug'] );
 }
 

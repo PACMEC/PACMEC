@@ -116,7 +116,7 @@ function wp_import_handle_upload() {
 }
 
 /**
- * Returns a list from PACMEC.net of popular importer plugins.
+ * Returns a list from pacmec.com.co of popular importer plugins.
  *
  * @since WP-3.5.0
  *

@@ -55,7 +55,7 @@ wp_localize_script( 'theme', '_wpThemeSettings', array(
 		'back'                => __( 'Back' ),
 		'error'               => sprintf(
 			/* translators: %s: support forums URL */
-			__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+			__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
 			__( 'https://forums.pacmec.com.co/c/support' )
 		),
 		'tryAgain'            => __( 'Try Again' ),

@@ -531,7 +531,7 @@
 	 * @since WP-4.6.0
 	 *
 	 * @param {object}                args         Arguments.
-	 * @param {string}                args.slug    Plugin identifier in the PACMEC.net Plugin repository.
+	 * @param {string}                args.slug    Plugin identifier in the pacmec.com.co Plugin repository.
 	 * @param {installPluginSuccess=} args.success Optional. Success callback. Default: wp.updates.installPluginSuccess
 	 * @param {installPluginError=}   args.error   Optional. Error callback. Default: wp.updates.installPluginError
 	 * @return {$.promise} A jQuery promise that represents the request,

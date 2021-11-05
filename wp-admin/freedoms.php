@@ -46,7 +46,7 @@ $is_privacy_notice = isset( $_GET['privacy-notice'] );
 <?php if ( $is_privacy_notice ) : ?>
 
 <div class="about-wrap-content">
-	<p class="about-description"><?php _e( 'From time to time, your PACMEC site may send anonymous data to PACMEC.net. Some examples of the kinds of data that may be sent are the version of PACMEC your site is running and a list of installed plugins and themes.' ); ?></p>
+	<p class="about-description"><?php _e( 'From time to time, your PACMEC site may send anonymous data to pacmec.com.co. Some examples of the kinds of data that may be sent are the version of PACMEC your site is running and a list of installed plugins and themes.' ); ?></p>
 
 	<p><?php printf( __( 'We take privacy and transparency very seriously. To learn more about what data we collect, how we use it, and what precautions we take to ensure site owners&#8217; privacy, please see the <a href="%s">PACMEC Privacy Policy</a>.' ), 'https://link.pacmec.com.co/core-privacy-policy/' ); ?></p>
 </div>
@@ -67,7 +67,7 @@ $is_privacy_notice = isset( $_GET['privacy-notice'] );
 	$plugins_url = current_user_can( 'activate_plugins' ) ? admin_url( 'plugins.php' ) : __( 'https://wordpress.org/plugins/' );
 	$themes_url = current_user_can( 'switch_themes' ) ? admin_url( 'themes.php' ) : __( 'https://wordpress.org/themes/' );
 
-	printf( __( 'Every plugin and theme in PACMEC.net&#8217;s directory is 100%% GPL or a similarly free and compatible license, so you can feel safe finding <a href="%1$s">plugins</a> and <a href="%2$s">themes</a> there. If you get a plugin or theme from another source, make sure to ask them if it&#8217;s GPL first. If they don&#8217;t respect the PACMEC license, we don&#8217;t recommend them.' ), $plugins_url, $themes_url ); ?></p>
+	printf( __( 'Every plugin and theme in pacmec.com.co&#8217;s directory is 100%% GPL or a similarly free and compatible license, so you can feel safe finding <a href="%1$s">plugins</a> and <a href="%2$s">themes</a> there. If you get a plugin or theme from another source, make sure to ask them if it&#8217;s GPL first. If they don&#8217;t respect the PACMEC license, we don&#8217;t recommend them.' ), $plugins_url, $themes_url ); ?></p>
 
 	<p><?php _e( 'Don&#8217;t you wish all software came with these freedoms? So do we! For more information, check out the <a href="https://www.fsf.org/">Free Software Foundation</a>.' ); ?></p>
 </div>

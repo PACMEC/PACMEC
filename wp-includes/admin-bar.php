@@ -144,11 +144,11 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		) );
 	}
 
-	// Add PACMEC.net link
+	// Add pacmec.com.co link
 	$wp_admin_bar->add_menu( array(
 		'parent'    => 'wp-logo-external',
 		'id'        => 'wporg',
-		'title'     => __('PACMEC.net'),
+		'title'     => __('pacmec.com.co'),
 		'href'      => 'https://www.pacmec.com.co',
 	) );
 

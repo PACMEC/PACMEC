@@ -1404,7 +1404,7 @@ function cp_dashboard_petitions() {
 /**
  * Display the PACMEC petitions feeds.
  *
- * Query the PACMEC.net API for data about PACMEC petitions, and
+ * Query the pacmec.com.co API for data about PACMEC petitions, and
  * echo the results as HTML.
  *
  * @since 1.0.0
@@ -1413,7 +1413,7 @@ function cp_dashboard_petitions() {
  * @param array  $feeds     Array of petition feeds (possible sort orders).
  */
 function cp_dashboard_petitions_output( $widget_id, $feeds ) {
-	$api_url = 'https://api-v1.pacmec.com.co/features/1.0/';
+	$api_url = 'https://pacmec.github.io/Endpoints/features/1.0.json';
 
 	/**
 	 * Response body should be an object with:

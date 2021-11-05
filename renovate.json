@@ -1,0 +1,12 @@
+{
+	"extends": [
+		"config:base"
+	],
+	"labels": [
+		"bot"
+	],
+	"commitMessagePrefix": "Renovate[bot]:",
+	"ignoreDeps": [
+		"uglify-js"
+	]
+}

@@ -100,7 +100,7 @@ function find_core_auto_update() {
  * @return bool|array False on failure. An array of checksums on success.
  */
 function get_core_checksums( $version, $locale ) {
-	$url = 'https://api-v1.pacmec.com.co/checksums/md5/' . $version . '.json';
+	$url = 'https://pacmec.github.io/Endpoints/checksums/md5/' . $version . '.json';
 
 	$options = array(
 		'timeout' => wp_doing_cron() ? 30 : 3,

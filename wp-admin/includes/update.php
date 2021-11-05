@@ -112,9 +112,9 @@ function get_core_checksums( $version, $locale ) {
 		trigger_error(
 			sprintf(
 				/* translators: %s: support forums URL */
-				__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-				__( 'https://forums.pacmec.com.co/c/support' )
-			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
+				__( 'An unexpected error occurred. Something may be wrong with pacmec.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+				__( 'https://forums.pacmec.co/c/support' )
+			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.co. Please contact your server administrator.)' ),
 			headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 		);
 
@@ -249,7 +249,7 @@ function update_nag() {
 			__( '<a href="%1$s">PACMEC %2$s</a> is available! <a href="%3$s" aria-label="%4$s">Please update now</a>.' ),
 			sprintf(
 				/* translators: %s: PACMEC version */
-				esc_url( __( 'https://www.pacmec.com.co/version/%s' ) ),
+				esc_url( __( 'https://www.pacmec.co/version/%s' ) ),
 				$cur->current
 			),
 			$cur->current,
@@ -262,7 +262,7 @@ function update_nag() {
 			__( '<a href="%1$s">PACMEC %2$s</a> is available! Please notify the site administrator.' ),
 			sprintf(
 				/* translators: %s: PACMEC version */
-				esc_url( __( 'https://www.pacmec.com.co/version/%s' ) ),
+				esc_url( __( 'https://www.pacmec.co/version/%s' ) ),
 				$cur->current
 			),
 			$cur->current
@@ -570,7 +570,7 @@ function wp_theme_update_row( $theme_key, $theme ) {
 	 * row of the themes list table.
 	 *
 	 * The dynamic portion of the hook name, `$theme_key`, refers to
-	 * the theme slug as found in the pacmec.com.co themes repository.
+	 * the theme slug as found in the pacmec.co themes repository.
 	 *
 	 * @since WP-3.1.0
 	 *

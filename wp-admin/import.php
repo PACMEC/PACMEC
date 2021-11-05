@@ -27,11 +27,11 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __('<a href="https://codex.wordpress.org/Tools_Import_Screen">Documentation on Import</a>') . '</p>' .
-	'<p>' . __('<a href="https://forums.pacmec.com.co/c/support">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://forums.pacmec.co/c/support">Support Forums</a>') . '</p>'
 );
 
 if ( current_user_can( 'install_plugins' ) ) {
-	// List of popular importer plugins from the pacmec.com.co API.
+	// List of popular importer plugins from the pacmec.co API.
 	$popular_importers = wp_get_popular_importers();
 } else {
  	$popular_importers = array();
@@ -78,7 +78,7 @@ foreach ( $popular_importers as $pop_importer => $pop_data ) {
 	if ( isset( $importers[ $pop_data['importer-id'] ] ) )
 		continue;
 
-	// Fill the array of registered (already installed) importers with data of the popular importers from the pacmec.com.co API.
+	// Fill the array of registered (already installed) importers with data of the popular importers from the pacmec.co API.
 	$importers[ $pop_data['importer-id'] ] = array( $pop_data['name'], $pop_data['description'], 'install' => $pop_data['plugin-slug'] );
 }
 

@@ -28,7 +28,7 @@
 				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 			}
 			?>
-			<a href="<?php echo esc_url( __( 'https://www.pacmec.com.co/', 'cp2015-child' ) ); ?>" class="imprint">
+			<a href="<?php echo esc_url( __( 'https://www.pacmec.co/', 'cp2015-child' ) ); ?>" class="imprint">
 				<?php printf( __( 'Proudly powered by %s', 'pacmec-twentyfifteen' ), 'PACMEC' ); ?>
 			</a>
 		</div><!-- .site-info -->

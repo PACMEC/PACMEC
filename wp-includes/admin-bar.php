@@ -144,12 +144,12 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		) );
 	}
 
-	// Add pacmec.com.co link
+	// Add pacmec.co link
 	$wp_admin_bar->add_menu( array(
 		'parent'    => 'wp-logo-external',
 		'id'        => 'wporg',
-		'title'     => __('pacmec.com.co'),
-		'href'      => 'https://www.pacmec.com.co',
+		'title'     => __('pacmec.co'),
+		'href'      => 'https://www.pacmec.co',
 	) );
 
 	// Add documentation link
@@ -157,7 +157,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'parent'    => 'wp-logo-external',
 		'id'        => 'documentation',
 		'title'     => __('Documentation'),
-		'href'      => __('https://docs.pacmec.com.co/'),
+		'href'      => __('https://docs.pacmec.co/'),
 	) );
 
 	// Add support link
@@ -165,7 +165,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'parent'    => 'wp-logo-external',
 		'id'        => 'support',
 		'title'     => __('Support'),
-		'href'      => __('https://docs.pacmec.com.co/faq-support/'),
+		'href'      => __('https://docs.pacmec.co/faq-support/'),
 	) );
 }
 

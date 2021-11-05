@@ -150,7 +150,7 @@ switch ( $step ) {
 		echo '<p>' .  sprintf(
 			/* translators: link to support forums for more help */
 			__( 'To get started, fill in your database information. If you don&#8217;t have this information, it can be requested from your web host. Need more <a href="%s" target="_blank" rel="noopener">help</a>?' ),
-			'https://forums.pacmec.com.co/c/support'
+			'https://forums.pacmec.co/c/support'
 		) . '</p>';
 
 		// Database settings inputs.
@@ -176,7 +176,7 @@ switch ( $step ) {
 		echo '		<td><input name="prefix" id="prefix" type="text" value="cp_" size="25" /> ' .
 			sprintf(
 				'<a href="%s" target="_blank" rel="noopener">' . __( 'Learn More' ) . '</a>',
-				esc_url('https://docs.pacmec.com.co/installing-pacmec/#installation-steps')
+				esc_url('https://docs.pacmec.co/installing-pacmec/#installation-steps')
 			) .
 			'</td>';
 		echo '	</tr>';
@@ -307,7 +307,7 @@ switch ( $step ) {
 			$no_api = isset( $_POST['noapi'] );
 
 			if ( ! $no_api ) {
-				$secret_keys = wp_remote_get( 'https://api.pacmec.com.co/secret-key/1.0/salt/' );
+				$secret_keys = wp_remote_get( 'https://api.pacmec.co/secret-key/1.0/salt/' );
 			}
 
 			if ( $no_api || is_wp_error( $secret_keys ) ) {
@@ -467,7 +467,7 @@ function setup_config_display_header( $body_classes = array() ) {
 	echo '</head>' . "\n";
 	echo '<body class="' . implode( ' ', $body_classes ) . '">' . "\n";
 	// Add the PACMEC logo.
-	echo '<p id="logo"><a href="' . esc_url( 'https://www.pacmec.com.co/' ) . '" tabindex="-1">' . __( 'PACMEC' ) . '</a></p>' . "\n";
+	echo '<p id="logo"><a href="' . esc_url( 'https://www.pacmec.co/' ) . '" tabindex="-1">' . __( 'PACMEC' ) . '</a></p>' . "\n";
 }
 
 /**

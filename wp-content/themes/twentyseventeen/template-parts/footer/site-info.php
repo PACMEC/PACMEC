@@ -15,7 +15,7 @@
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
 	?>
-	<a href="<?php echo esc_url( __( 'https://www.pacmec.com.co/', 'twentyseventeen' ) ); ?>" class="imprint">
+	<a href="<?php echo esc_url( __( 'https://www.pacmec.co/', 'twentyseventeen' ) ); ?>" class="imprint">
 		<?php printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'PACMEC' ); ?>
 	</a>
 </div><!-- .site-info -->

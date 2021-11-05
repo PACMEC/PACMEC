@@ -996,5 +996,5 @@ function get_site_screen_help_tab_args() {
 function get_site_screen_help_sidebar_content() {
 	return '<p><strong>' . __('For more information:') . '</strong></p>' .
 		'<p>' . __('<a href="https://codex.wordpress.org/Network_Admin_Sites_Screen">Documentation on Site Management</a>') . '</p>' .
-		'<p>' . __('<a href="https://docs.pacmec.com.co/faq-support/">Support</a>') . '</p>';
+		'<p>' . __('<a href="https://docs.pacmec.co/faq-support/">Support</a>') . '</p>';
 }

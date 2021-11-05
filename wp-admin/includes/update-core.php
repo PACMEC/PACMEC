@@ -521,9 +521,9 @@ function cp_get_core_checksums( $version ) {
 		trigger_error(
 			sprintf(
 				/* translators: %s: support forums URL */
-				__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-				__( 'https://forums.pacmec.com.co/c/support' )
-			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
+				__( 'An unexpected error occurred. Something may be wrong with pacmec.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+				__( 'https://forums.pacmec.co/c/support' )
+			) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.co. Please contact your server administrator.)' ),
 			headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 		);
 

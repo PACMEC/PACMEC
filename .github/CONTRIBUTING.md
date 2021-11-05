@@ -4,11 +4,11 @@ PACMEC is a volunteer-driven open source project that thrives when we have multi
 
 We invite all contributors to not only submit pull requests (_PRs_) that are in line with the goals and direction of the project, but also to discuss and review other contributors' issues and pull requests. This will help us make the most of our limited time and review all contributions quickly.
 
-Before contributing to this repository, please read our [Democracy page](https://www.pacmec.com.co/democracy/) to understand how we make decisions about what is included in PACMEC, and our [roadmap](https://www.pacmec.com.co/roadmap/) to see what's already planned for the next couple of releases.
+Before contributing to this repository, please read our [Democracy page](https://www.pacmec.co/democracy/) to understand how we make decisions about what is included in PACMEC, and our [roadmap](https://www.pacmec.co/roadmap/) to see what's already planned for the next couple of releases.
 
-The **petitions process** mentioned in our Democracy document is very important to help us prioritize new features based on the needs of our users. There are some [exceptions](https://www.pacmec.com.co/democracy/#democracy-exceptions) to this process for minor changes and bugfixes, but generally speaking it is a good idea to search or ask in one of our communication channels (see below) before undertaking a change, because most changes should go through the petitions process.
+The **petitions process** mentioned in our Democracy document is very important to help us prioritize new features based on the needs of our users. There are some [exceptions](https://www.pacmec.co/democracy/#democracy-exceptions) to this process for minor changes and bugfixes, but generally speaking it is a good idea to search or ask in one of our communication channels (see below) before undertaking a change, because most changes should go through the petitions process.
 
-Also, please be sure to follow our [code of conduct](https://www.pacmec.com.co/democracy/#democracy-conduct) in all interactions with PACMEC community members.
+Also, please be sure to follow our [code of conduct](https://www.pacmec.co/democracy/#democracy-conduct) in all interactions with PACMEC community members.
 
 ## Table of Contents
 
@@ -28,17 +28,17 @@ Also, please be sure to follow our [code of conduct](https://www.pacmec.com.co/d
 
 We encourage you to join and ask any questions you have about contributing.
 
-- [Slack](https://www.pacmec.com.co/join-slack/) - great for real-time chat, posting screenshots and asking questions about anything you're stuck on. Or just socializing.
-- [Petitions](https://forums.pacmec.com.co/c/governance/petitions/77) - for proposing new features or major changes for consideration by the community.
+- [Slack](https://www.pacmec.co/join-slack/) - great for real-time chat, posting screenshots and asking questions about anything you're stuck on. Or just socializing.
+- [Petitions](https://forums.pacmec.co/c/governance/petitions/77) - for proposing new features or major changes for consideration by the community.
 - [GitHub issues](https://github.com/PACMEC/PACMEC/issues) - for proposing or discussing bugfixes, or minor improvements. Generally it is a good idea to create a petition for anything that may take a significant amount of time or that may have backwards compatibility implications.
-- [Forums](https://forums.pacmec.com.co/) - for posting questions and searching for solutions. The forums are our most active community channel other than Slack.
+- [Forums](https://forums.pacmec.co/) - for posting questions and searching for solutions. The forums are our most active community channel other than Slack.
 
 ## Review criteria
 
 When evaluating bug fixes and other code changes in pull requests (_PRs_), we look for these things, ideally all of them:
 
-1. The change impacts or is likely to impact existing PACMEC users. Otherwise, there are literally thousands of things we could look at, but we need to prioritize our development time. Right now the best tool we have for this is [petitions](https://forums.pacmec.com.co/c/governance/petitions/77).
-2. The change is not going to break backward compatibility, and has minimal effects on the existing plugin and theme ecosystem. A good way to evaluate the effects of a change on plugins or themes is to do a search on [wpdirectory](https://wpdirectory.net). (Major changes are also a possibility but require a planning effort around when and how they will be released, as well as agreement from the community per our [democratic process](https://www.pacmec.com.co/democracy/).)
+1. The change impacts or is likely to impact existing PACMEC users. Otherwise, there are literally thousands of things we could look at, but we need to prioritize our development time. Right now the best tool we have for this is [petitions](https://forums.pacmec.co/c/governance/petitions/77).
+2. The change is not going to break backward compatibility, and has minimal effects on the existing plugin and theme ecosystem. A good way to evaluate the effects of a change on plugins or themes is to do a search on [wpdirectory](https://wpdirectory.net). (Major changes are also a possibility but require a planning effort around when and how they will be released, as well as agreement from the community per our [democratic process](https://www.pacmec.co/democracy/).)
 3. The change has automated tests.
 4. We understand the code change very well or can ask questions of someone who understands it very well.
 
@@ -140,7 +140,7 @@ If you're not sure about any of that, then it's a good idea to ask first. A good
 
 There are some changes that we already know we want to backport because they fit into our plans for future versions of PACMEC. You can find some examples under the [`WP backport` label](https://github.com/PACMEC/PACMEC/labels/WP%20backport).
 
-You can see a list of all WordPress changes since the fork, along with information about which ones have already been included in PACMEC, at [backports.pacmec.com.co](https://backports.pacmec.com.co).
+You can see a list of all WordPress changes since the fork, along with information about which ones have already been included in PACMEC, at [backports.pacmec.co](https://backports.pacmec.co).
 
 ### Making a backport PR
 
@@ -162,7 +162,7 @@ When you're ready to backport a code change:
    Using this script for all backports saves time for you and for the maintainers. It uses a standardized format for commit messages, which makes it possible for us to track which WordPress changes we've already included.
 
    **Pay close attention to the output of this script** and let us know if you see anything strange or confusing!
-3. Resolve merge conflicts (if any) by editing the conflicting files, running `git add` and then `git commit`. If you cannot resolve the conflicts, ask for help in the [**#core** Slack channel](https://www.pacmec.com.co/join-slack/) or just push your branch as-is and we'll take care of it!
+3. Resolve merge conflicts (if any) by editing the conflicting files, running `git add` and then `git commit`. If you cannot resolve the conflicts, ask for help in the [**#core** Slack channel](https://www.pacmec.co/join-slack/) or just push your branch as-is and we'll take care of it!
 4. Repeat steps 2 and 3 for any further WordPress changesets that are related to this PR.
 5. Push your branch to your fork on GitHub using `git push origin merge/wp-rCHANGESET_NUMBER` or the name of your current branch.
 6. Use the GitHub website to make a PR against the `develop` branch for review.

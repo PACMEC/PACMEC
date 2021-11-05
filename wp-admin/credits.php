@@ -25,7 +25,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 	<?php printf(
 		/* translators: link to "business-focused CMS" article */
 		__( 'Thank you for using PACMEC, the <a href="%s">CMS for Creators</a>.' ),
-		'https://link.pacmec.com.co/the-cms-for-creators'
+		'https://link.pacmec.co/the-cms-for-creators'
 	); ?>
 	<br>
 	<?php _e( 'Stable. Lightweight. Instantly Familiar.' ); ?>
@@ -44,15 +44,15 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 <?php
 
 echo '<p class="about-description">' . sprintf(
-	/* translators: %s: https://www.pacmec.com.co/contributors/ */
+	/* translators: %s: https://www.pacmec.co/contributors/ */
 	__( 'PACMEC is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
-	'https://www.pacmec.com.co/contributors/'
+	'https://www.pacmec.co/contributors/'
 ) . '</p>';
 
 echo '<p class="about-description">' . sprintf(
-	/* translators: %s: https://www.pacmec.com.co/get-involved/ */
+	/* translators: %s: https://www.pacmec.co/get-involved/ */
 	__( 'Interested in helping out with development? <a href="%s">Get involved in PACMEC</a>.' ),
-	'https://www.pacmec.com.co/get-involved/'
+	'https://www.pacmec.co/get-involved/'
 ) . '</p>';
 
 ?>

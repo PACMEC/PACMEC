@@ -47,7 +47,7 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __('<a href="https://codex.wordpress.org/Settings_General_Screen">Documentation on General Settings</a>') . '</p>' .
-	'<p>' . __('<a href="https://forums.pacmec.com.co/c/support">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://forums.pacmec.co/c/support">Support Forums</a>') . '</p>'
 );
 
 include( ABSPATH . 'wp-admin/admin-header.php' );
@@ -149,7 +149,7 @@ if ( $login_custom_image_src ) {
 		<legend class="screen-reader-text"><span><?php _e( 'Custom Login Image' ) ?></span></legend>
 		<p class="description" id="login_custom_image-description">
 			<?php _e( 'If you choose an image here and enable this option, then that image will be shown at the top of the login page instead of the PACMEC logo.' ); ?>
-			<a href="https://link.pacmec.com.co/docs/custom-login-image" target="_blank" rel="noopener noreferrer">
+			<a href="https://link.pacmec.co/docs/custom-login-image" target="_blank" rel="noopener noreferrer">
 				<?php _e( 'Documentation &#187;' ); ?>
 			</a>
 		</p>

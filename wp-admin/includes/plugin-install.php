@@ -7,7 +7,7 @@
  */
 
 /**
- * Retrieves plugin installer pages from the pacmec.com.co Plugins API.
+ * Retrieves plugin installer pages from the pacmec.co Plugins API.
  *
  * It is possible for a plugin to override the Plugin API result with three
  * filters. Assume this is for plugins, which can extend on the Plugin Info to
@@ -18,7 +18,7 @@
  * as the second parameter. The hook for {@see 'plugins_api_args'} must ensure that
  * an object is returned.
  *
- * The second filter, {@see 'plugins_api'}, allows a plugin to override the pacmec.com.co
+ * The second filter, {@see 'plugins_api'}, allows a plugin to override the pacmec.co
  * Plugin Installation API entirely. If `$action` is 'query_plugins' or 'plugin_information',
  * an object MUST be passed. If `$action` is 'hot_tags' or 'hot_categories', an array MUST
  * be passed.
@@ -113,7 +113,7 @@ function plugins_api( $action, $args = array() ) {
 	}
 
 	/**
-	 * Filters the pacmec.com.co Plugin Installation API arguments.
+	 * Filters the pacmec.co Plugin Installation API arguments.
 	 *
 	 * Important: An object MUST be returned to this filter.
 	 *
@@ -125,9 +125,9 @@ function plugins_api( $action, $args = array() ) {
 	$args = apply_filters( 'plugins_api_args', $args, $action );
 
 	/**
-	 * Filters the response for the current pacmec.com.co Plugin Installation API request.
+	 * Filters the response for the current pacmec.co Plugin Installation API request.
 	 *
-	 * Passing a non-false value will effectively short-circuit the pacmec.com.co API request.
+	 * Passing a non-false value will effectively short-circuit the pacmec.co API request.
 	 *
 	 * If `$action` is 'query_plugins' or 'plugin_information', an object MUST be passed.
 	 * If `$action` is 'hot_tags' or 'hot_categories', an array should be passed.
@@ -160,9 +160,9 @@ function plugins_api( $action, $args = array() ) {
 			trigger_error(
 				sprintf(
 					/* translators: %s: support forums URL */
-					__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.com.co/c/support' )
-				) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.com.co. Please contact your server administrator.)' ),
+					__( 'An unexpected error occurred. Something may be wrong with pacmec.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+					__( 'https://forums.pacmec.co/c/support' )
+				) . ' ' . __( '(PACMEC could not establish a secure connection to pacmec.co. Please contact your server administrator.)' ),
 				headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 			);
 
@@ -174,8 +174,8 @@ function plugins_api( $action, $args = array() ) {
 			$res = new WP_Error( 'plugins_api_failed',
 				sprintf(
 					/* translators: %s: support forums URL */
-					__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.com.co/c/support' )
+					__( 'An unexpected error occurred. Something may be wrong with pacmec.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+					__( 'https://forums.pacmec.co/c/support' )
 				),
 				$request->get_error_message()
 			);
@@ -185,8 +185,8 @@ function plugins_api( $action, $args = array() ) {
 				$res = new WP_Error( 'plugins_api_failed',
 					sprintf(
 						/* translators: %s: support forums URL */
-						__( 'An unexpected error occurred. Something may be wrong with pacmec.com.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://forums.pacmec.com.co/c/support' )
+						__( 'An unexpected error occurred. Something may be wrong with pacmec.co or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://forums.pacmec.co/c/support' )
 					),
 					wp_remote_retrieve_body( $request )
 				);

@@ -1086,7 +1086,7 @@ function wp_dashboard_events_news() {
 		<?php printf(
 			/* translators: link to PACMEC blog */
 			__( 'You can always find the latest PACMEC news on our <a href="%s">official&nbsp;blog</a>.' ),
-			'https://www.pacmec.com.co/blog/'
+			'https://www.pacmec.co/blog/'
 		); ?>
 	</div>
 	<div class="wordpress-news hide-if-no-js">
@@ -1112,7 +1112,7 @@ function wp_dashboard_primary() {
 			 *
 			 * @param string $link The widget's primary link URL.
 			 */
-			'link' => apply_filters( 'dashboard_primary_link', 'https://www.pacmec.com.co/blog/' ),
+			'link' => apply_filters( 'dashboard_primary_link', 'https://www.pacmec.co/blog/' ),
 
 			/**
 			 * Filters the primary feed URL for the 'PACMEC News' dashboard widget.
@@ -1121,7 +1121,7 @@ function wp_dashboard_primary() {
 			 *
 			 * @param string $url The widget's primary feed URL.
 			 */
-			'url' => apply_filters( 'dashboard_primary_feed', 'https://www.pacmec.com.co/feed/' ),
+			'url' => apply_filters( 'dashboard_primary_feed', 'https://www.pacmec.co/feed/' ),
 
 			/**
 			 * Filters the primary link title for the 'PACMEC News' dashboard widget.
@@ -1365,7 +1365,7 @@ function wp_welcome_panel() {
 		printf(
 			/* translators: link to learn more about translating PACMEC */
 			__( 'Help us translate PACMEC into your language! <a href="%s">Learn more</a>.' ),
-			'https://www.pacmec.com.co/translating-pacmec/'
+			'https://www.pacmec.co/translating-pacmec/'
 		);
 		echo '</p><p>';
 		printf(
@@ -1404,7 +1404,7 @@ function cp_dashboard_petitions() {
 /**
  * Display the PACMEC petitions feeds.
  *
- * Query the pacmec.com.co API for data about PACMEC petitions, and
+ * Query the pacmec.co API for data about PACMEC petitions, and
  * echo the results as HTML.
  *
  * @since 1.0.0

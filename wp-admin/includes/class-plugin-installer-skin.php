@@ -108,7 +108,7 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 		 * @since WP-2.7.0
 		 *
 		 * @param array  $install_actions Array of plugin action links.
-		 * @param object $api             Object containing pacmec.com.co API plugin data. Empty
+		 * @param object $api             Object containing pacmec.co API plugin data. Empty
 		 *                                for non-API installs, such as when a plugin is installed
 		 *                                via upload.
 		 * @param string $plugin_file     Path to the plugin file.

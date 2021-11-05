@@ -27,7 +27,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 			<?php printf(
 				/* translators: link to "business-focused CMS" article */
 				__( 'Thank you for using PACMEC, the <a href="%s">CMS for Creators</a>.' ),
-				'https://link.pacmec.com.co/the-cms-for-creators'
+				'https://link.pacmec.co/the-cms-for-creators'
 			); ?>
 			<br />
 			<?php _e( 'Stable. Lightweight. Instantly Familiar.' ); ?>
@@ -48,7 +48,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 					<?php printf(
 						/* translators: link to learn more about translating PACMEC */
 						__( 'Help us translate PACMEC into your language! <a href="%s">Learn more</a>.' ),
-						'https://www.pacmec.com.co/translating-pacmec/'
+						'https://www.pacmec.co/translating-pacmec/'
 					); ?>
 				</p>
 			<?php } ?>
@@ -59,7 +59,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				<?php printf(
 					/* translators: link to PACMEC site */
 					__( '<a href="%s"><strong>PACMEC</strong></a> is a fork of the WordPress 4.9 branch, including the battle-tested and proven classic editor interface using TinyMCE.' ),
-					'https://www.pacmec.com.co'
+					'https://www.pacmec.co'
 				); ?>
 			</p>
 			<p>
@@ -72,23 +72,23 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				<?php printf(
 					/* translators: 1: link with instructions to join PACMEC Slack, 2: link to community forums */
 					__( 'For general discussion about PACMEC, <a href="%1$s"><strong>join our Slack group</strong></a> or our <a href="%2$s"><strong>community forum</strong></a>.' ),
-					'https://www.pacmec.com.co/join-slack/',
-					'https://forums.pacmec.com.co/c/support'
+					'https://www.pacmec.co/join-slack/',
+					'https://forums.pacmec.co/c/support'
 				); ?>
 			</p>
 			<p>
 				<?php printf(
 					/* translators: link to PACMEC Petitions site for new features */
 					__( 'Suggestions for improvements to future versions of PACMEC are welcome at <a href="%s"><strong>our petitions site</strong></a>.' ),
-					'https://petitions.pacmec.com.co/'
+					'https://petitions.pacmec.co/'
 				); ?>
 			</p>
 			<p>
 				<?php printf(
 					/* translators: 1: link to PACMEC FAQs page, 2: link to PACMEC support forum */
 					__( 'If you need help with something else, please see our <a href="%1$s"><strong>FAQs page</strong></a>. If your question is not answered there, you can make a new post on our <a href="%2$s"><strong>support forum</strong></a>.' ),
-					'https://docs.pacmec.com.co/faq-support/',
-					'https://forums.pacmec.com.co/c/support/'
+					'https://docs.pacmec.co/faq-support/',
+					'https://forums.pacmec.co/c/support/'
 				); ?>
 			</p>
 			<p>
@@ -109,7 +109,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				<?php printf(
 					/* translators: link to PACMEC release announcements subforum */
 					__( 'The changes and new features included in recent versions of PACMEC can be found in our <a href="%s"><strong>Release Announcements subforum</strong></a>.' ),
-					'https://forums.pacmec.com.co/c/announcements/release-notes'
+					'https://forums.pacmec.co/c/announcements/release-notes'
 				);
 				?>
 			</p>
@@ -118,7 +118,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				<?php printf(
 					/* translators: link to PACMEC 1.0.0 changelog */
 					__( 'For a list of new features and other changes from WordPress 4.9.x, see the <a href="%s"><strong>PACMEC 1.0.0 (Aurora) release notes</strong></a>.' ),
-					'https://forums.pacmec.com.co/t/pacmec-1-0-0-aurora-release-notes/910'
+					'https://forums.pacmec.co/t/pacmec-1-0-0-aurora-release-notes/910'
 				);
 				?>
 			</p>

@@ -69,16 +69,16 @@ function list_core_update( $update ) {
 
 			if ( !$mysql_compat && !$php_compat )
 				/* translators: 1: PACMEC version number, 2: Minimum required PHP version number, 3: Minimum required MySQL version number, 4: Current PHP version number, 5: Current MySQL version number */
-				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.com.co/version/%1$s">PACMEC %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $update->current, $update->php_version, $update->mysql_version, $php_version, $mysql_version );
+				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.co/version/%1$s">PACMEC %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $update->current, $update->php_version, $update->mysql_version, $php_version, $mysql_version );
 			elseif ( !$php_compat )
 				/* translators: 1: PACMEC version number, 2: Minimum required PHP version number, 3: Current PHP version number */
-				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.com.co/version/%1$s">PACMEC %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $update->current, $update->php_version, $php_version );
+				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.co/version/%1$s">PACMEC %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $update->current, $update->php_version, $php_version );
 			elseif ( !$mysql_compat )
 				/* translators: 1: PACMEC version number, 2: Minimum required MySQL version number, 3: Current MySQL version number */
-				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.com.co/version/%1$s">PACMEC %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
+				$message = sprintf( __('You cannot update because <a href="https://www.pacmec.co/version/%1$s">PACMEC %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
 			else
 				/* translators: 1: PACMEC version number, 2: PACMEC version number including locale if necessary */
-				$message = 	sprintf(__('You can update to <a href="https://www.pacmec.com.co/version/%1$s">PACMEC %2$s</a> automatically:'), $update->current, $version_string);
+				$message = 	sprintf(__('You can update to <a href="https://www.pacmec.co/version/%1$s">PACMEC %2$s</a> automatically:'), $update->current, $version_string);
 			if ( !$mysql_compat || !$php_compat )
 				$show_buttons = false;
 		}
@@ -203,7 +203,7 @@ function core_upgrade_preamble() {
 		printf(
 			__( '<strong>Important:</strong> before updating, please <a href="%1$s">back up your database and files</a>. For help with updates, visit the <a href="%2$s">Updating PACMEC</a> documentation page.' ),
 			'https://codex.wordpress.org/WordPress_Backups',
-			'https://docs.pacmec.com.co/updating-pacmec/'
+			'https://docs.pacmec.co/updating-pacmec/'
 		);
 		echo '</p></div>';
 
@@ -293,27 +293,27 @@ function list_plugin_updates() {
 		// Get plugin compat for running version of PACMEC.
 		if ( isset($plugin_data->update->tested) && version_compare($plugin_data->update->tested, $cur_wp_version, '>=') ) {
 			$compat = '<br />' . sprintf(__('Expected compatibility with PACMEC %1$s: 100%%.'), $cur_cp_version);
-			$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+			$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 		} elseif ( isset($plugin_data->update->compatibility->{$cur_wp_version}) ) {
 			$compat = $plugin_data->update->compatibility->{$cur_wp_version};
 			$compat = '<br />' . sprintf(__('Expected Compatibility with PACMEC %1$s: %2$d%% (%3$d "works" votes out of %4$d total).'), $cur_cp_version, $compat->percent, $compat->votes, $compat->total_votes);
-			$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+			$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 		} else {
 			$compat = '<br />' . sprintf(__('Expected compatibility with PACMEC %1$s: Unknown.'), $cur_cp_version);
-			$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+			$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 		}
 		// Get plugin compat for updated version of PACMEC.
 		if ( $core_update_version ) {
 			if ( isset( $plugin_data->update->tested ) && version_compare( $plugin_data->update->tested, $core_update_version, '>=' ) ) {
 				$compat = '<br />' . sprintf( __( 'Expected compatibility with PACMEC %1$s: 100%%.' ), $core_update_version );
-				$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+				$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 			} elseif ( isset( $plugin_data->update->compatibility->{$core_update_version} ) ) {
 				$update_compat = $plugin_data->update->compatibility->{$core_update_version};
 				$compat .= '<br />' . sprintf(__('Expected compatibility with PACMEC %1$s: %2$d%% (%3$d "works" votes out of %4$d total).'), $core_update_version, $update_compat->percent, $update_compat->votes, $update_compat->total_votes);
-				$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+				$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 			} else {
 				$compat = '<br />' . sprintf(__('Expected compatibility with PACMEC %1$s: Unknown.'), $core_update_version);
-				$compat .= ' <a href="https://link.pacmec.com.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
+				$compat .= ' <a href="https://link.pacmec.co/plugin-compatibility">' . __( 'More info.' ) . '</a>';
 			}
 		}
 		// Get the upgrade notice for the new plugin version.
@@ -555,7 +555,7 @@ function do_core_upgrade( $reinstall = false ) {
 				show_message( sprintf(
 					/* translators: URL to support forum */
 					__( 'If you see this message after waiting 15 minutes and trying the update again, please make a post on our <a href="%s">support forum</a>.' ),
-					'https://forums.pacmec.com.co/c/support/'
+					'https://forums.pacmec.co/c/support/'
 				) );
 				break;
 
@@ -619,7 +619,7 @@ if ( ( 'do-theme-upgrade' == $action || ( 'do-plugin-upgrade' == $action && ! is
 $title = __('PACMEC Updates');
 $parent_file = 'index.php';
 
-$updates_overview  = '<p>' . __( 'On this screen, you can update to the latest version of PACMEC, as well as update your themes, plugins, and translations from the pacmec.com.co repositories.' ) . '</p>';
+$updates_overview  = '<p>' . __( 'On this screen, you can update to the latest version of PACMEC, as well as update your themes, plugins, and translations from the pacmec.co repositories.' ) . '</p>';
 $updates_overview .= '<p>' . __( 'If an update is available, you&#8127;ll see a notification appear in the Toolbar and navigation menu.' ) . ' ' . __( 'Keeping your site updated is important for security. It also makes the internet a safer place for you and your readers.' ) . '</p>';
 
 get_current_screen()->add_help_tab( array(
@@ -644,7 +644,7 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Dashboard_Updates_Screen">Documentation on Updating PACMEC</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://forums.pacmec.com.co/c/support">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://forums.pacmec.co/c/support">Support Forums</a>' ) . '</p>'
 );
 
 if ( 'upgrade-core' == $action ) {

@@ -18,7 +18,7 @@ if ( false ) {
 	<title>Error: PHP is not running</title>
 </head>
 <body class="cp-installation wp-core-ui">
-	<p id="logo"><a href="https://www.pacmec.com.co/">PACMEC</a></p>
+	<p id="logo"><a href="https://www.pacmec.co/">PACMEC</a></p>
 	<h1>Error: PHP is not running</h1>
 	<p>PACMEC requires that your web server is running PHP. Your server does not have PHP installed, or PHP is turned off.</p>
 </body>
@@ -307,7 +307,7 @@ function display_header( $body_classes = array() ) {
 	echo '<body class="' . implode( ' ', $body_classes ) . '">' . "\n";
 
 	// Add the linked PACMEC logo.
-	echo '<p id="logo"><a href="' . esc_url( 'https://www.pacmec.com.co/' ) . '" tabindex="-1">' . __( 'PACMEC' ) . '</a></p>' . "\n";
+	echo '<p id="logo"><a href="' . esc_url( 'https://www.pacmec.co/' ) . '" tabindex="-1">' . __( 'PACMEC' ) . '</a></p>' . "\n";
 }
 
 /**

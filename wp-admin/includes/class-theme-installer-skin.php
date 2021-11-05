@@ -107,7 +107,7 @@ class Theme_Installer_Skin extends WP_Upgrader_Skin {
 		 * @since WP-2.8.0
 		 *
 		 * @param array    $install_actions Array of theme action links.
-		 * @param object   $api             Object containing pacmec.com.co API theme data.
+		 * @param object   $api             Object containing pacmec.co API theme data.
 		 * @param string   $stylesheet      Theme directory name.
 		 * @param WP_Theme $theme_info      Theme object.
 		 */

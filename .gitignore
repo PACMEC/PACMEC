@@ -1,4 +1,7 @@
 /.htaccess
+.htaccess
 wp-config.php
-wp-content/languages/plugins/
-wp-content/languages/themes/
+wp-content/languages/*
+wp-content/plugins/*
+wp-content/themes/*
+wp-content/uploads/*

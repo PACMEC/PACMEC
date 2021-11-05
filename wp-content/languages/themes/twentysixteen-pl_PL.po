@@ -1,0 +1,397 @@
+# Translation of Themes - Twenty Sixteen in Polish
+# This file is distributed under the same license as the Themes - Twenty Sixteen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-09-23 09:24:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: pl\n"
+"Project-Id-Version: Themes - Twenty Sixteen\n"
+
+#. Theme Name of the theme
+#: inc/block-patterns.php:17 inc/block-patterns.php:57
+msgid "Twenty Sixteen"
+msgstr "Twenty Sixteen"
+
+#. Description of the theme
+msgid "Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere."
+msgstr "Twenty Sixteen to unowocześniony, popularny wygląd WordPressa &mdash; poziomy nagłówek z opcjonalnym prawym panelem bocznym doskonale pasuje do blogów i innych witryn. Umożliwia ustawienie własnych kolorów, posiadając również gotowe propozycje zestawów kolorystycznych. Oparty jest na eleganckiej i elastycznej siatce podejścia mobile-first, będąc dopracowanym w każdym detalu. Twenty Sixteen sprawi, że WordPress będzie wyglądał pięknie &mdash; wszędzie."
+
+#: inc/block-patterns.php:133
+msgid "My new book “Twenty Sixteen” is available for pre-order."
+msgstr "Moja nowa książka “Twenty Sixteen” jest dostępna w przedsprzedaży."
+
+#: inc/block-patterns.php:140
+msgid "Pre-Order Now"
+msgstr "Zamów teraz w przedsprzedaży"
+
+#: functions.php:170
+msgid "White"
+msgstr "Biały"
+
+#: functions.php:165
+msgid "Light Gray"
+msgstr "Jasnoszary"
+
+#: functions.php:155
+msgid "Dark Gray"
+msgstr "Ciemnoszary"
+
+#: functions.php:195
+msgid "Medium Brown"
+msgstr "Brązowy"
+
+#: functions.php:190
+msgid "Dark Brown"
+msgstr "Ciemnobrązowy"
+
+#: functions.php:205
+msgid "Bright Red"
+msgstr "Jasnoczerwony"
+
+#: functions.php:200
+msgid "Dark Red"
+msgstr "Ciemnoczerwony"
+
+#: functions.php:185
+msgid "Light Blue"
+msgstr "Jasnoniebieski"
+
+#: functions.php:180
+msgid "Bright Blue"
+msgstr "Jaśniejący niebieski"
+
+#: functions.php:175
+msgid "Blue Gray"
+msgstr "Szaroniebieski"
+
+#: functions.php:160
+msgid "Medium Gray"
+msgstr "Szary"
+
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#: image.php:88 template-parts/content-page.php:39
+#: template-parts/content-search.php:28 template-parts/content-search.php:43
+#: template-parts/content-single.php:47 template-parts/content.php:53
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Edytuj<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#: inc/template-tags.php:195 template-parts/content.php:29
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Czytaj dalej<span class=\"screen-reader-text\"> %s</span>"
+
+#: inc/customizer.php:347
+msgid "Red"
+msgstr "Czerwony"
+
+#. translators: %s: Post title.
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Jeden komentarz do &ldquo;%s&rdquo;"
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr "Szukaj"
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Szukaj &hellip;"
+
+#: searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr "Szukaj:"
+
+#: footer.php:17
+msgid "Footer Primary Menu"
+msgstr "Podstawowe menu w stopce strony"
+
+#: footer.php:30
+msgid "Footer Social Links Menu"
+msgstr "Menu serwisów społecznościowych w stopce strony"
+
+#: functions.php:273
+msgid "Add widgets here to appear in your sidebar."
+msgstr "Dodaj widżety, żeby pojawiły się w panelu bocznym."
+
+#: template-parts/content.php:14
+msgid "Featured"
+msgstr "Wyróżnione"
+
+#: template-parts/content-none.php:33
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Nie udało się znaleźć tego, czego szukasz. Być może wyszukiwanie przyniesie lepsze rezultaty."
+
+#: template-parts/content-none.php:28
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Brak wyników wyszukiwania. Proszę spróbować ponownie z innymi słowami."
+
+#. translators: %s: Post editor URL.
+#: template-parts/content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Wszystko gotowe? <a href=\"%1$s\">Zacznij tutaj</a> i opublikuj swój pierwszy wpis."
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr "Niczego nie znaleziono"
+
+#. translators: %s: The post author display name.
+#: template-parts/biography.php:35
+msgid "View all posts by %s"
+msgstr "Zobacz wszystkie wpisy opublikowane przez %s"
+
+#: template-parts/biography.php:28
+msgid "Author:"
+msgstr "Autor:"
+
+#: single.php:42
+msgid "Previous post:"
+msgstr "Poprzedni wpis:"
+
+#: single.php:39
+msgid "Next post:"
+msgstr "Następny wpis:"
+
+#: single.php:41
+msgid "Previous"
+msgstr "Poprzedni"
+
+#: single.php:38
+msgid "Next"
+msgstr "Następny"
+
+#. translators: %s: The search query.
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr "Wyniki wyszukiwania: %s"
+
+#: inc/template-tags.php:113
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr "Tagi"
+
+#: inc/template-tags.php:104
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr "Kategorie"
+
+#: inc/template-tags.php:100 inc/template-tags.php:109
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:84
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr "Data publikacji"
+
+#. translators: %s: Post title.
+#: inc/template-tags.php:53
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Dodaj komentarz<span class=\"screen-reader-text\"> do %s</span>"
+
+#: inc/template-tags.php:40
+msgctxt "Used before post format."
+msgid "Format"
+msgstr "Format"
+
+#: inc/template-tags.php:26
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr "Autor"
+
+#: functions.php:210 inc/customizer.php:357
+msgid "Yellow"
+msgstr "Żółty"
+
+#: inc/customizer.php:337
+msgid "Gray"
+msgstr "Szary"
+
+#: inc/customizer.php:327
+msgid "Dark"
+msgstr "Ciemny"
+
+#: inc/customizer.php:221
+msgid "Main Text Color"
+msgstr "Podstawowy kolor tekstu"
+
+#: inc/customizer.php:242
+msgid "Secondary Text Color"
+msgstr "Drugorzędny kolor tekstu"
+
+#: inc/customizer.php:317
+msgid "Default"
+msgstr "Domyślne"
+
+#: inc/customizer.php:176
+msgid "Page Background Color"
+msgstr "Kolor tła strony"
+
+#: inc/customizer.php:200
+msgid "Link Color"
+msgstr "Kolor odnośnika"
+
+#: image.php:107 single.php:31
+msgctxt "Parent post link"
+msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">Opublikowano w </span><span class=\"post-title\">%title</span>"
+
+#: inc/customizer.php:153
+msgid "Base Color Scheme"
+msgstr "Podstawowy zestaw kolorów"
+
+#. translators: %s: The current WordPress version.
+#. translators: %s: The current WordPress version.
+#. translators: %s: The current WordPress version.
+#: inc/back-compat.php:45 inc/back-compat.php:62 inc/back-compat.php:85
+msgid "Twenty Sixteen requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Sixteen wymaga WordPressa przynajmniej w wersji 4.4. Aktualnie używaż wersji %s. Zaktualizuj system i spróbuj ponownie."
+
+#: image.php:77
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr "Pełny rozmiar"
+
+#: image.php:58 template-parts/content-page.php:24
+#: template-parts/content-single.php:26 template-parts/content.php:36
+msgid "Pages:"
+msgstr "Strony:"
+
+#: image.php:26
+msgid "Next Image"
+msgstr "Następny obrazek"
+
+#: image.php:25
+msgid "Previous Image"
+msgstr "Poprzedni obrazek"
+
+#: header.php:50
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:28
+msgid "Skip to content"
+msgstr "Przejdź do treści"
+
+#: functions.php:423
+msgid "expand child menu"
+msgstr "rozwiń menu potomne"
+
+#: functions.php:424
+msgid "collapse child menu"
+msgstr "zwiń menu potomne"
+
+#: functions.php:285 functions.php:297
+msgid "Appears at the bottom of the content on posts and pages."
+msgstr "Pojawia się na końcu treści wpisów i stron."
+
+#. translators: If there are characters in your language that are not supported
+#. by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:334
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "off"
+
+#: functions.php:283
+msgid "Content Bottom 1"
+msgstr "Dolna część treści 1"
+
+#: functions.php:295
+msgid "Content Bottom 2"
+msgstr "Dolna część treści 2"
+
+#. translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:342
+msgctxt "Inconsolata font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: If there are characters in your language that are not supported
+#. by Merriweather, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:326
+msgctxt "Merriweather font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:271
+msgid "Sidebar"
+msgstr "Panel boczny"
+
+#: functions.php:93 header.php:67
+msgid "Social Links Menu"
+msgstr "Menu odnośników serwisów społecznościowych"
+
+#: functions.php:92 header.php:54
+msgid "Primary Menu"
+msgstr "Menu główne"
+
+#. translators: %s: WordPress
+#: footer.php:63
+msgid "Proudly powered by %s"
+msgstr "Dumnie wspierane przez %s"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "Możliwość komentowania została wyłączona."
+
+#. translators: 1: Number of comments, 2: Post title.
+#: comments.php:35
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s komentarz do &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s komentarze do &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s komentarzy do &ldquo;%2$s&rdquo;"
+
+#: archive.php:54 image.php:62 index.php:51 search.php:46
+#: template-parts/content-page.php:28 template-parts/content-single.php:30
+#: template-parts/content.php:40
+msgid "Page"
+msgstr "Strona"
+
+#: archive.php:53 index.php:50 search.php:45
+msgid "Next page"
+msgstr "Następna strona"
+
+#: archive.php:52 index.php:49 search.php:44
+msgid "Previous page"
+msgstr "Poprzednia strona"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Niczego tutaj nie ma. Może użyj wyszukiwarki?"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Nie udało się znaleźć pożądanej strony."
+
+#. Author of the theme
+msgid "the WordPress team"
+msgstr "zespół WordPressa"
+
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentysixteen/"
+msgstr "https://pl.wordpress.org/themes/twentysixteen/"
+
+#. Author URI of the theme
+#: footer.php:60
+msgid "https://wordpress.org/"
+msgstr "https://pl.wordpress.org/"

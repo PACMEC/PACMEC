@@ -1,0 +1,430 @@
+# Translation of Themes - Twenty Seventeen in Polish
+# This file is distributed under the same license as the Themes - Twenty Seventeen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-10-01 06:11:18+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: pl\n"
+"Project-Id-Version: Themes - Twenty Seventeen\n"
+
+#. Description of the theme
+msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
+msgstr "Twenty Seventeen dzięki filmom w nagłówku oraz obrazkom przynosi witrynie więcej życia. Motyw polecany jest do witryn biznesowych i oferuje wiele sekcji na stronie głównej, a także widgety, menu nawigacyjne i społecznościowe, logo i wiele innych. Spersonalizuj swój asymetryczną siatkę, użyj niestandardowej kolorystyki i prezentuj multimedialne treści z wykorzystaniem formatów. Nasz domyślny motyw dla 2017 działa świetnie w wielu językach, w każdych warunkach i na dowolnym urządzeniu."
+
+#. Theme Name of the theme
+#: inc/block-patterns.php:17
+msgid "Twenty Seventeen"
+msgstr "Twenty Seventeen"
+
+#: inc/block-patterns.php:193
+msgid "Contact us"
+msgstr "Skontaktuj się z nami"
+
+#: inc/block-patterns.php:188
+msgid "We are proud to serve outstanding clients."
+msgstr "Jesteśmy dumni, że możemy obsługiwać wybitnych klientów."
+
+#: inc/block-patterns.php:184
+msgid "Contact Us"
+msgstr "Skontaktuj się z nami"
+
+#: inc/block-patterns.php:170
+msgid "Video Production"
+msgstr "Produkcja filmów"
+
+#: inc/block-patterns.php:170
+msgid "Marketing &amp; SEO"
+msgstr "Marketing i SEO"
+
+#: inc/block-patterns.php:170
+msgid "Content Strategy"
+msgstr "Strategia treści"
+
+#: inc/block-patterns.php:162
+msgid "Web Development"
+msgstr "Tworzenie stron internetowych"
+
+#: inc/block-patterns.php:148
+msgid "Services"
+msgstr "Usługi"
+
+#: inc/block-patterns.php:131
+msgid "Strategy"
+msgstr "Strategia"
+
+#: inc/block-patterns.php:117
+msgid "Design"
+msgstr "Wygląd"
+
+#: inc/block-patterns.php:90
+msgid "Images with Link"
+msgstr "Obrazki z odnośnikami"
+
+#: inc/block-patterns.php:74 inc/block-patterns.php:162
+msgid "Web Design"
+msgstr "Tworzenie stron internetowych"
+
+#: inc/block-patterns.php:71 inc/block-patterns.php:114
+msgid "White border"
+msgstr "Białe obramowanie"
+
+#: inc/block-patterns.php:63 inc/block-patterns.php:80
+#: inc/block-patterns.php:106 inc/block-patterns.php:120
+#: inc/block-patterns.php:134
+msgid "See Case Study"
+msgstr "Zobacz studium przypadku"
+
+#: inc/block-patterns.php:57 inc/block-patterns.php:103
+#: inc/block-patterns.php:162
+msgid "Branding"
+msgstr "Marka"
+
+#: inc/block-patterns.php:54 inc/block-patterns.php:100
+msgid "Black Stripes"
+msgstr "Czarne pasy"
+
+#: inc/block-patterns.php:45
+msgid "Images with Text and Link"
+msgstr "Obrazki z tekstem i odnośnikiem"
+
+#: inc/block-patterns.php:36 inc/block-patterns.php:155
+msgid "Our Services"
+msgstr "Nasze usługi"
+
+#: inc/block-patterns.php:28
+msgid "Large Heading with Button"
+msgstr "Duży nagłówek z przyciskiem"
+
+#: template-parts/footer/footer-widgets.php:18
+msgid "Footer"
+msgstr "Stopka"
+
+#: functions.php:346
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr "Dodaj widgety tutaj aby pojawiły się na panelu bocznym wpisów na blogu i stronach archiwum."
+
+#: functions.php:344 sidebar.php:18
+msgid "Blog Sidebar"
+msgstr "Panel boczny na blogu"
+
+#: template-parts/header/site-branding.php:34
+#: template-parts/navigation/navigation-top.php:31
+msgid "Scroll down to content"
+msgstr "Przewiń do treści"
+
+#: functions.php:187
+msgctxt "Theme starter content"
+msgid "Coffee"
+msgstr "Kawa"
+
+#: functions.php:183
+msgctxt "Theme starter content"
+msgid "Sandwich"
+msgstr "Kanapka"
+
+#: functions.php:179
+msgctxt "Theme starter content"
+msgid "Espresso"
+msgstr "Espresso"
+
+#: inc/custom-header.php:128
+msgid "Pause background video"
+msgstr "Wstrzymaj film w tle"
+
+#: inc/custom-header.php:127
+msgid "Play background video"
+msgstr "Odtwarzaj film tworzący tło"
+
+#. translators: %s: The section ID.
+#: inc/template-tags.php:158
+msgid "Front Page Section %s Placeholder"
+msgstr "Miejsce dla sekcji %s strony głównej"
+
+#: inc/customizer.php:109
+msgid "When the two-column layout is assigned, the page title is in one column and content is in the other."
+msgstr "Kiedy układ dwóch kolumn jest w uzyciu, tytuł strony jest w jednej kolumnie, a zawartość strony w pozostalej kolumnie.."
+
+#: single.php:34
+msgid "Next Post"
+msgstr "Następny wpis"
+
+#: index.php:27
+msgid "Posts"
+msgstr "Wpisy"
+
+#: inc/template-tags.php:89
+msgid "Tags"
+msgstr "Tagi"
+
+#: inc/template-tags.php:85
+msgid "Categories"
+msgstr "Kategorie"
+
+#. translators: Used between list items, there is a space after the comma.
+#: inc/template-tags.php:66
+msgid ", "
+msgstr ", "
+
+#. translators: %s: Post date.
+#: inc/template-tags.php:52
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=\"screen-reader-text\">Opublikowane w</span> %s"
+
+#. translators: %s: Post author.
+#: inc/template-tags.php:21
+msgid "by %s"
+msgstr "przez %s"
+
+#: inc/icon-functions.php:44
+msgid "Please define an SVG icon filename."
+msgstr "Proszę określić nazwę pliku ikony SVG"
+
+#: inc/icon-functions.php:39
+msgid "Please define default parameters in the form of an array."
+msgstr "Proszę zdefiniować domyślne parametry w postaci tablicy."
+
+#: inc/customizer.php:143
+msgid "Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed."
+msgstr "Z rozwijanego menu wybierz strony do wyróżnienia w każdym obszarze.. Dodaj zdjęcie do sekcji ustawiając wyróżnioną obraz w edytorze stron. Puste sekcje nie zostaną wyświetlone."
+
+#. translators: %d: The front page section number.
+#: inc/customizer.php:142
+msgid "Front Page Section %d Content"
+msgstr "Treść sekcji %d strony głównej"
+
+#: inc/customizer.php:112 inc/customizer.php:171
+msgid "Two Column"
+msgstr "Dwie kolumny"
+
+#: inc/customizer.php:111 inc/customizer.php:170
+msgid "One Column"
+msgstr "Jedna kolumna"
+
+#: inc/customizer.php:106
+msgid "Page Layout"
+msgstr "Układ strony"
+
+#: inc/customizer.php:89
+msgid "Theme Options"
+msgstr "Opcje motywu"
+
+#: inc/customizer.php:64
+msgid "Custom"
+msgstr "Własne"
+
+#: inc/customizer.php:62
+msgid "Light"
+msgstr "Jasny"
+
+#: inc/customizer.php:60
+msgid "Color Scheme"
+msgstr "Zestaw kolorów"
+
+#: inc/custom-header.php:56
+msgid "Default Header Image"
+msgstr "Domyślny obrazek nagłówka"
+
+#: functions.php:368
+msgid "Footer 2"
+msgstr "Stopka 2"
+
+#: functions.php:358 functions.php:370
+msgid "Add widgets here to appear in your footer."
+msgstr "Tutaj dodaj widżety, które zostaną wyświetlone w stopce."
+
+#: functions.php:356
+msgid "Footer 1"
+msgstr "Stopka 1"
+
+#. translators: If there are characters in your language that are not supported
+#. by Libre Franklin, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:296
+msgctxt "Libre Franklin font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:69 functions.php:211
+#: template-parts/navigation/navigation-top.php:12
+msgid "Top Menu"
+msgstr "Górne menu"
+
+#: comments.php:62
+msgid "Reply"
+msgstr "Odpowiedz"
+
+#: template-parts/post/content-none.php:33
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Nie udało się znaleźć tego, czego szukasz. Być może wyszukiwanie przyniesie lepsze rezultaty."
+
+#: search.php:59
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Brak wyników wyszukiwania. Proszę spróbować ponownie z innymi słowami."
+
+#. translators: %s: Post editor URL.
+#: template-parts/post/content-none.php:27
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr "Czy można już opublikować pierwszy wpis? <a href=\"%s\">Zacznij tutaj</a>."
+
+#: search.php:26 template-parts/post/content-none.php:17
+msgid "Nothing Found"
+msgstr "Niczego nie znaleziono"
+
+#: single.php:33
+msgid "Previous Post"
+msgstr "Poprzedni wpis"
+
+#: comments.php:71 single.php:33
+msgid "Previous"
+msgstr "Poprzedni"
+
+#: comments.php:72 single.php:34
+msgid "Next"
+msgstr "Następne"
+
+#: searchform.php:20
+msgctxt "submit button"
+msgid "Search"
+msgstr "Szukaj"
+
+#: searchform.php:19
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Szukaj &hellip;"
+
+#: searchform.php:17
+msgctxt "label"
+msgid "Search for:"
+msgstr "Szukaj:"
+
+#. translators: Search query.
+#: search.php:22
+msgid "Search Results for: %s"
+msgstr "Wyniki wyszukiwania: %s"
+
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#. translators: %s: Post title.
+#: functions.php:398 template-parts/page/content-front-page-panels.php:45
+#: template-parts/page/content-front-page.php:42
+#: template-parts/post/content-audio.php:84
+#: template-parts/post/content-gallery.php:71
+#: template-parts/post/content-image.php:61
+#: template-parts/post/content-video.php:83 template-parts/post/content.php:57
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Czytaj dalej<span class=\"screen-reader-text\"> %s</span>"
+
+#: inc/customizer.php:63
+msgid "Dark"
+msgstr "Ciemny"
+
+#. translators: %s: The current WordPress version.
+#. translators: %s: The current WordPress version.
+#. translators: %s: The current WordPress version.
+#: inc/back-compat.php:43 inc/back-compat.php:60 inc/back-compat.php:83
+msgid "Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Seventeen wymaga WordPressa przynajmniej w wersji 4.7. Aktualnie używasz wersji %s. Zaktualizuj system i spróbuj ponownie."
+
+#. translators: %s: Post title.
+#: inc/template-tags.php:117
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Edytuj<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/page/content-front-page.php:48
+#: template-parts/page/content-page.php:26
+#: template-parts/post/content-audio.php:91
+#: template-parts/post/content-gallery.php:78
+#: template-parts/post/content-image.php:68
+#: template-parts/post/content-video.php:90 template-parts/post/content.php:64
+msgid "Pages:"
+msgstr "Strony:"
+
+#: template-parts/navigation/navigation-top.php:17
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:28
+msgid "Skip to content"
+msgstr "Przejdź do treści"
+
+#: functions.php:490
+msgid "Collapse child menu"
+msgstr "Zwiń menu potomne"
+
+#: functions.php:489
+msgid "Expand child menu"
+msgstr "Rozwiń menu potomne"
+
+#: functions.php:70 functions.php:222
+msgid "Social Links Menu"
+msgstr "Menu odnośników serwisów społecznościowych"
+
+#. translators: %s: WordPress
+#: template-parts/footer/site-info.php:21
+msgid "Proudly powered by %s"
+msgstr "Dumnie wspierane przez %s"
+
+#: footer.php:26
+msgid "Footer Social Links Menu"
+msgstr "Menu serwisów społecznościowych w stopce strony"
+
+#: comments.php:82
+msgid "Comments are closed."
+msgstr "Możliwość komentowania została wyłączona."
+
+#. translators: 1: Number of comments, 2: Post title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s odpowiedź na &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s odpowiedzi na &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s odpowiedzi na &ldquo;%2$s&rdquo;"
+
+#. translators: %s: Post title.
+#: comments.php:37
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "Jedna odpowiedź do &ldquo;%s&rdquo;"
+
+#: archive.php:51 index.php:55 search.php:52
+msgid "Page"
+msgstr "Strona"
+
+#: archive.php:50 index.php:54 search.php:51
+msgid "Next page"
+msgstr "Następna strona"
+
+#: archive.php:49 index.php:53 search.php:50
+msgid "Previous page"
+msgstr "Poprzednia strona"
+
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Niczego tutaj nie ma. Może użyj wyszukiwarki?"
+
+#: 404.php:21
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Nie udało się znaleźć pożądanej strony."
+
+#. Author of the theme
+msgid "the WordPress team"
+msgstr "zespół WordPressa"
+
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentyseventeen/"
+msgstr "https://wordpress.org/themes/twentyseventeen/"
+
+#. Author URI of the theme
+#: template-parts/footer/site-info.php:18
+msgid "https://wordpress.org/"
+msgstr "https://pl.wordpress.org/"

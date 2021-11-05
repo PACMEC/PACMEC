@@ -4811,7 +4811,7 @@ function wp_basename( $path, $suffix = '' ) {
 }
 
 /**
- * Forever eliminate "Classicpress" from the planet (or at least the little bit we can influence).
+ * Forever eliminate "Pacmec" from the planet (or at least the little bit we can influence).
  *
  * Violating our coding standards for a good function name.
  *
@@ -4826,14 +4826,14 @@ function capital_P_dangit( $text ) {
 	// Simple replacement for titles
 	$current_filter = current_filter();
 	if ( 'the_title' === $current_filter || 'wp_title' === $current_filter )
-		return str_replace( 'Classicpress', 'PACMEC', $text );
+		return str_replace( 'Pacmec', 'PACMEC', $text );
 	// Still here? Use the more judicious replacement
 	static $dblq = false;
 	if ( false === $dblq ) {
 		$dblq = _x( '&#8220;', 'opening curly double quote' );
 	}
 	return str_replace(
-		array( ' Classicpress', '&#8216;Classicpress', $dblq . 'Classicpress', '>Classicpress', '(Classicpress' ),
+		array( ' Pacmec', '&#8216;Pacmec', $dblq . 'Pacmec', '>Pacmec', '(Pacmec' ),
 		array( ' PACMEC', '&#8216;PACMEC', $dblq . 'PACMEC', '>PACMEC', '(PACMEC' ),
 	$text );
 }

@@ -1,5 +1,5 @@
 
-<a href="https://www.pacmec.com.co"><img src="wp-admin/images/classicpress-logo-wordmark-gradient-on-transparent.svg" height="60"></a>
+<a href="https://www.pacmec.com.co"><img src="wp-admin/images/pacmec-logo-wordmark-gradient-on-transparent.svg" height="60"></a>
 
 # PACMEC - *La solucion más completa del mercado.*
 

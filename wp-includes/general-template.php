@@ -2925,7 +2925,7 @@ function wp_resource_hints() {
 	 * The path is removed in the foreach loop below.
 	 */
 	/** This filter is documented in wp-includes/formatting.php */
-	$hints['dns-prefetch'][] = apply_filters( 'emoji_svg_url', 'https://twemoji.pacmec.co/12/svg/' );
+	$hints['dns-prefetch'][] = apply_filters( 'emoji_svg_url', 'https://twemoji.pacmec.com.co/12/svg/' );
 
 	foreach ( $hints as $relation_type => $urls ) {
 		$unique_urls = array();
@@ -4157,7 +4157,7 @@ function get_the_generator( $type = '' ) {
 	$esc_wp_version = esc_attr( $wp_version );
 	$esc_cp_version = esc_attr( pacmec_version_short() );
 	$esc_cp_url = esc_url_raw(
-		'https://www.pacmec.co/?v='
+		'https://www.pacmec.com.co/?v='
 		. $wp_version . '-cp-' . pacmec_version_short()
 	);
 
@@ -4169,7 +4169,7 @@ function get_the_generator( $type = '' ) {
 			$gen = "<meta name=\"generator\" content=\"WordPress $esc_wp_version (compatible; PACMEC $esc_cp_version)\">";
 			break;
 		case 'atom':
-			$gen = "<generator uri=\"https://www.pacmec.co/\" version=\"$esc_wp_version-cp-$esc_cp_version\">PACMEC</generator>";
+			$gen = "<generator uri=\"https://www.pacmec.com.co/\" version=\"$esc_wp_version-cp-$esc_cp_version\">PACMEC</generator>";
 			break;
 		case 'rss2':
 			$gen = "<generator>$esc_cp_url</generator>";
@@ -4355,7 +4355,7 @@ function get_login_image_html() {
 		$login_header_url   = network_home_url();
 		$login_header_title = get_network()->site_name;
 	} else {
-		$login_header_url   = 'https://www.pacmec.co/';
+		$login_header_url   = 'https://www.pacmec.com.co/';
 		$login_header_title = __( 'Powered by PACMEC' );
 	}
 

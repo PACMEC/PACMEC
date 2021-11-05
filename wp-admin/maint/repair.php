@@ -23,7 +23,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
 	?>
 </head>
 <body class="wp-core-ui">
-<p id="logo"><a href="<?php echo esc_url( 'https://www.pacmec.co/' ); ?>" tabindex="-1"><?php _e( 'PACMEC' ); ?></a></p>
+<p id="logo"><a href="<?php echo esc_url( 'https://www.pacmec.com.co/' ); ?>" tabindex="-1"><?php _e( 'PACMEC' ); ?></a></p>
 
 <?php
 
@@ -66,7 +66,7 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) ) {
 		echo '<h2 class="screen-reader-text">' . __( 'Check secret keys' ) . '</h2>';
 
 		// Translators: 1: wp-config.php; 2: Secret key service URL.
-		echo '<p>' . sprintf( __( 'While you are editing your %1$s file, take a moment to make sure you have all 8 keys and that they are unique. You can generate these using the <a href="%2$s">PACMEC.net secret key service</a>.' ), '<code>wp-config.php</code>', 'https://api.pacmec.co/secret-key/1.0/salt/' ) . '</p>';
+		echo '<p>' . sprintf( __( 'While you are editing your %1$s file, take a moment to make sure you have all 8 keys and that they are unique. You can generate these using the <a href="%2$s">PACMEC.net secret key service</a>.' ), '<code>wp-config.php</code>', 'https://api.pacmec.com.co/secret-key/1.0/salt/' ) . '</p>';
 	}
 
 } elseif ( isset( $_GET['repair'] ) ) {
@@ -144,7 +144,7 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) ) {
 	}
 
 	if ( $problems ) {
-		printf( '<p>' . __('Some database problems could not be repaired. Please copy-and-paste the following list of errors into the <a href="%s">support forum</a> for additional assistance.') . '</p>', __( 'https://forums.pacmec.co/c/support/' ) );
+		printf( '<p>' . __('Some database problems could not be repaired. Please copy-and-paste the following list of errors into the <a href="%s">support forum</a> for additional assistance.') . '</p>', __( 'https://forums.pacmec.com.co/c/support/' ) );
 		$problem_output = '';
 		foreach ( $problems as $table => $problem )
 			$problem_output .= "$table: $problem\n";

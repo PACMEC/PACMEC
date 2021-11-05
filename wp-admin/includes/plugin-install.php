@@ -161,7 +161,7 @@ function plugins_api( $action, $args = array() ) {
 				sprintf(
 					/* translators: %s: support forums URL */
 					__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.co/c/support' )
+					__( 'https://forums.pacmec.com.co/c/support' )
 				) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
 				headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 			);
@@ -175,7 +175,7 @@ function plugins_api( $action, $args = array() ) {
 				sprintf(
 					/* translators: %s: support forums URL */
 					__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.co/c/support' )
+					__( 'https://forums.pacmec.com.co/c/support' )
 				),
 				$request->get_error_message()
 			);
@@ -186,7 +186,7 @@ function plugins_api( $action, $args = array() ) {
 					sprintf(
 						/* translators: %s: support forums URL */
 						__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://forums.pacmec.co/c/support' )
+						__( 'https://forums.pacmec.com.co/c/support' )
 					),
 					wp_remote_retrieve_body( $request )
 				);

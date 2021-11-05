@@ -64,7 +64,7 @@ switch ( $active_tab ) :
 		printf(
 			/* translators: canonical link to security forum */
 			__( 'Watch this page and the PACMEC <a href="%s" rel="noopener" target="_blank">Security forum</a> for more news as development continues.' ),
-			'https://link.pacmec.co/forum/security'
+			'https://link.pacmec.com.co/forum/security'
 		);
 		?>
 		</p>
@@ -104,7 +104,7 @@ switch ( $active_tab ) :
 		printf(
 			/* translators: link that describes how to contact plugin authors about the PACMEC security page */
 			__( 'If you have plugins installed and activated with security-related settings that aren&#8217;t appearing here, <a href="%s" rel="noopener" target="_blank">contact the authors</a> and ask them to add support for the PACMEC security page.' ),
-			'https://link.pacmec.co/security-page/contact-plugin-authors'
+			'https://link.pacmec.com.co/security-page/contact-plugin-authors'
 		);
 		echo "</p>\n";
 		?>
@@ -213,8 +213,8 @@ switch ( $active_tab ) :
 						<div class="inside">
 							<p>
 								<ul>
-									<li><a href="https://link.pacmec.co/support/security-page" rel="noopener" target="_blank"><?php _e( 'Security Page forum' ); ?></a></li>
-									<li><a href="https://link.pacmec.co/security-page" rel="noopener" target="_blank"><?php _e( 'Documentation' ); ?></a></li>
+									<li><a href="https://link.pacmec.com.co/support/security-page" rel="noopener" target="_blank"><?php _e( 'Security Page forum' ); ?></a></li>
+									<li><a href="https://link.pacmec.com.co/security-page" rel="noopener" target="_blank"><?php _e( 'Documentation' ); ?></a></li>
 								</ul>
 							</p>
 						</div>

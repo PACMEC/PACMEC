@@ -746,7 +746,7 @@ function _wp_translate_php_url_constant_to_key( $constant ) {
  * @return string The User-Agent header value.
  */
 function pacmec_user_agent( $include_site_id = false ) {
-	$url = 'https://www.pacmec.co/?wp_compatible=true'
+	$url = 'https://www.pacmec.com.co/?wp_compatible=true'
 		. '&ver=' . pacmec_version_short();
 
 	if ( $include_site_id ) {

@@ -56,7 +56,7 @@ wp_localize_script( 'theme', '_wpThemeSettings', array(
 		'error'               => sprintf(
 			/* translators: %s: support forums URL */
 			__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-			__( 'https://forums.pacmec.co/c/support' )
+			__( 'https://forums.pacmec.com.co/c/support' )
 		),
 		'tryAgain'            => __( 'Try Again' ),
 		'themesFound'         => __( 'Number of Themes found: %d' ),
@@ -118,7 +118,7 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __('<a href="https://codex.wordpress.org/Using_Themes#Adding_New_Themes">Documentation on Adding New Themes</a>') . '</p>' .
-	'<p>' . __('<a href="https://forums.pacmec.co/c/support">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://forums.pacmec.com.co/c/support">Support Forums</a>') . '</p>'
 );
 
 include(ABSPATH . 'wp-admin/admin-header.php');

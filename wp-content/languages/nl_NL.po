@@ -111,8 +111,8 @@ msgstr "PACMEC is al Geïnstalleerd"
 
 #. translators: %s: PACMEC version
 #: wp-admin/includes/update.php:243 wp-admin/includes/update.php:256
-msgid "https://www.pacmec.co/version/%s"
-msgstr "https://www.pacmec.co/version/%s"
+msgid "https://www.pacmec.com.co/version/%s"
+msgstr "https://www.pacmec.com.co/version/%s"
 
 #: wp-admin/includes/plugin-install.php:361
 msgid "These are some of the most common types of plugins. Not all categories are represented here."
@@ -222,8 +222,8 @@ msgstr "<strong>PACMEC nieuws</strong> &mdash; Het laatste nieuws van de offici�
 #: wp-includes/update.php:349 wp-includes/update.php:531
 #: wp-includes/wp-db.php:1062 wp-includes/wp-db.php:1595
 #: wp-includes/wp-db.php:1753 wp-login.php:921
-msgid "https://forums.pacmec.co/c/support"
-msgstr "https://forums.pacmec.co/c/support"
+msgid "https://forums.pacmec.com.co/c/support"
+msgstr "https://forums.pacmec.com.co/c/support"
 
 #: wp-admin/comment.php:52 wp-admin/custom-background.php:98
 #: wp-admin/custom-header.php:124 wp-admin/edit-comments.php:188
@@ -244,8 +244,8 @@ msgstr "https://forums.pacmec.co/c/support"
 #: wp-admin/themes.php:119 wp-admin/tools.php:34 wp-admin/update-core.php:648
 #: wp-admin/upload.php:67 wp-admin/upload.php:213 wp-admin/user-edit.php:62
 #: wp-admin/user-new.php:221 wp-admin/users.php:69 wp-admin/widgets.php:77
-msgid "<a href=\"https://forums.pacmec.co/c/support\">Support Forums</a>"
-msgstr "<a href=\"https://forums.pacmec.co/c/support\">Ondersteuningsforums</a>"
+msgid "<a href=\"https://forums.pacmec.com.co/c/support\">Support Forums</a>"
+msgstr "<a href=\"https://forums.pacmec.com.co/c/support\">Ondersteuningsforums</a>"
 
 #: wp-admin/includes/dashboard.php:1443
 msgid "Invalid API response (invalid JSON)"
@@ -305,8 +305,8 @@ msgid "An unexpected error occurred. Something may be wrong with PACMEC.net or t
 msgstr "Er is een onverwachte fout opgetreden. Iets kan verkeerd zijn met PACMEC.net of deze server&#8217;s configuratie. Als u nog steeds problemen ondervindt, meldt u dit probleem dan in onze <a href=\"%s\">ondersteuningsforum</a>."
 
 #: wp-admin/maint/repair.php:147
-msgid "https://forums.pacmec.co/c/support/"
-msgstr "https://forums.pacmec.co/c/support/"
+msgid "https://forums.pacmec.com.co/c/support/"
+msgstr "https://forums.pacmec.com.co/c/support/"
 
 #. translators: 1: link to PACMEC GitHub repository, 2: link to GitHub
 #. issues list
@@ -378,8 +378,8 @@ msgstr "<strong>Belangrijk:</strong> voordat u een update uitvoert, maak alsjebl
 #: wp-admin/includes/ms.php:997 wp-admin/network/index.php:51
 #: wp-admin/network/site-new.php:31 wp-admin/network/sites.php:43
 #: wp-admin/network/user-new.php:27 wp-admin/network/users.php:180
-msgid "<a href=\"https://docs.pacmec.co/faq-support/\">Support</a>"
-msgstr "<a href=\"https://docs.pacmec.co/faq-support/\">Ondersteuning</a>"
+msgid "<a href=\"https://docs.pacmec.com.co/faq-support/\">Support</a>"
+msgstr "<a href=\"https://docs.pacmec.com.co/faq-support/\">Ondersteuning</a>"
 
 #: wp-admin/includes/class-wp-automatic-updater.php:832
 msgid ""
@@ -389,8 +389,8 @@ msgid ""
 "This debugging email is sent when you are using a development version of PACMEC.\n"
 "\n"
 "If you think these failures might be due to a bug in PACMEC, could you report it?\n"
-" * If you need general support: https://docs.pacmec.co/faq-support/\n"
-" * Or, if you're comfortable writing a bug report: https://docs.pacmec.co/testing-pacmec/#reporting-bugs\n"
+" * If you need general support: https://docs.pacmec.com.co/faq-support/\n"
+" * Or, if you're comfortable writing a bug report: https://docs.pacmec.com.co/testing-pacmec/#reporting-bugs\n"
 "\n"
 "Thanks! -- The PACMEC Team"
 msgstr ""
@@ -400,22 +400,22 @@ msgstr ""
 "Deze debugging e-mail wordt verstuurd als je een ontwikkelingsversie van PACMEC gebruikt.\n"
 "\n"
 "Als je denkt dat deze fouten komen door een bug in PACMEC, zou je het kunnen melden?\n"
-" * Als je algemene ondersteuning nodig hebt: https://docs.pacmec.co/faq-support/\n"
-" * Of, als je comfertabel een bug rapport kan schrijven: https://docs.pacmec.co/testing-pacmec/#reporting-bugs\n"
+" * Als je algemene ondersteuning nodig hebt: https://docs.pacmec.com.co/faq-support/\n"
+" * Of, als je comfertabel een bug rapport kan schrijven: https://docs.pacmec.com.co/testing-pacmec/#reporting-bugs\n"
 "\n"
 "Dankjewel! -- Het PACMEC Team"
 
 #: wp-includes/admin-bar.php:168
-msgid "https://docs.pacmec.co/faq-support/"
-msgstr "https://docs.pacmec.co/faq-support/"
+msgid "https://docs.pacmec.com.co/faq-support/"
+msgstr "https://docs.pacmec.com.co/faq-support/"
 
 #: wp-includes/admin-bar.php:167
 msgid "Support"
 msgstr "Ondersteuning"
 
 #: wp-includes/admin-bar.php:160
-msgid "https://docs.pacmec.co/"
-msgstr "https://docs.pacmec.co/"
+msgid "https://docs.pacmec.com.co/"
+msgstr "https://docs.pacmec.com.co/"
 
 #: wp-trackback.php:125
 msgid "We already have a ping from that URL for this post."
@@ -7657,8 +7657,8 @@ msgid "No themes found. Try a different search, or %s."
 msgstr "Geen thema's gevonden. Probeer een andere zoekopdracht of %s."
 
 #: wp-includes/customize/class-wp-customize-themes-section.php:84
-msgid "An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"https://forums.pacmec.co/c/support\">support forums</a>."
-msgstr "Er is een onverwachte fout opgetreden. Iets kan verkeerd zijn met PACMEC.net of deze server&#8217;s configuratie. Als u nog steeds problemen ondervindt, probeer dan de <a href=\"https://forums.pacmec.co/c/support\">ondersteuningsforum</a>."
+msgid "An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"https://forums.pacmec.com.co/c/support\">support forums</a>."
+msgstr "Er is een onverwachte fout opgetreden. Iets kan verkeerd zijn met PACMEC.net of deze server&#8217;s configuratie. Als u nog steeds problemen ondervindt, probeer dan de <a href=\"https://forums.pacmec.com.co/c/support\">ondersteuningsforum</a>."
 
 #. translators: %s: themes panel title in the Customizer
 #: wp-includes/customize/class-wp-customize-themes-panel.php:75
@@ -11110,8 +11110,8 @@ msgid "Documentation"
 msgstr "Documentatie"
 
 #: wp-admin/index.php:74
-msgid "https://www.pacmec.co/blog/"
-msgstr "https://www.pacmec.co/blog/"
+msgid "https://www.pacmec.com.co/blog/"
+msgstr "https://www.pacmec.com.co/blog/"
 
 #: wp-includes/admin-bar.php:151
 msgid "PACMEC.net"
@@ -16406,7 +16406,7 @@ msgid ""
 "We hope you enjoy your new site. Thanks!\n"
 "\n"
 "--The PACMEC Team\n"
-"https://www.pacmec.co/\n"
+"https://www.pacmec.com.co/\n"
 msgstr ""
 "Uw nieuwe ClasicPress site is succesvol klaar gezet op:\n"
 "\n"
@@ -16421,7 +16421,7 @@ msgstr ""
 "Wij hopen dat u veel plezier heeft van uw nieuwe site. Dankjewel!\n"
 "\n"
 "--Het PACMEC Team\n"
-"https://www.pacmec.co/\n"
+"https://www.pacmec.com.co/\n"
 
 #. translators: Privacy Policy page slug
 #: wp-admin/includes/upgrade.php:280
@@ -26085,8 +26085,8 @@ msgid "Description"
 msgstr "Omschrijving"
 
 #: wp-admin/edit-link-form.php:111
-msgid "Example: <code>https://www.pacmec.co</code> &#8212; don&#8217;t forget the <code>https://</code>"
-msgstr "Bijvoorbeeld: <code>https://www.pacmec.co</code> &#8212; vergeet de <code>https://</code> niet"
+msgid "Example: <code>https://www.pacmec.com.co</code> &#8212; don&#8217;t forget the <code>https://</code>"
+msgstr "Bijvoorbeeld: <code>https://www.pacmec.com.co</code> &#8212; vergeet de <code>https://</code> niet"
 
 #: wp-admin/edit-link-form.php:108
 msgid "Web Address"
@@ -27335,12 +27335,12 @@ msgstr "Je kunt het uiterlijk van je site, zonder de broncode van je thema's te 
 msgid "Background"
 msgstr "Achtergrond"
 
-#. translators: %s: https://www.pacmec.co/get-involved/
+#. translators: %s: https://www.pacmec.com.co/get-involved/
 #: wp-admin/credits.php:54
 msgid "Interested in helping out with development? <a href=\"%s\">Get involved in PACMEC</a>."
 msgstr "Geïnteresseerd in het helpen met de ontwikkeling? <a href=\"%s\">Raak betrokken bij PACMEC</a>."
 
-#. translators: %s: https://www.pacmec.co/contributors/
+#. translators: %s: https://www.pacmec.com.co/contributors/
 #: wp-admin/credits.php:48
 msgid "PACMEC is created by a <a href=\"%1$s\">worldwide team</a> of passionate individuals."
 msgstr "PACMEC wordt gemaakt door een <a href=\"%1$s\">wereldwijd team</a> van gepassioneerde individuen."
@@ -27751,8 +27751,8 @@ msgid "Network Admin: %s"
 msgstr "Netwerkbeheer: %s"
 
 #: wp-admin/upgrade.php:71
-msgid "https://www.pacmec.co/"
-msgstr "https://www.pacmec.co/"
+msgid "https://www.pacmec.com.co/"
+msgstr "https://www.pacmec.com.co/"
 
 #: wp-admin/admin-footer.php:34
 msgid "Thank you for creating with <a href=\"%s\">PACMEC</a>."

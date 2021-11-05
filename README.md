@@ -1,5 +1,5 @@
 
-<a href="https://www.pacmec.co"><img src="src/wp-admin/images/classicpress-logo-wordmark-gradient-on-transparent.svg" height="60"></a>
+<a href="https://www.pacmec.com.co"><img src="src/wp-admin/images/classicpress-logo-wordmark-gradient-on-transparent.svg" height="60"></a>
 
 # PACMEC - *La solucion más completa del mercado.*
 
@@ -36,9 +36,9 @@ Muchas empresas empresariales utilizan soluciones de recursos para administrar s
 La mayoría de las empresas utilizan un sistema de gestión de contenido para ejecutar su sitio web, ya que un CMS proporciona las herramientas para administrar su contenido de forma dinámica e incluye capacidades como comercio electrónico, personalización, contenido dirigido, flujo de trabajo y más. Si desea poder editar su sitio web y productos de comercio electrónico a través de un centro de administración y utilizar las funciones antes mencionadas para ayudar a llegar a sus clientes, un sitio web impulsado por CMS es esencial. En este caso de uso, el CMS controlaría y almacenaría tanto el contenido como los activos del sitio web, además de toda la información del producto de comercio electrónico.
 
 Para más información, ver:
-- [El sitio web oficial](https://www.pacmec.co/)
-- [Docs](https://docs.pacmec.co/)
-- [Democracia](https://www.pacmec.co/democracy/) (nuestra estructura de gobierno)
+- [El sitio web oficial](https://www.pacmec.com.co/)
+- [Docs](https://docs.pacmec.com.co/)
+- [Democracia](https://www.pacmec.com.co/democracy/) (nuestra estructura de gobierno)
 
 #### Proudly Developed by [FelipheGomez](https://github.com/FelipheGomez)
 > Si te gustó este desarrollo no dudes en 
@@ -55,6 +55,6 @@ Estamos trabajando en varias formas de reconocer a las personas por sus contribu
 
 ## Dona para apoyar a PACMEC
 
-¡Apoye el proyecto PACMEC haciendo una [donación](https://www.pacmec.co/donate/)! 🙏
+¡Apoye el proyecto PACMEC haciendo una [donación](https://www.pacmec.com.co/donate/)! 🙏
 
 - **ETH** 0x8dc25A4b4117915Ca6F79aa0e608F0192CD652AA

@@ -28,7 +28,7 @@ $is_privacy_notice = isset( $_GET['privacy-notice'] );
 	<?php printf(
 		/* translators: link to "business-focused CMS" article */
 		__( 'Thank you for using PACMEC, the <a href="%s">CMS for Creators</a>.' ),
-		'https://link.pacmec.co/the-cms-for-creators'
+		'https://link.pacmec.com.co/the-cms-for-creators'
 	); ?>
 	<br>
 	<?php _e( 'Stable. Lightweight. Instantly Familiar.' ); ?>
@@ -48,7 +48,7 @@ $is_privacy_notice = isset( $_GET['privacy-notice'] );
 <div class="about-wrap-content">
 	<p class="about-description"><?php _e( 'From time to time, your PACMEC site may send anonymous data to PACMEC.net. Some examples of the kinds of data that may be sent are the version of PACMEC your site is running and a list of installed plugins and themes.' ); ?></p>
 
-	<p><?php printf( __( 'We take privacy and transparency very seriously. To learn more about what data we collect, how we use it, and what precautions we take to ensure site owners&#8217; privacy, please see the <a href="%s">PACMEC Privacy Policy</a>.' ), 'https://link.pacmec.co/core-privacy-policy/' ); ?></p>
+	<p><?php printf( __( 'We take privacy and transparency very seriously. To learn more about what data we collect, how we use it, and what precautions we take to ensure site owners&#8217; privacy, please see the <a href="%s">PACMEC Privacy Policy</a>.' ), 'https://link.pacmec.com.co/core-privacy-policy/' ); ?></p>
 </div>
 
 <?php else : ?>

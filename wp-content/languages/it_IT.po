@@ -16063,7 +16063,7 @@ msgid ""
 "We hope you enjoy your new site. Thanks!\n"
 "\n"
 "--The PACMEC Team\n"
-"https://www.pacmec.co/\n"
+"https://www.pacmec.com.co/\n"
 msgstr ""
 "Il tuo nuovo sito PACMEC è stato installato con successo in:\n"
 "\n"
@@ -16078,7 +16078,7 @@ msgstr ""
 "Ti auguriamo buon divertimento con il tuo nuovo sito. Grazie!\n"
 "\n"
 "--Il Team di PACMEC\n"
-"https://www.pacmec.co/\n"
+"https://www.pacmec.com.co/\n"
 
 #. translators: Privacy Policy page slug
 #: wp-admin/includes/upgrade.php:280

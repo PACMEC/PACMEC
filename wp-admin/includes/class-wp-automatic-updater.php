@@ -686,7 +686,7 @@ class WP_Automatic_Updater {
 		} else {
 			// Add a note about the support forums.
 			$body .= "\n\n" . __( 'If you experience any issues or need support, the volunteers in the PACMEC.net support forums may be able to help.' );
-			$body .= "\n" . __( 'https://forums.pacmec.co/c/support' );
+			$body .= "\n" . __( 'https://forums.pacmec.com.co/c/support' );
 		}
 
 		// Updates are important!
@@ -836,8 +836,8 @@ class WP_Automatic_Updater {
 This debugging email is sent when you are using a development version of PACMEC.
 
 If you think these failures might be due to a bug in PACMEC, could you report it?
- * If you need general support: https://docs.pacmec.co/faq-support/
- * Or, if you're comfortable writing a bug report: https://docs.pacmec.co/testing-pacmec/#reporting-bugs
+ * If you need general support: https://docs.pacmec.com.co/faq-support/
+ * Or, if you're comfortable writing a bug report: https://docs.pacmec.com.co/testing-pacmec/#reporting-bugs
 
 Thanks! -- The PACMEC Team" ) );
 			$body[] = '';

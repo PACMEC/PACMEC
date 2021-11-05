@@ -49,7 +49,7 @@ function translations_api( $type, $args = null ) {
 			$options['method'] = 'GET';
 			$url = add_query_arg(
 				$stats,
-				'https://api-v1.pacmec.co/translations/core/1.0.0/translations.json'
+				'https://api-v1.pacmec.com.co/translations/core/1.0.0/translations.json'
 			);
 			$request = wp_remote_request( $url, $options );
 		} else {
@@ -66,7 +66,7 @@ function translations_api( $type, $args = null ) {
 				sprintf(
 					/* translators: %s: support forums URL */
 					__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.co/c/support' )
+					__( 'https://forums.pacmec.com.co/c/support' )
 				) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
 				headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 			);
@@ -80,7 +80,7 @@ function translations_api( $type, $args = null ) {
 				sprintf(
 					/* translators: %s: support forums URL */
 					__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://forums.pacmec.co/c/support' )
+					__( 'https://forums.pacmec.com.co/c/support' )
 				),
 				$request->get_error_message()
 			);
@@ -91,7 +91,7 @@ function translations_api( $type, $args = null ) {
 					sprintf(
 						/* translators: %s: support forums URL */
 						__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://forums.pacmec.co/c/support' )
+						__( 'https://forums.pacmec.com.co/c/support' )
 					),
 					wp_remote_retrieve_body( $request )
 				);

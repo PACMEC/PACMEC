@@ -71,7 +71,7 @@ if ( is_blog_admin() && current_user_can( 'edit_posts' ) )
 $help .= '<p>' . sprintf(
 		/* translators: %s: PACMEC Planet URL */
 		__( '<strong>PACMEC News</strong> &mdash; Latest news from the official <a href="%s">PACMEC blog</a>.' ),
-		__( 'https://www.pacmec.co/blog/' )
+		__( 'https://www.pacmec.com.co/blog/' )
 ) . '</p>';
 if ( current_user_can( 'edit_theme_options' ) )
 	$help .= '<p>' . __( '<strong>Welcome</strong> &mdash; Shows links for some of the most common tasks when setting up a new site.' ) . '</p>';
@@ -87,7 +87,7 @@ unset( $help );
 $screen->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Dashboard_Screen">Documentation on Dashboard</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://forums.pacmec.co/c/support">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://forums.pacmec.com.co/c/support">Support Forums</a>' ) . '</p>'
 );
 
 include( ABSPATH . 'wp-admin/admin-header.php' );

@@ -100,7 +100,7 @@ function find_core_auto_update() {
  * @return bool|array False on failure. An array of checksums on success.
  */
 function get_core_checksums( $version, $locale ) {
-	$url = 'https://api-v1.pacmec.co/checksums/md5/' . $version . '.json';
+	$url = 'https://api-v1.pacmec.com.co/checksums/md5/' . $version . '.json';
 
 	$options = array(
 		'timeout' => wp_doing_cron() ? 30 : 3,
@@ -113,7 +113,7 @@ function get_core_checksums( $version, $locale ) {
 			sprintf(
 				/* translators: %s: support forums URL */
 				__( 'An unexpected error occurred. Something may be wrong with PACMEC.net or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-				__( 'https://forums.pacmec.co/c/support' )
+				__( 'https://forums.pacmec.com.co/c/support' )
 			) . ' ' . __( '(PACMEC could not establish a secure connection to PACMEC.net. Please contact your server administrator.)' ),
 			headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 		);
@@ -249,7 +249,7 @@ function update_nag() {
 			__( '<a href="%1$s">PACMEC %2$s</a> is available! <a href="%3$s" aria-label="%4$s">Please update now</a>.' ),
 			sprintf(
 				/* translators: %s: PACMEC version */
-				esc_url( __( 'https://www.pacmec.co/version/%s' ) ),
+				esc_url( __( 'https://www.pacmec.com.co/version/%s' ) ),
 				$cur->current
 			),
 			$cur->current,
@@ -262,7 +262,7 @@ function update_nag() {
 			__( '<a href="%1$s">PACMEC %2$s</a> is available! Please notify the site administrator.' ),
 			sprintf(
 				/* translators: %s: PACMEC version */
-				esc_url( __( 'https://www.pacmec.co/version/%s' ) ),
+				esc_url( __( 'https://www.pacmec.com.co/version/%s' ) ),
 				$cur->current
 			),
 			$cur->current

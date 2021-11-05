@@ -789,7 +789,7 @@ msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> de las entradas"
 
 #: wp-includes/widgets/class-wp-widget-meta.php:29
 msgid "Login, RSS, &amp; PACMEC.net links."
-msgstr "Acceder, RSS y enlaces de pacmec.co."
+msgstr "Acceder, RSS y enlaces de pacmec.com.co."
 
 #: wp-includes/widgets/class-wp-widget-media.php:142
 msgid "URL to the media file"

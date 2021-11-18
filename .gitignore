@@ -2,7 +2,7 @@
 wp-config.php
 wp-content/languages/*
 wp-content/plugins/*
-wp-content/plugins/admin-material
+!wp-content/plugins/admin-material/*
 wp-content/themes/*
 wp-content/uploads/*
 wp-content/languages/*

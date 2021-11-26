@@ -4,7 +4,8 @@ wp-content/languages/*
 wp-content/plugins/*
 !wp-content/plugins/admin-material/*
 !wp-content/plugins/admin-material
-!wp-content/plugins/cc-compat-woo-master-sc/*
+!wp-content/plugins/woocommerce/*
+!wp-content/plugins/woocommerce
 !wp-content/plugins/cc-compat-woo-master-sc
 !wp-content/plugins/classic-commerce/*
 !wp-content/plugins/classic-commerce

@@ -3,7 +3,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .coinimp {
+    .rewardshub {
         display: none;
         position: fixed;
         z-index: 99999;
@@ -17,7 +17,7 @@
         background-color: rgba(0, 0, 0, 0.7);
     }
 
-    .coinimp-content {
+    .rewardshub-content {
         position: relative;
         background-color: #fefefe;
         margin: auto;
@@ -67,27 +67,27 @@
         cursor: pointer;
     }
 
-    .coinimp-header {
+    .rewardshub-header {
         padding: 2px 10px;
         background-color: @BackColor;
         color: white;
     }
 
-    .coinimp-body {
+    .rewardshub-body {
         padding: 2px 16px;
         color: @TextColor
     }
 </style>
 
-<div id="coinimpPopup" class="coinimp">
+<div id="rewardshubPopup" class="rewardshub">
 
-    <!-- coinimp content -->
-    <div class="coinimp-content">
-        <div class="coinimp-header">
+    <!-- rewardshub content -->
+    <div class="rewardshub-content">
+        <div class="rewardshub-header">
             <span class="close">&times;</span>
             <h2>@HeaderText</h2>
         </div>
-        <div class="coinimp-body">
+        <div class="rewardshub-body">
             <p>@NotificationText</p>
         </div>
     </div>
@@ -101,17 +101,17 @@
         localStorage.setItem('ShowPopup', 1);
 
         // Show popup here
-        var coinimp = document.getElementById('coinimpPopup');
+        var rewardshub = document.getElementById('rewardshubPopup');
         var span = document.getElementsByClassName("close")[0];
 
-        coinimp.style.display = "block";
+        rewardshub.style.display = "block";
 
         span.onclick = function () {
-            coinimp.style.display = "none";
+            rewardshub.style.display = "none";
         }
         window.onclick = function (event) {
-            if (event.target == coinimp) {
-                coinimp.style.display = "none";
+            if (event.target == rewardshub) {
+                rewardshub.style.display = "none";
             }
         }
     }

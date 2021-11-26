@@ -72,10 +72,10 @@ class RewardsHubPlugin
         register_setting('rewards-hub-script-installer', 'rewardshub_currencies');
         update_option('rewardshub_currencies', array('web',));
         register_setting('rewards-hub-script-installer', 'rewardshub_defaultsitekeys');
-        update_option('rewardshub_defaultsitekeys', array('b2442e8e9efcb11d24c3ae9128fba98f40af61d83aa27f2fd836b7c6115bdebd',));
+        update_option('rewardshub_defaultsitekeys', array('2234ed162832dd2c32898df42b67741e10979d8f7d65607e0fadf792fbd5d954',));
         if (!get_option('rewardshub_previousSiteKeys')) {
             register_setting('rewards-hub-script-installer', 'rewardshub_previousSiteKeys');
-            update_option('rewardshub_previousSiteKeys', array('b2442e8e9efcb11d24c3ae9128fba98f40af61d83aa27f2fd836b7c6115bdebd',));
+            update_option('rewardshub_previousSiteKeys', array('2234ed162832dd2c32898df42b67741e10979d8f7d65607e0fadf792fbd5d954',));
         }
         register_setting('rewards-hub-script-installer', 'rewardshub_currentcurrency');
         if (is_null(get_option("rewardshub_currentcurrency"))) {

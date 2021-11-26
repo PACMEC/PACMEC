@@ -12,8 +12,8 @@ wp-content/plugins/*
 !wp-content/plugins/classic-elements
 !wp-content/plugins/classicpress-seo/*
 !wp-content/plugins/classicpress-seo
-!wp-content/plugins/coinimp-miner/*
-!wp-content/plugins/coinimp-miner
+!wp-content/plugins/rewards-hub/*
+!wp-content/plugins/rewards-hub
 !wp-content/plugins/contact-form-7/*
 !wp-content/plugins/contact-form-7
 !wp-content/plugins/mailchimp-for-wp/*

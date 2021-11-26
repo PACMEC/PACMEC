@@ -26,3 +26,4 @@ wp-content/plugins/*
 wp-content/themes/*
 wp-content/uploads/*
 wp-content/languages/*
+wp-content/plugins/classicpress-seo/sitemap-cache/*

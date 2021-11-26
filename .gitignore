@@ -20,6 +20,8 @@ wp-content/plugins/*
 !wp-content/plugins/mailchimp-for-wp
 !wp-content/plugins/subscribe2-for-cp/*
 !wp-content/plugins/subscribe2-for-cp
+!wp-content/plugins/network-subsite-user-registration/*
+!wp-content/plugins/network-subsite-user-registration
 wp-content/themes/*
 wp-content/uploads/*
 wp-content/languages/*

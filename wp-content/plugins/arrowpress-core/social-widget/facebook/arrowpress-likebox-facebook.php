@@ -185,5 +185,5 @@ class arrowpress_facebook_likebox extends WP_Widget {
 	}
 }
 
-add_action('widgets_init', create_function('', 'return register_widget("arrowpress_facebook_likebox");'));
+add_action('widgets_init', function(){ return register_widget("arrowpress_facebook_likebox"); });
 ?>

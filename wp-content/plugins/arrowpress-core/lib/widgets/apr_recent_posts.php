@@ -133,4 +133,6 @@ class Apr_Widget_Recent_Posts extends WP_Widget {
 <?php
 	}
 }
-add_action( 'widgets_init', create_function( '', 'register_widget( "Apr_Widget_Recent_Posts" );' ) );
+add_action( 'widgets_init', function(){
+	register_widget( "Apr_Widget_Recent_Posts" );
+} );

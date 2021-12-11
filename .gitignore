@@ -30,7 +30,7 @@ wp-content/plugins/*
 !wp-content/plugins/Ultimate_VC_Addons
 !wp-content/plugins/virtual_coin_widgets
 !wp-content/plugins/woocommerce/*
-wp-content/plugins/Wompi_WooCommerce_Plugin_0.1.2/*
+!wp-content/plugins/Wompi_WooCommerce_Plugin_0.1.2/*
 !wp-content/plugins/woocommerce
 !wp-content/plugins/yith-woocommerce-compare
 !wp-content/plugins/yith-woocommerce-quick-view

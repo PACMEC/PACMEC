@@ -458,9 +458,7 @@ if ( ! class_exists( 'Redux_Extension_Metaboxes', false ) ) {
 				}
 
 				if ( isset( $options[ $key ] ) ) {
-					if ( isset( $options[ $key ] ) ) {
-						$data[ $key ] = $options[ $key ];
-					}
+					$data[ $key ] = $options[ $key ];
 				}
 			}
 
@@ -569,7 +567,7 @@ if ( ! class_exists( 'Redux_Extension_Metaboxes', false ) ) {
 					 * @param string  bundled stylesheet src
 					 */
 					wp_enqueue_style(
-						'redux-extension-metaboxes-js',
+						'redux-extension-metaboxes-css',
 						apply_filters( "redux/metaboxes/{$this->parent->args['opt_name']}/enqueue/redux-extension-metaboxes-css", $this->extension_url . 'redux-extension-metaboxes.css' ), // phpcs:ignore: WordPress.NamingConventions.ValidHookName
 						array(),
 						self::$version
@@ -618,7 +616,7 @@ if ( ! class_exists( 'Redux_Extension_Metaboxes', false ) ) {
 			if ( isset( $_GET['post'] ) ) {  // phpcs:ignore WordPress.Security.NonceVerification
 				$post = (int) sanitize_text_field( wp_unslash( $_GET['post'] ) );  // phpcs:ignore WordPress.Security.NonceVerification
 
-				if ( ! empty( $post ) && is_numeric( $post ) ) {
+				if ( ! empty( $post ) ) {
 					return $post;
 				}
 			}
@@ -1388,9 +1386,7 @@ if ( ! class_exists( 'Redux_Extension_Metaboxes', false ) ) {
 			if ( isset( $this->parent->args['metaboxes_save_defaults'] ) && $this->parent->args['metaboxes_save_defaults'] ) {
 				$dont_save = false;
 			}
-
 			foreach ( Redux_Helpers::sanitize_array( wp_unslash( $_POST[ $this->parent->args['opt_name'] ] ) ) as $key => $value ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
-
 				// Have to remove the escaping for array comparison.
 				if ( is_array( $value ) ) {
 					foreach ( $value as $k => $v ) {

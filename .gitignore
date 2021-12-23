@@ -65,6 +65,8 @@ wp-content/plugins/*
 !wp-content/plugins/wallet-base
 !wp-content/plugins/woocommerce/*
 !wp-content/plugins/woocommerce
+!wp-content/plugins/redux-framework/*
+!wp-content/plugins/redux-framework
 !wp-content/plugins/hello.php
 !wp-content/plugins/index.php
 

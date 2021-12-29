@@ -29,7 +29,7 @@ Using these two plugins your non-techie customers can register to obtain an Ethe
 * To show user's Ethereum account address's Ether balance insert the `[pacmec-wallet-balance]` shortcode wherever you like. Add the `displayfiat="1"` attribute to display the calculated fiat balance too.
 * Use `tokendecimals` attribute to configure the desired digits after the decimal separator count for the `[pacmec-wallet-balance]` shortcode.
 * Use `tokendecimalchar` attribute to configure the desired decimal separator character for the `[pacmec-wallet-balance]` shortcode.
-* Dynamic CTN token price feature of the [Cryptocurrency Product for WooCommerce](https://ethereumico.io/product/cryptocurrency-wordpress-plugin/ "Cryptocurrency Product for WooCommerce") plugin is supported.
+* Dynamic BNB token price feature of the [Cryptocurrency Product for WooCommerce](https://ethereumico.io/product/cryptocurrency-wordpress-plugin/ "Cryptocurrency Product for WooCommerce") plugin is supported.
 * To show the send Ether form insert the `[pacmec-wallet-sendform]` shortcode wherever you like.
 * To show an account's transactions history insert the `[pacmec-wallet-history direction="in"]` shortcode wherever you like. The `direction` attribute can have values `in` to show only input transactions, `out` to show only output transactions, or `inout` to show both input and output transactions. If attribute is omitted, the `inout` is used by default.
 * Pagination and filtering is available for the tx history table

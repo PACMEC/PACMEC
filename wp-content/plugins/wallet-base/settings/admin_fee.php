@@ -74,7 +74,7 @@ function PACMEC_WALLET_admin_fee_print_options_hook( $options, $current_screen )
 
 <tr valign="top">
 <th scope="row"><?php 
-    _e( "Min Admin Fee Markup, CTN", 'pacmec-wallet' );
+    _e( "Min Admin Fee Markup, BNB", 'pacmec-wallet' );
     ?></th>
 <td><fieldset>
     <label>
@@ -82,7 +82,7 @@ function PACMEC_WALLET_admin_fee_print_options_hook( $options, $current_screen )
     echo  ( !empty($options['admin_min_fee_eth']) ? esc_attr( $options['admin_min_fee_eth'] ) : '0' ) ;
     ?>">
         <p><?php 
-    _e( "The minimum admin fee in CTN taken from users with every Ether transfer from accounts controlled by this plugin. Zero means no minimum fee applied.", 'pacmec-wallet' );
+    _e( "The minimum admin fee in BNB taken from users with every Ether transfer from accounts controlled by this plugin. Zero means no minimum fee applied.", 'pacmec-wallet' );
     ?></p>
     </label>
 </fieldset></td>
@@ -90,7 +90,7 @@ function PACMEC_WALLET_admin_fee_print_options_hook( $options, $current_screen )
 
 <tr valign="top">
 <th scope="row"><?php 
-    _e( "Max Admin Fee Markup, CTN", 'pacmec-wallet' );
+    _e( "Max Admin Fee Markup, BNB", 'pacmec-wallet' );
     ?></th>
 <td><fieldset>
     <label>
@@ -98,7 +98,7 @@ function PACMEC_WALLET_admin_fee_print_options_hook( $options, $current_screen )
     echo  ( !empty($options['admin_max_fee_eth']) ? esc_attr( $options['admin_max_fee_eth'] ) : '0' ) ;
     ?>">
         <p><?php 
-    _e( "The maximum admin fee in CTN taken from users with every Ether transfer from accounts controlled by this plugin. Zero means no maximum fee applied.", 'pacmec-wallet' );
+    _e( "The maximum admin fee in BNB taken from users with every Ether transfer from accounts controlled by this plugin. Zero means no maximum fee applied.", 'pacmec-wallet' );
     ?></p>
     </label>
 </fieldset></td>

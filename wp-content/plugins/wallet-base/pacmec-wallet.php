@@ -260,10 +260,10 @@ if ( PHP_INT_SIZE != 8 ) {
                     function PACMEC_WALLET_calc_display_value( $value )
                     {
                         if ( $value < 1 ) {
-                            return [ 0.01 * floor( 100 * $value ), __( 'CTN', 'pacmec-wallet' ) ];
+                            return [ 0.01 * floor( 100 * $value ), __( 'BNB', 'pacmec-wallet' ) ];
                         }
                         if ( $value < 1000 ) {
-                            return [ 0.1 * floor( 10 * $value ), __( 'CTN', 'pacmec-wallet' ) ];
+                            return [ 0.1 * floor( 10 * $value ), __( 'BNB', 'pacmec-wallet' ) ];
                         }
                         if ( $value < 1000000 ) {
                             return [ 0.1 * floor( 10 * 0.001 * $value ), __( 'K', 'pacmec-wallet' ) ];
@@ -494,7 +494,7 @@ if ( PHP_INT_SIZE != 8 ) {
                         $strBalance = '0';
                         $strBalanceNum = '0';
                         $strCurrencyName = __( 'Citrino', 'pacmec-wallet' );
-                        $strCurrencySymbol = "CTN";
+                        $strCurrencySymbol = "BNB";
 												
                         if ( !empty($tokenAddress)) {
 													if(!empty($tokenName)) $strCurrencyName = $tokenName;
@@ -505,7 +505,7 @@ if ( PHP_INT_SIZE != 8 ) {
 												
                         if ( !empty($accountAddress) ) {
 													if ( empty($tokenAddress) ) {
-														// CTN
+														// BNB
 														list( $error, $balance ) = PACMEC_WALLET_getBalanceEth( $providerUrl, $accountAddress );
 														
 													} else {
@@ -549,7 +549,7 @@ if ( PHP_INT_SIZE != 8 ) {
                         if ( $product_id ) {
                             // if ( ethereum_wallet_freemius_init()->is__premium_only() ) {
                         } else {
-                            if ( "CTN" == $strCurrencySymbol && $displayFiat ) {
+                            if ( "BNB" == $strCurrencySymbol && $displayFiat ) {
                                 if ( function_exists( "get_woocommerce_currency" ) ) {
                                     $currency = get_woocommerce_currency();
                                     if ( $currency != 'MYC' && !(function_exists( 'mycred_point_type_exists' ) && mycred_point_type_exists( $currency )) ) {
@@ -930,7 +930,7 @@ if ( PHP_INT_SIZE != 8 ) {
                         class="custom-select form-control"
                         id="pacmec-wallet-sendform-currency"
                         name="pacmec-wallet-sendform-currency" >
-                        <option value="0x0000000000000000000000000000000000000001" selected="">' . __( 'CTN', 'pacmec-wallet' ) . '</option>
+                        <option value="0x0000000000000000000000000000000000000001" selected="">' . __( 'BNB', 'pacmec-wallet' ) . '</option>
                         ' . $ops . '
                     </select>
                 </div>

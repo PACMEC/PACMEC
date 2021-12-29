@@ -136,17 +136,17 @@ class CurrencyConvertor {
         );
         $response = wp_remote_get($url, $args);
         if (is_wp_error($response) || 200 !== $response['response']['code']) {
-            throw new \Exception('Could not fetch CTN pricing');
+            throw new \Exception('Could not fetch BNB pricing');
         }
         $body = json_decode($response['body']);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception('Could not convert CTN pricing - JSON error.');
+            throw new \Exception('Could not convert BNB pricing - JSON error.');
         }
         if (!isset($body->{$destination})) {
             if (isset($body->{"Message"})) {
-                throw new \Exception('Could not convert CTN pricing - ' . $body->{"Message"});
+                throw new \Exception('Could not convert BNB pricing - ' . $body->{"Message"});
             }
-            throw new \Exception('Could not convert CTN pricing - missing value after decoding.');
+            throw new \Exception('Could not convert BNB pricing - missing value after decoding.');
         }
         return (float) $body->{$destination};
     }

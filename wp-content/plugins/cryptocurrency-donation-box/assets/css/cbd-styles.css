@@ -1,0 +1,295 @@
+/*Tabs Styles*/
+ul.cbd-tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+}
+ul.cbd-tabs li {
+    background: none;
+    color: #7e7e7e;
+    display: inline-block;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+	margin:0;
+	margin-bottom: -1px;
+}
+ul.cbd-tabs li img {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin-right: 2px;
+    display: inline-block;
+    vertical-align: middle;
+}
+ul.cbd-tabs li.current img {
+    width: 30px;
+    height: 30px;
+}
+ul.cbd-tabs li.current {
+    background:#ffffff;
+    color: #222;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: rgb(0, 0, 0, 0.1) !IMPORTANT;
+    border-bottom: 0;
+}
+.dbd-tabs-content {
+    display: none;
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid;
+    border-color: rgb(0, 0, 0, 0.1) !IMPORTANT;
+}
+.dbd-tabs-content.current{
+	display: inherit;
+}
+/*Tabs Styles - END*/
+
+
+/*Box Inside Styles*/
+.CDBBC_qr_code {
+    display: inline-block;
+    width: 30%;
+    max-width: 300px;
+	vertical-align: top;
+}
+.CDBBC_qr_code img {
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-color: rgb(0, 0, 0, 0.1) !IMPORTANT;
+}
+.CDBBC_input_add {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(70% - 20px);
+    margin-left: 20px;
+}
+.CDBBC_input_add h2.CDBBC-title {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+p.CDBBC-desc {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 20px;
+}
+input.wallet-address-input {
+    font-size: 18px !IMPORTANT;
+    padding: 5px !IMPORTANT;
+    height:40px !IMPORTANT;
+    margin-bottom: 0px !IMPORTANT;
+    background: #eeeeee !IMPORTANT;
+    color: #222 !IMPORTANT;
+    border: 1px solid !IMPORTANT;
+    border-color: rgb(0, 0, 0, 0.1) !IMPORTANT;
+    letter-spacing: 1px;
+}
+button.CDBBC_btn {
+    margin-top: 15px;
+    margin-left:4px;
+    padding: 13px;
+    background: #222;
+    border: 0;
+    font-size: 15px;
+    color: #fff;
+}
+button.CDBBC_btn:hover {
+	opacity:0.85;
+}
+/*Box Inside Styles - END*/
+
+/*Responsive Styles*/
+@media screen and (max-width: 992px) {
+	.CDBBC_qr_code {
+		width: 100%;
+		max-width: 600px;
+	}
+	.CDBBC_input_add {
+		width: 100%;
+		margin-left: 0px;
+		margin-top:15px;
+	}
+	ul.cbd-tabs {
+		padding-bottom:46px;
+		position:relative;
+	}
+	ul.cbd-tabs li {
+		padding: 3px 6px;
+		font-size: 12px;
+	}
+	ul.cbd-tabs li img {
+		width: 20px;
+		height: 20px;
+		margin-right: 1px;
+	}
+	ul.cbd-tabs li.current img {
+		width: 24px;
+		height: 24px;
+	}
+	ul.cbd-tabs li.current{
+		font-size:16px;
+		position:absolute;
+		bottom:0;
+		left:0;
+	}
+}        
+
+/******* Classic-list *********/
+ul.cbd-classic-list {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+li.cbd-classic-list {
+    list-style: none;
+    display: block;
+    padding: 10px;
+    margin: 0 0 25px;
+    background: #fff;
+    border: 1px solid;
+    border-color: rgb(0, 0, 0, 0.1) !IMPORTANT;
+    text-align: center;
+    max-width: 375px;
+    min-width: 275px;
+    width: 100%;
+    vertical-align: top;
+    box-shadow: 2px 2px 4px -1px rgb(0 0 0 / 10%);
+}
+.cbd-modal-body .cbd-address {
+    text-align: center;
+}
+.cbd-classic-list .CDBBC_qr_code {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+.cbd-classic-list h2.CDBBC-title {
+    font-size: 18px !IMPORTANT;
+    margin: 0;
+    padding: 0 0 10px;
+}
+.cbd-classic-list .tip-button {
+    display: inline-block;
+}
+
+/******** List-view ************/
+.cbd-list-view ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.cbd-list-view li.cbd-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    background: rgb(193, 193, 193, 0.25);
+    display: block;
+    vertical-align: top;
+    height: 60px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px -1px rgb(0 0 0 / 10%);
+}
+.cbd-list-view li.cbd-list-items:hover {
+    box-shadow: none;
+}
+a.cbd-list-popup {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.cdb-list-img {
+    width: 60px;
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    border-right: 1px solid;
+    border-color: rgb(0, 0, 0, 0.15) !IMPORTANT;
+}
+li.cbd-list-items img {
+    vertical-align: middle;
+    width: auto;
+    height: 100%;
+    margin: 0;
+}
+.cdb-list-content {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 200px;
+    text-align: left;
+    line-height: 1.1em;
+    font-size: 18px;
+    padding-left: 10px;
+    color: #222;
+    font-weight: bold;
+}
+span.cdb-list-donate-txt, span.cdb-list-coin {
+    width: 100%;
+    display: block;
+}
+span.cdb-list-donate-txt {
+    font-size: 0.8em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.cbd-main-title h2.cbd-title {
+    text-align: center;
+    margin-top: 0px;
+}
+.cbd-address h3.cbd-coin-address {
+    text-align: center;
+}
+.cbd_qr_code {
+    width: 100%;
+    text-align: center;
+}
+.cbd-main-title {
+    border-bottom: 1px solid #e5e5e5;
+}
+body .jquery-modal.blocker {
+    z-index: 9999;
+  }
+  .modal a.close-modal {
+    top: -1.5px!important;
+    right: -1.5px!important;
+}
+/**
+* Meta mask css
+*/
+.tip-button {
+    width: 304px;
+    height: 89px;
+    background-size: 100%;
+    background-image: url(../../assets/images/1_pay_mm_off.png);
+    cursor: pointer;
+    max-width: 100%;
+    background-repeat: no-repeat;
+}
+  
+  .tip-button:hover {
+    background-image: url('../../assets/images/1_pay_mm_over.png');
+  }
+  
+  .tip-button:active {
+    background-image: url('../../assets/images/1_pay_mm_off.png');
+  }
+.cbd-modal-body .cdbbc_tag{
+    text-align: center;
+}
+span.cdbbc_tag_heading {
+    font-weight: 700;
+}

@@ -1,0 +1,78 @@
+<div class="tile {{mediaclass}}">
+    {{#id}}
+        <a href="{{nft_account_link}}" target="_blank" class="ui top right label grey-label">
+            {{id}}
+        </a>
+    {{/id}}
+
+    {{#media}}
+    <div class="image-container">
+        {{{media}}}
+    </div>
+    {{/media}}
+
+    <div class="card-info">
+
+        {{#author}}
+        <div class="profile">
+            <div class="profile-inner">
+                {{#author_avatar}}
+                <img class="avatar" src="{{author_avatar}}">
+                {{/author_avatar}}
+                {{#author_external_url}}
+                <a href="{{author_external_url}}">
+                {{/author_external_url}}
+                {{{author}}}
+                {{#author_external_url}}
+                </a>
+                {{/author_external_url}}
+            </div>
+        </div>
+        {{/author}}
+
+        {{#title}}
+            <h2 class="title">{{{title}}}</h2>
+        {{/title}}
+
+        {{#author_account_short}}
+            <div class="profile-short">
+                Minted by:
+                <span>
+                    <a href="{{author_account_link}}" target="_blank">
+                        {{author_account_short}} 
+                    </a>
+                </span>                        
+                <i class="copy icon" onclick="copyToClipboard('{{author_account}}', 'wpsc-author-{{nftid}}')"></i>
+                <span id="wpsc-author-{{nftid}}"></span>
+            </div>
+        {{/author_account_short}}
+
+        {{#category}}
+            <div class="main-info-top">
+                <p>Category: <span class="highlighted"><a href="{{category_link}}" class="black-link">{{{category}}}</a></span></p>
+            </div>
+        {{/category}}
+
+        <div class="tag-container">
+            {{#tags}}
+            <div class="the-tag normal-tag">
+                <a href="{{link}}"><span class="tag-main-text">{{{tag}}}</span></a>
+            </div>
+            {{/tags}}
+        </div>
+
+        {{#price_label}}
+            <div class="price">
+            {{price}}<div class="detail">{{{price_label}}}</div>
+            </div>
+        {{/price_label}}
+    </div>
+
+     <div class="hover-info">
+        <div class="option">
+            <a href="{{url}}" class="option-text">
+                View
+            </a>
+        </div>
+    </div>
+</div>

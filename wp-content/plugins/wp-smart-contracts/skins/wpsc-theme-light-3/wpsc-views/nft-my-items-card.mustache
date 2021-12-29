@@ -1,0 +1,72 @@
+<div class="tile {{mediaclass}}">
+    {{#id}}
+        <a href="{{nft_account_link}}" target="_blank" class="ui top right label grey-label">
+            {{id}}
+        </a>
+    {{/id}}
+
+    {{#category}}
+            <div class="main-info-top">
+                <p><span class="highlighted"><a href="{{category_link}}" class="black-link">{{{category}}}</a></span></p>
+            </div>
+        {{/category}}
+
+    {{#media}}
+    <div class="image-container">
+        {{{media}}}
+    </div>
+    {{/media}}
+
+    <div class="card-info">
+
+        {{#title}}
+            <div class="title-container">
+                <h2 class="title">{{{title}}}</h2>
+            </div>
+        {{/title}}
+
+        {{#author_account_short}}
+            <div class="profile-short">
+                Minted by:
+                <span>
+                    <a href="{{author_account_link}}" target="_blank">
+                        {{author_account_short}} 
+                    </a>
+                </span>                        
+                <i class="copy icon" onclick="copyToClipboard('{{author_account}}', 'wpsc-author-{{nftid}}')"></i>
+                <span id="wpsc-author-{{nftid}}"></span>
+            </div>
+        {{/author_account_short}}
+
+        {{#author}}
+        <div class="profile">
+            <div class="profile-inner">
+                {{#author_avatar}}
+                <img class="avatar" src="{{author_avatar}}">
+                {{/author_avatar}}
+                {{#author_external_url}}
+                <a href="{{author_external_url}}">
+                {{/author_external_url}}
+                {{{author}}}
+                {{#author_external_url}}
+                </a>
+                {{/author_external_url}}
+            </div>
+        </div>
+        {{/author}}
+
+        {{#price_label}}
+            <div class="price">
+            {{price}}<div class="detail">{{{price_label}}}</div>
+            </div>
+        {{/price_label}}
+    </div>
+
+     <div class="hover-info">
+        <div class="option">
+            <a href="{{url}}" class="option-text">
+                View
+            </a>
+        </div>
+    </div>
+</div>

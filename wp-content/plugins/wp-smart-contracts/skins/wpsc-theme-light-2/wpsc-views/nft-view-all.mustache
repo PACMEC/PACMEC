@@ -1,0 +1,676 @@
+<style>img.ui.medium.rounded.centered.bordered.image {width: 100%;}</style>
+<div class="page-wrapper detail-wrapper">
+    <div class="page-wrapper-inner">
+        <input type="hidden" id="wpsc-nft-network" value="{{wpsc_nft_network}}">
+        <input type="hidden" id="wpsc-contract-flavor" value="{{wpsc_contract_flavor}}">
+        <input type="hidden" id="wpsc-nft-marketplace-contract" value="{{wpsc_nft_marketplace_contract}}">
+        <input type="hidden" id="wpsc-nft-token-id" value="{{nft_token_id}}">
+        <input type="hidden" id="wpsc-nft-etherscan" value="{{etherscan}}">
+        <input type="hidden" id="wpsc-nft-time-countdown">
+        <span id="wpsc_log_history" style="display: none;">{{wpsc_log_history}}</span>
+
+        <input type="hidden" id="wpsc-suika-token" value="">
+        <input type="hidden" id="wpsc-suika-token-decimals" value="">
+        <input type="hidden" id="wpsc-suika-token-symbol" value="">
+    
+        {{{view-metamask}}}
+        {{{nft-view-menu}}}
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <ul class="breadcrumb-inner">
+                <li><a href="{{collection-link}}" class="btn white-btn">{{{collection-title}}}</a></li>
+                <li class="separator"></li>
+                <li><span class="selected-page">{{{nft-title}}}</span></li>
+            </ul>
+        </div>
+        <div id="wpsc-nft-generic-message"></div>
+        <div id="wpsc-wallet-mint-account-message"></div>
+
+        <!-- Detail top -->
+        <div class="detail-top {{meter_clase_de_video}}" id="meterClaseDeVideo">
+            <input type="hidden" id="wpsc-nft-highest-bid">
+            <div class="top-inner">
+                <div class="category">
+                    <div class="cat-inner">
+                        {{#cats}}
+                        <a href="{{link}}">{{{value}}}</a>
+                        {{/cats}}
+                    </div>
+                </div>
+                <input type="hidden" id="wpsc-media-type" value="{{wpsc-media-type}}">
+                <input type="hidden" id="wpsc-nft-media-json" value="{{wpsc-nft-media-json}}">
+                <div id="wpsc-nft-media-preview-media" class="nft-media">
+                    <div class="image">
+                        {{#video}}
+                            <video controls="" controlslist="nodownload" oncontextmenu="return false;">
+                                {{#media_files}}
+                                <source src="{{url}}" type="{{mime}}">
+                                {{/media_files}}
+                            </video>
+                        {{/video}}
+                        {{#audio}}
+                            <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+                                {{#media_files}}
+                                <source src="{{url}}" type="{{mime}}">
+                                {{/media_files}}
+                            </audio>    
+                        {{/audio}}
+                        {{#image}}
+                            {{#media_files}}
+                                <img oncontextmenu="return false;" class="ui medium rounded centered bordered image" src="{{url}}">
+                            {{/media_files}}
+                        {{/image}}
+                        {{#doc}}
+                            {{#media_files}}
+                            <div class="wpsc-pdf-iframe-container">
+                                <iframe src="{{url}}"></iframe>
+                            </div>
+                            {{/media_files}}
+                        {{/doc}}
+                    </div>
+                </div>
+            </div>     
+        </div>
+
+    </div>
+
+    <div class='the-full-width-section'>
+        <div class="page-wrapper-inner">
+
+            <!-- Detail bottom -->
+            <div class="detail-bottom">
+                <div class="bottom-left">
+
+                    <div class="profile">
+                        <img id="wpsc-nft-owner-blockie" class="ui right spaced avatar image" style="display: none;">
+                        Owned by  <a id="wpsc-nft-owner-link" href="" target="_blank"></a>
+                        <i id="wpsc-nft-owner-link-copy" class="copy icon"></i>
+                        <span id="wpsc-nft-owner-link-copy-span"></span>
+                    </div>
+
+                    <h1 class="title">
+                        {{{nft-title}}}
+                    </h1>
+
+                    <div class="tag-container">
+                        {{#tags}}
+                        <div class="the-tag normal-tag">
+                            <a href="{{link}}" ><span class="tag-main-text">{{{value}}}</span></a>
+                        </div>
+                        {{/tags}}
+                    </div>
+
+                    <div class="meta">
+                        <span class="date">
+                            <div class="tag-container">
+                                <a href="{{wpsc_author_url}}" class="the-tag main-tag">
+                                {{#original_author_avatar}}
+                                <img class="ui right spaced avatar image" src="{{original_author_avatar}}">
+                                {{/original_author_avatar}}
+                                <span class="tag-main-text">Minted by</span> @{{author}}
+                                </a>
+                                <div class="the-tag main-tag">
+                                    {{#wpsc_creator_blockie}}
+                                    <img class="ui right spaced avatar image" src="{{wpsc_creator_blockie}}">
+                                    {{/wpsc_creator_blockie}}
+                                    <span class="tag-main-text"><a href="{{etherscan}}address/{{wpsc_creator}}" target="_blank">{{wpsc_creator_short}}</a></span>
+                                    <i class="copy icon" onclick="copyToClipboard('{{wpsc_creator}}', 'wpsc-nft-item-creator')"></i>
+                                    <span id="wpsc-nft-item-creator"></span>
+                                </div>
+                                <div class="the-tag main-tag large-text">
+                                    <span class="gen-title">Genesis:</span>  <a href="{{etherscan}}tx/{{wpsc_txid}}" target="_blank">{{wpsc_txid_short}}</a>
+                                    <i class="copy icon" onclick="copyToClipboard('{{wpsc_txid}}', 'wpsc-nft-item-txid')"></i>
+                                    <span id="wpsc-nft-item-txid"></span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+
+                    <div class="description">
+                        {{#content}}
+                        <p class="feature-label-link">Description</p>
+                        {{/content}}
+                        {{{content}}}
+                    </div>
+
+                    <div class="tag-container">
+                        <div class="the-tag main-tag {{color}}">
+                            <i class="{{icon}} icon"></i><span class="tag-main-text">{{network_val}}</span>
+                        </div>
+                        <div class="the-tag main-tag {{wpsc_flavor_color}}">
+                            <i class="{{icon}} icon"></i><span class="tag-main-text">{{wpsc_contract_flavor}}</span>
+                        </div>
+                        <div class="the-tag main-tag special-copy">
+                            <img src="{{wpsc_blockie_collection}}" class="avatar">
+                            <span class="tag-main-text">Smart Contract</span>
+                            <div class="detail">
+                                <a href="{{etherscan}}address/{{wpsc_collection_contract}}" target="_blank">{{wpsc_collection_contract_short}}</a>
+                                <i class="copy icon" onclick="copyToClipboard('{{wpsc_collection_contract}}', 'wpsc-nft-collection-contract')"></i>
+                                <span id="wpsc-nft-collection-contract"></span>
+                            </div>
+                        </div>
+                        <div class="the-tag main-tag">
+                            <img src="{{wpsc_nft_id_blockie}}" class="avatar">
+                            <a href="{{etherscan}}token/{{wpsc_collection_contract}}?a={{wpsc_nft_id}}" target="_blank" class="tag-main-text">Token ID <span class="detail">#{{wpsc_nft_id}}</span></a>
+                        </div>
+                        <div class="the-tag main-tag">
+                            <a href="{{endpoint}}" target="_blank" class="tag-main-text">View Token URI</a>
+                        </div>
+                    </div>
+
+                    <h3 class="ui dividing header">
+                        History
+                    </h3>
+                    <div class="history-container">
+                        <div class="table-header">
+                            <div class="table-left">Creator</div>
+                            <div class="table-right">Detail</div>
+                        </div>
+                        <div id="wpsc-nft-history"></div>
+                        <div class="ui raised segment">
+                            <input type="hidden" id="wpsc_graph_line_color" value="{{wpsc_graph_line_color}}">
+                            <input type="hidden" id="wpsc_graph_bg_color" value="{{wpsc_graph_bg_color}}">
+                            <div class="ui image label">
+                                <img src="{{wpsc_creator_blockie}}">
+                                <i class="ui user icon"></i> 
+                                <a href="{{wpsc_creator_link}}" target="_blank">{{wpsc_creator_short}}</a>
+                                <div class="detail">
+                                    <a href="{{wpsc_txid_link}}" target="_blank">TxId {{wpsc_txid_short}}</a>
+                                </div>
+                            </div>
+                            <span class="ui top right attached label">
+                            Mint
+                            </span>
+                        </div>
+                    </div>
+        
+                </div>
+
+
+                <div class="bottom-right">
+                    <div class="ui grid">
+                        <div class="two-column">
+                            <div id="wpsc-nft-col1" class="column-left col">
+                                <span id="wpsc-nft-col1-price-label" class="detail-feature-title" style="display: none;"></span>
+                                <p id="wpsc-nft-col1-price" class="feature-label" style="display: none;"></p>
+                                <div class="tag-container">
+                                    <div id="wpsc-nft-col1-reserve-price" class="the-tag main-tag" style="display: none; margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                            <div id="wpsc-nft-col2" class="column-right col">
+                                <div id="wpsc-nft-place-higher-bid" class="btn wpsc-modal-button" style="display: none;" {{#is-suika}}data-modal="wpsc-bid-modal-token"{{/is-suika}} {{^is-suika}}data-modal="wpsc-bid-modal"{{/is-suika}}>Place Higher Bid</div>
+                                <div id="wpsc-nft-place-bid" class="btn wpsc-modal-button" style="display: none;" {{#is-suika}}data-modal="wpsc-bid-modal-token"{{/is-suika}} {{^is-suika}}data-modal="wpsc-bid-modal"{{/is-suika}}>Place Bid</div>
+                                <div id="wpsc-nft-buy" class="btn wpsc-modal-button" style="display: none;" {{#is-suika}}data-modal="wpsc-buy-modal-token"{{/is-suika}}{{^is-suika}}data-modal="wpsc-buy-modal"{{/is-suika}}>Buy</div>
+                                <div id="wpsc-nft-finalize" class="btn wpsc-modal-button" style="display: none;" data-modal="wpsc-finalize-modal">Finalize</div>
+                            </div>
+                            <div id="wpsc-nft-buttons" class="one-column row column-right col" style="display: none;">
+                                <div class="column">
+                                    <div id="wpsc-nft-burn-button" class="btn wpsc-modal-button outline" style="display: none;" data-modal="wpsc-burn-modal">Burn</div>
+                                    <div id="wpsc-nft-transfer-button" class="btn wpsc-modal-button outline" style="display: none;" data-modal="wpsc-transfer-modal">Transfer</div>
+                                    <div id="wpsc-nft-sell-button" class="btn wpsc-modal-button" style="display: none;" data-modal="wpsc-sell-modal">Sell</div>
+                                    <div id="wpsc-nft-auction-button" class="btn wpsc-modal-button" style="display: none;" data-modal="wpsc-auction-modal">Auction</div>
+                                    <div id="wpsc-nft-withdraw-button" class="btn wpsc-modal-button" style="display: none;" data-modal="wpsc-withdraw-modal">Withdraw</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="wpsc-nft-auction-timer-msg" class="detail">
+                        <p class="detail-feature-title auction-text active-auction">Auction ends in</p>
+                        <p class="detail-feature-title auction-text ended-auction">Auction ended</p>
+                        <div class="timer-container">
+
+                            <!--NEW-->
+                            <div class="box active-auction theDay">
+                                <p id="days">00</p>
+                                <p id="daystxt">Days</p>
+                            </div>
+                            <div class="box active-auction theHour">
+                                <p id="hours">00</p>
+                                <p id="hourstxt">Hours</p>
+                            </div>
+                            <div class="box active-auction theMin">
+                                <p id="minutes">00</p>
+                                <p id="minutestxt">Mins</p>
+                            </div>
+                            <div class="box active-auction theSecond">
+                                <p id="seconds">00</p>
+                                <p id="secondstxt">Secs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graph-history">
+                        <div id="wpsc-nft-graph" style="display: none">
+                            <h3 class="ui dividing header">
+                                Graph
+                            </h3>
+                            <div class="ui raised segment">
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+                                <canvas id="nftChart" width="400" height="400"></canvas>
+                            </div>
+                        </div>
+                        <!-- History -->
+                        
+                        <!-- / History -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="wpsc-wallet-mint-account-message"></div>
+            <!-- NFT -->
+            <div class="ui raised stackable grid">
+                <!-- Left Column -->
+                <!-- / Left Column -->
+                <!-- Right Column -->
+                <div class="seven wide column">
+                    <!-- Modals -->
+
+                                <!-- Modals -->
+
+            <!-- Burn -->
+            <div id="wpsc-burn-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="fire icon"></i>
+                        Burn
+                        </h2>
+                    <div id="wpsc-burn-form">
+                        <div class="ui inverted segment">
+                            <div class="content">
+                                <p>Are you sure you want to destroy this item forever?</p>
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                            <div id="wpsc-nft-burn-message">This is an irreversible action, you will not be able to recover this item after burning it.</div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div class="actions">
+                        <div id="wpsc-nft-burn-go-button" class="ui green basic inverted button">
+                            <i class="paper plane icon"></i>
+                            Burn
+                        </div>
+                        <div id="wpsc-nft-burn-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-nft-burn-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transfer -->
+            <div id="wpsc-transfer-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular paper plane inverted icon"></i>
+                        Transfer
+                    </h2>
+                    <div id="wpsc-transfer-form">
+                        <div class="ui inverted segment">
+                            <div class="content">
+                                <p>Are you sure you want to transfer the ownership of this Item to another account?</p>
+                            </div>
+                        </div>
+                        <div class="ui fluid action input">
+                            <input name="wpsc-nft-transfer" type="text" value="" placeholder="To address" class="wpsc-validate-address">
+                            <button class="ui right labeled icon inverted button wpsc-open-qr-scanner" data-input-name="wpsc-nft-transfer">
+                            <i class="qrcode icon"></i>Scan
+                            </button>
+                        </div>
+                        <div class="ui divider"></div>
+                        <div id="wpsc-nft-transfer-message"></div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div class="actions">
+                        <div id="wpsc-nft-transfer-go-button" class="ui green basic inverted button">
+                            <i class="paper plane icon"></i>
+                            Transfer
+                        </div>
+                        <div id="wpsc-nft-transfer-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-nft-transfer-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sell -->
+            <div id="wpsc-sell-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular handshake inverted icon"></i>
+                        Sell
+                    </h2>
+                    <div id="wpsc-sell-form" class="ui inverted form">
+                        <div class="ui inverted segment">
+                            <div class="content">
+                                <p>Are you sure you want to put your NFT up for sale?</p>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Price</label>
+                                <input id="wpsc-sell-amount" name="wpsc-sell-amount" type="number" placeholder="Sale Price">
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> This is the total price of the item.</p>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> The marketplace may charge commission.</p>
+                            </div>
+                            <div class="field">
+                                <label>Wallet</label>
+                                <div class="ui fluid action input">
+                                    <input id="wpsc-nft-wallet-sell" name="wpsc-nft-wallet-sell" type="text" value="" placeholder="Wallet to receive funds" class="wpsc-validate-address">
+                                    <button class="ui right labeled icon inverted button wpsc-open-qr-scanner" data-input-name="wpsc-nft-wallet-sell">
+                                    <i class="qrcode icon"></i>Scan
+                                    </button>
+                                </div>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> This is the wallet where you will receive funds.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-sell-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-sell-go-button" class="ui green basic inverted button">
+                            <i class="handshake icon"></i>
+                            Sell
+                        </div>
+                        <div id="wpsc-sell-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-nft-sell-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auction -->
+            <div id="wpsc-auction-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular gavel inverted icon"></i>
+                        Auction
+                    </h2>
+                    <div id="wpsc-auction-form" class="ui inverted form">
+                        <div class="ui inverted segment">
+                            <div class="content">
+                                <p>Are you sure you want to put your NFT up for auction?</p>
+                            </div>
+                        </div>
+                        <div class="ui hidden divider"></div>
+                        <div class="fields">
+                            <div class="four wide field">
+                                <label>Reserve Price</label>
+                                <input id="wpsc-reserve-amount" name="wpsc-reserve-amount" type="number" placeholder="Reserve Price">
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> This is the minimum price you are willing to accept for your NFT</p>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> The marketplace may charge commission.</p>
+                            </div>
+                            <div class="four wide field">
+                                <label>Auction end date</label>
+                                <div class="ui fluid action input">
+                                    <input name="wpsc-nft-date-auction" type="datetime-local">
+                                </div>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> This is the end date of your auction. It will be at midnight GMT time.</p>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="warning circle icon"></i> This action is irreversible, and once you put your item up for auction, it will be blocked from being transferred or sold until the auction ends</p>
+                            </div>
+                            <div class="eight wide field">
+                                <label>Wallet</label>
+                                <div class="ui fluid action input">
+                                    <input name="wpsc-nft-wallet-auction" type="text" value="" placeholder="Wallet to receive funds" class="wpsc-validate-address">
+                                    <button class="ui right labeled icon inverted button wpsc-open-qr-scanner" data-input-name="wpsc-nft-wallet-auction">
+                                    <i class="qrcode icon"></i>Scan
+                                    </button>
+                                </div>
+                                <p class="wpsc-small wpsc-padding wpsc-grey"><i class="info circle icon"></i> This is the wallet where you will receive funds.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-auction-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-auction-go-button" class="ui green basic inverted button">
+                            <i class="gavel icon"></i>
+                            Auction
+                        </div>
+                        <div id="wpsc-auction-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-nft-auction-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bid -->
+            <div id="wpsc-bid-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular hand point up outline inverted icon"></i>
+                        Bid
+                    </h2>
+                    <div id="wpsc-bid-form" class="ui inverted form">
+                        <div class="three fields">
+                            <div class="field"></div>
+                            <div class="field">
+                                <input id="wpsc-bid-amount" name="wpsc-bid-amount" type="number" placeholder="Bid Amount">
+                            </div>
+                            <div class="field"></div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-bid-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-bid-go-button" class="ui green basic inverted button">
+                            <i class="hand point up outline icon"></i>
+                            Bid
+                        </div>
+                        <div id="wpsc-bid-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-bid-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bid with token -->
+            <div id="wpsc-bid-modal-token" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <div class="ui two steps">
+                        <div id="wpsc-bid-token-step-1" class="disabled step">
+                          <i class="thumbs up outline icon"></i>
+                            <div class="content">
+                                <div class="title">Step 1</div>
+                                <div class="description">Approve funds</div>
+                            </div>
+                        </div>
+                        <div id="wpsc-bid-token-step-2" class="disabled step">
+                            <i class="circular hand point up outline icon"></i>
+                            <div class="content">
+                                <div class="title">Step 2</div>
+                                <div class="description">Bid</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="wpsc-bid-token-form" class="ui inverted form">
+                        <div class="three fields">
+                            <div class="field"></div>
+                            <div class="field">
+                                <label>Amount</label>
+                                <input id="wpsc-bid-token-amount" name="wpsc-bid-token-amount" type="text">
+                            </div>
+                            <div class="field"></div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-bid-token-message"></div>
+                    <div class="ui hidden divider"></div>
+                    <div class="actions">
+                        <div id="wpsc-bid-approve-go-button" class="ui green basic inverted button">
+                            <i class="thumbs up outline icon"></i>
+                            Approve funds
+                        </div>
+                        <div id="wpsc-bid-with-token-go-button" class="ui green basic inverted button">
+                            <i class="hand point up outline icon"></i>
+                            Bid
+                        </div>
+                        <div id="wpsc-bid-token-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-bid-token-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buy with token -->
+            <div id="wpsc-buy-modal-token" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <div class="ui two steps">
+                        <div id="wpsc-buy-token-step-1" class="disabled step">
+                          <i class="thumbs up outline icon"></i>
+                            <div class="content">
+                                <div class="title">Step 1</div>
+                                <div class="">Approve funds</div>
+                            </div>
+                        </div>
+                        <div id="wpsc-buy-token-step-2" class="disabled step">
+                            <i class="handshake outline icon"></i>
+                            <div class="content">
+                                <div class="title">Step 2</div>
+                                <div class="">Buy</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="wpsc-buy-token-form" class="ui inverted form">
+                        <div class="three fields">
+                            <div class="field"></div>
+                            <div class="field">
+                                <label>Amount</label>
+                                <input id="wpsc-buy-token-amount" name="wpsc-buy-token-amount" type="text" readonly>
+                            </div>
+                            <div class="field"></div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-buy-token-message"></div>
+                    <div class="ui hidden divider"></div>
+                    <div class="actions">
+                        <div id="wpsc-approve-go-button" class="ui green basic inverted button">
+                            <i class="thumbs up outline icon"></i>
+                            Approve funds
+                        </div>
+                        <div id="wpsc-buy-with-token-go-button" class="ui green basic inverted button">
+                            <i class="handshake icon"></i>
+                            Buy
+                        </div>
+                        <div id="wpsc-buy-token-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-buy-token-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy -->
+            <div id="wpsc-buy-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular handshake inverted icon"></i>
+                        Buy
+                    </h2>
+                    <div id="wpsc-buy-form" class="ui inverted form">
+                        <div class="three fields">
+                            <div class="field"></div>
+                            <div class="field">
+                                <label>Amount</label>
+                                <input id="wpsc-buy-amount" name="wpsc-buy-amount" type="text" readonly>
+                            </div>
+                            <div class="field"></div>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div id="wpsc-nft-buy-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-buy-go-button" class="ui green basic inverted button">
+                            <i class="handshake icon"></i>
+                            Buy
+                        </div>
+                        <div id="wpsc-buy-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-buy-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finalize -->
+            <div id="wpsc-finalize-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="file outline icon"></i>
+                        Close Auction
+                    </h2>
+                    <div id="wpsc-nft-finalize-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-finalize-go-button" class="ui green basic inverted button">
+                            <i class="file outline icon"></i>
+                            Finalize
+                        </div>
+                        <div id="wpsc-finalize-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-finalize-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Withdraw Auction -->
+            <div id="wpsc-withdraw-modal" class="ui basic modal">
+                <div class="ui center aligned inverted segment">
+                    <h2 class="ui center aligned icon header">
+                        <i class="file outline icon"></i>
+                        Close Auction & Withdraw
+                    </h2>
+                    <div id="wpsc-nft-withdraw-message"></div>
+                    <div class="actions">
+                        <div id="wpsc-withdraw-go-button" class="ui green basic inverted button">
+                            <i class="file outline icon"></i>
+                            Withdraw
+                        </div>
+                        <div id="wpsc-withdraw-cancel-button" class="ui red basic cancel inverted button">
+                            <i class="remove icon"></i>
+                            Cancel
+                        </div>
+                    </div>
+                    <div id="wpsc-withdraw-progress" class="ui icon black message hidden">
+                        {{{nft-transfer-progress}}}
+                    </div>
+                </div>
+            </div>
+
+                </div>
+                <!-- / Right Column -->
+            </div>
+        </div>
+    </div>
+</div>

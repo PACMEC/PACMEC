@@ -1,0 +1,103 @@
+<div class="tile {{mediaclass}}">
+    {{#media}}
+    <div class="image-container">
+        {{{media}}}
+    </div>
+    {{/media}}
+
+    <div class="hover-info">
+        <div class="plus-icon"></div>
+        <div class="option">
+            <div class="option-icon view"></div>
+            <div class="option-text">View</div>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+<div class="modal-list {{mediaclass}}">
+    <div class="modal">
+        <div class="close-list-modal"></div>
+
+        <div class="modal-inner">
+
+            <div class="image-container">
+                {{{media}}}
+            </div>
+
+             <div class="modal-info">
+                {{#id}}
+                    <a href="{{nft_account_link}}" target="_blank" class="ui top right attached label">
+                        {{id}}
+                    </a>
+                {{/id}}
+
+                {{#author}}
+                <div class="profile">
+                    {{#author_avatar}}
+                        <img class="avatar" src="{{author_avatar}}">
+                    {{/author_avatar}}
+                    {{#author_external_url}}
+                    <a href="{{author_external_url}}">
+                    {{/author_external_url}}
+                    {{{author}}}
+                    {{#author_external_url}}
+                    </a>
+                    {{/author_external_url}}
+                    {{#author_account_short}}
+                        <div class="profile-short">
+                            <span>
+                                <a href="{{author_account_link}}" target="_blank">
+                                    {{author_account_short}} 
+                                </a>
+                            </span>                        
+                            <i class="copy icon" onclick="copyToClipboard('{{author_account}}', 'wpsc-author-{{nftid}}')"></i>
+                            <span id="wpsc-author-{{nftid}}"></span>
+                        </div>
+                    {{/author_account_short}}
+                </div>
+                {{/author}}
+
+                {{#title}}
+                <h2 class="modal-title">{{{title}}}</h2>
+                {{/title}}
+
+                {{#description}}
+                    <h3 class="desc-title">Description</h3>
+                    <p class="description">{{{description}}}</p>
+                {{/description}}
+
+                {{#category}}
+                <div class="main-info-top">
+                    <p>Category: <span class="highlighted"><a href="{{category_link}}" class="black-link">{{{category}}}</a></span></p>
+                </div>
+                {{/category}}
+
+                <div class="main-info-bottom">
+                    <div class="tag-container">
+                        {{#tags}}
+                        <div class="the-tag normal-tag">
+                            <a href="{{link}}"><span class="tag-main-text">{{{tag}}}</span></a>
+                        </div>
+                        {{/tags}}
+                    </div>
+                   
+                   {{#price_label}}
+                   <div class="price">
+                    {{price}}<div class="detail">{{{price_label}}}</div>
+                   </div>
+                   {{/price_label}}
+
+                </div>
+
+                <div class="theBtn">
+                    <a href="{{url}}" class="btn">
+                        See details
+                    </a>
+                </div>
+
+
+             </div>
+        </div>
+    </div>
+</div>  

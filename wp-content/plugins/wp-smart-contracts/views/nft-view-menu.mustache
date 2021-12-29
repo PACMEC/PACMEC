@@ -1,0 +1,18 @@
+<div class="ui stackable menu">
+    <div class="item wpsc-nft-hide-no-account">
+        <span class="ui image label">
+            <img id="wpsc-nft-my-account-img" class="ui mini circular image" src="" style="display: none;">
+            <span id="wpsc-nft-my-account-short"></span>
+            <div id="wpsc-nft-my-account-balance" class="detail"></div>
+        </span>
+    </div>
+    <a href="{{my-items-link}}" class="{{#my-items}}active{{/my-items}} item wpsc-nft-hide-no-account">My Items</a>
+    <a href="{{my-bids-link}}" class="{{#my-bids}}active{{/my-bids}} item wpsc-nft-hide-no-account">My Bids</a>
+    <div id="wpsc-nft-mint-button" class="right menu">
+        {{#edit-link}}
+        <a href="{{edit-link}}" class="{{#edit}}active{{/edit}} item">Edit</a>
+        {{/edit-link}}
+        <a href="{{mint-link}}" class="{{#mint}}active{{/mint}} item">Mint a new Item</a>
+    </div>
+</div>
+  

@@ -1,0 +1,35 @@
+
+div.main
+{
+    background: #FCFCFC;
+    border: 1px solid #D8D8D8;
+    margin: 20px;
+    padding: 10px 20px;
+    -moz-box-shadow: inset 0 1px 0 #fff;
+    -webkit-box-shadow: inset 0 1px 0 #fff;
+    box-shadow: inset 0 1px 0 #fff;
+    position: relative;
+}
+
+span.description {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#pl8app_addresses-ul a.deletion {
+    color: #F00;
+    padding: 2px 4px;
+    margin-left: 5px;
+}
+
+#pl8app_addresses-ul a.deletion:hover {
+    background:red;
+    color:#fff;
+    text-decoration:none
+}
+
+#pl8app_cryptocurrencies-ul li {
+    line-height: unset;
+    margin: 0px;
+}

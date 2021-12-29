@@ -1,0 +1,40 @@
+<span class="ui {{color}} image {{size}} label">
+  <img src="{{imgUrl}}{{type}}.png">
+  <span class="wpsc-capitalize">{{type}}</span>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="tag icon"></i>
+    {{{symbol_label}}} <div class="detail">{{wpsc_symbol}}</div>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="key icon"></i>
+    {{{name_label}}} <div class="detail">{{wpsc_name}}</div>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="percent icon"></i>
+    {{{commission_label}}} <div class="detail">{{wpsc_commission}}</div>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="ethereum icon"></i>
+    {{{wallet_label}}} <div class="detail">{{wpsc_wallet}}</div>
+</span>
+
+{{#wpsc_token}}
+<span class="ui {{color}} image {{size}} label">
+    <i class="ethereum icon"></i>
+    {{{token_label}}} <div class="detail">{{wpsc_token}}</div>
+</span>
+{{/wpsc_token}}
+
+{{#wpsc_anyone_can_mint}}
+<span class="ui {{color}} image {{size}} label">
+    <i class="tint icon"></i>
+    {{{anyone_label}}}
+</span>
+{{/wpsc_anyone_can_mint}}
+
+

@@ -1,0 +1,66 @@
+<div class="page-wrapper list-page">
+    <div class="page-wrapper-inner">
+        <input type="hidden" id="wpsc-contract-flavor" name="wpsc-contract-flavor" value="{{wpsc-contract-flavor}}">
+        <input type="hidden" id="wpsc-nft-marketplace-contract" name="wpsc-nft-marketplace-contract" value="{{wpsc-nft-marketplace-contract}}">
+        <input type="hidden" id="wpsc-collection-id" name="wpsc-collection-id" value="{{collection-id}}">
+        <input type="hidden" id="wpsc-nft-current-page" value="0">
+        <input type="hidden" id="wpsc-nft-items-per-page" value="{{nft-items-per-page}}">
+        <input type="hidden" id="wpsc-nft-option" value="{{wpsc-nft-option}}">
+        <input type="hidden" id="wpsc-nft-etherscan" value="{{etherscan}}">
+        <input type="hidden" id="wpsc-nft-params-nft-ids" value="{{wpsc-nft-params-nft-ids}}">
+        <input type="hidden" id="wpsc-nft-network" value="{{wpsc-nft-network}}">
+
+        <input type="hidden" id="wpsc-suika-token" value="">
+        <input type="hidden" id="wpsc-suika-token-decimals" value="">
+        <input type="hidden" id="wpsc-suika-token-symbol" value="">
+
+        <div id="wpsc-nft-my-items"></div>
+
+        
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <div id="content" class="site-content">
+                    <div class="the-list-container">
+
+                        {{{view-metamask}}}
+
+                        {{{nft-view-menu}}}
+
+                        <!-- Breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul class="breadcrumb-inner">
+                                <li><a href="{{collection-link}}" class="btn white-btn">{{{collection-name}}}</a></li>
+                                {{#breadcrumb-level2}}
+                                    <li>|</li>
+                                    <li><span class="selected-page">{{breadcrumb-level2}}</span></li>
+                                {{/breadcrumb-level2}}
+                            </ul>
+                        </div>
+                        
+
+                        <!-- list header -->
+                        {{#page-title}}
+                        <div class="list-header">
+                            <h2 class="list-title">{{{page-title}}}</h2>
+                            {{! <a href="#" class="view-all">View all</a> }}
+                        </div>
+                        {{/page-title}}
+
+                        <div id="wpsc-nft-generic-message"></div>
+
+                        {{{custom-title}}}
+
+                        <div id="wpsc-nft-items-container" class="the-list"></div>
+
+                        <div id="wpsc-nft-load-more" style="display: none;">
+                            <button class="btn">
+                                Load more
+                            </button>
+                        </div> 
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

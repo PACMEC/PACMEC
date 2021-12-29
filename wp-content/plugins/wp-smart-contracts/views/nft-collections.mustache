@@ -1,0 +1,28 @@
+<div class="ui basic container segment wpsc-nft-view">
+    <h1 class="ui dividing header">
+        NFT Collections
+    </h1>
+    <p>Choose the collection</p>
+    <div class="ui hidden divider"></div>
+    <div class="ui four cards">
+        {{#cards}}
+        <div class="card">
+        <div class="image">
+            <img src="{{img}}">
+        </div>
+        <div class="extra">
+            <a href="{{permalink}}">{{{post_title}}}</a>
+        </div>
+        </div>
+        {{/cards}}
+        {{^cards}}
+        <div class="ui info message">
+            <i class="close icon"></i>
+            <div class="header">
+            Error
+            </div>
+            <p>No collections found</p>
+        </div>
+        {{/cards}}
+    </div>
+</div>

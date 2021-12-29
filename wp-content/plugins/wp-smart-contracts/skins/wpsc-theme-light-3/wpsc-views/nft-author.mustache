@@ -1,0 +1,28 @@
+<div class="ui unstackable items author-style">
+    <div class="item">
+      {{#avatar}}
+      <div class="image">
+        <img class="ui avatar image" src="{{avatar}}">
+      </div>
+      {{/avatar}}
+      <div class="content">
+        <h3 class="ui dividing header">
+            @{{{display_name}}}
+        </h3>
+        <div class="description">
+          <p>{{{description}}}</p>
+        </div>
+        <div class="extra">
+            {{#user_url}}
+            <p>
+                <a href="{{user_url}}" target="_blank">
+                    <i class="external icon"></i>
+                    {{user_url}}
+                </a>
+            </p>
+            {{/user_url}}
+            <p>Joined in {{{user_registered}}}</p>
+        </div>
+      </div>
+    </div>
+</div>

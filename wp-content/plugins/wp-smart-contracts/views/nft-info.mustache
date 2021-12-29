@@ -1,0 +1,50 @@
+<span class="ui {{color}} image {{size}} label">
+  <img src="{{imgUrl}}{{type}}.png">
+  <span class="wpsc-capitalize">{{type}}</span>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="tag icon"></i>
+    {{{symbol_label}}} <div class="detail">{{wpsc_symbol}}</div>
+</span>
+
+<span class="ui {{color}} image {{size}} label">
+    <i class="key icon"></i>
+    {{{name_label}}} <div class="detail">{{wpsc_name}}</div>
+</span>
+
+{{#is_matcha}}
+    <span class="ui {{color}} image {{size}} label">
+        <i class="percent icon"></i>
+        {{{commission_label}}} <div class="detail">{{wpsc_commission}}</div>
+    </span>
+
+    <span class="ui {{color}} image {{size}} label">
+        <i class="ethereum icon"></i>
+        {{{wallet_label}}} <div class="detail">{{wpsc_wallet}}</div>
+    </span>
+{{/is_matcha}}
+
+{{#is_suika}}
+    <span class="ui {{color}} image {{size}} label">
+        <i class="percent icon"></i>
+        {{{commission_label}}} <div class="detail">{{wpsc_commission}}</div>
+    </span>
+
+    <span class="ui {{color}} image {{size}} label">
+        <i class="ethereum icon"></i>
+        {{{wallet_label}}} <div class="detail">{{wpsc_wallet}}</div>
+    </span>
+
+    <span class="ui {{color}} image {{size}} label">
+        <i class="percent icon"></i>
+        {{{royalties_label}}} <div class="detail">{{wpsc_royalties}}</div>
+    </span>
+
+    <span class="ui {{color}} image {{size}} label">
+        <i class="ethereum icon"></i>
+        {{{token_label}}} <div class="detail">{{wpsc_token}}</div>
+    </span>
+{{/is_suika}}
+
+

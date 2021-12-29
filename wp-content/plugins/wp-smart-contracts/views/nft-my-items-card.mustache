@@ -1,0 +1,66 @@
+<div class="ui card">
+    <div class="content">
+        {{#category}}
+        <a href="{{category_link}}" class="ui teal ribbon label">{{{category}}}</a>
+        {{/category}}
+        {{#id}}
+        <a href="{{nft_account_link}}" target="_blank" class="ui top right attached label">
+            {{id}}
+        </a>
+        {{/id}}
+        <div class="ui hidden divider"></div>
+        {{#title}}
+        <span class="header">
+            {{{title}}}
+        </span>
+        {{/title}}
+        <div class="meta">
+            {{#tags}}
+                <a href="{{link}}">{{{tag}}}</a>
+            {{/tags}}
+        </div>
+    </div>
+    {{#media}}
+    <div class="wpsc-nft-media-grid">
+        {{{media}}}
+    </div>
+    {{/media}}
+
+    <div class="content description">
+        {{{description}}}
+    </div>
+
+    {{#author}}
+    <div class="content">
+        {{#author_account_short}}
+        <div class="right floated meta">
+            <a href="{{author_account_link}}" target="_blank">
+                {{author_account_short}} 
+            </a>
+            <i class="copy icon" onclick="copyToClipboard('{{author_account}}', 'wpsc-author-{{nftid}}')"></i>
+            <span id="wpsc-author-{{nftid}}"></span>
+        </div>
+        {{/author_account_short}}
+        {{#author_avatar}}
+            <img class="ui avatar image" src="{{author_avatar}}">
+        {{/author_avatar}}
+        {{#author_external_url}}
+        <a href="{{author_external_url}}">
+        {{/author_external_url}}
+        {{{author}}}
+        {{#author_external_url}}
+        </a>
+        {{/author_external_url}}
+    </div>
+    {{/author}}
+    {{#price_label}}
+    <div class="extra content">
+        <span class="ui tag label centered" style="float: right;">
+            {{price}}<div class="detail">{{{price_label}}}</div>
+        </span>
+    </div>
+    {{/price_label}}
+    <a href="{{url}}" class="ui bottom attached button">
+        <i class="eye icon"></i>View
+    </a>
+</div>

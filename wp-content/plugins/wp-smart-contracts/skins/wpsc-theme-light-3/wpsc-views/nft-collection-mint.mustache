@@ -1,0 +1,218 @@
+<style>
+.ui.compact.selection.dropdown {
+  width: 50%!important;
+}
+embed, iframe, object, video {
+    max-width: 100%!important;
+}
+</style>
+
+<div class="page-wrapper">
+
+    <div class="ui basic container segment">
+
+        <input type="hidden" id="wpsc-nft-network" name="wpsc-nft-network" value="{{wpsc-nft-network}}">
+
+        {{{view-metamask}}}
+
+        {{{nft-view-menu}}}
+
+        <div class="ui segment">
+
+            <div class="ui grid" id="wpsc-nft-view" >
+                <div class="ten wide column">
+                    <h1 class="ui dividing header">
+                        Item editor
+                    </h1>        
+                    <form class="ui form">
+
+                        <input type="hidden" id="wpsc-contract-flavor" name="wpsc-contract-flavor" value="{{wpsc-contract-flavor}}">
+                        <input type="hidden" id="wpsc-nft-marketplace-contract" name="wpsc-nft-marketplace-contract" value="{{wpsc-nft-marketplace-contract}}">
+                        <input type="hidden" id="wpsc-block-explorer-network" name="wpsc-block-explorer-network" value="{{wpsc-block-explorer-network}}">
+                        <input type="hidden" id="wpsc-nft-token-uri" name="wpsc-nft-token-uri" value="{{wpsc_nft_token_uri}}">
+                        
+                        <input type="hidden" id="wpsc-suika-token" value="">
+                        <input type="hidden" id="wpsc-suika-token-decimals" value="">
+                        <input type="hidden" id="wpsc-suika-token-symbol" value="">
+    
+                        <input type="hidden" id="wpsc-nft-id" name="wpsc-nft-id" value="{{nft-id}}">
+                        <input type="hidden" id="wpsc-nft-media-json" name="wpsc-nft-media-json" value="{{wpsc_nft_media_json}}">
+                        <input type="hidden" id="wpsc-collection-id" name="wpsc-collection-id" value="{{collection-id}}">
+                        <div class="field">
+                            <label>Title</label>
+                            <input id="wpsc-title" type="text" name="title" value="{{{post_title}}}">
+                        </div>
+                        <div class="field">
+                            <label>Description</label>
+                            <textarea id="wpsc-description" name="description">{{{post_content}}}</textarea>
+                        </div>
+                        <div class="field">
+                            <label>Categories</label>
+                            <select id="wpsc-categories" class="ui fluid search dropdown" multiple="">
+                            {{#taxs}}
+                            <option value="{{term_id}}" {{#selected}}selected{{/selected}}>{{{name}}}</option>
+                            {{/taxs}}
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Attributes</label>
+                            <select id="wpsc-tags" class="ui fluid search dropdown" multiple="">
+                            {{#tags}}
+                            <option value="{{term_id}}" {{#selected}}selected{{/selected}}>{{{name}}}</option>
+                            {{/tags}}
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>
+                                Custom attributes (comma separated)
+                                <span class="ui icon showfluid"><i class="small help icon circular"></i></span>
+                                <div class="ui flowing popup top left transition hidden">
+                                    <p>Not seeing the attributes you are looking for?</p>
+                                    <p>Add them on a comma separated list here. You can add up to 10 attributes.</p>
+                                </div>
+                            </label>
+                            <input id="wpsc-custom-atts" type="text" name="custom-atts">
+                        </div>
+                        <div class="field">
+                            <label>
+                                Media
+                                <span class="ui icon showfluid"><i class="small help icon circular"></i></span>
+                                <div class="ui flowing popup top left transition hidden">
+                                    <p>Do you want to sell a picture, audio or video? add your media file here.</p>
+                                    <div class="ui tiny list">
+                                        <span class="item">
+                                        <i class="angle double right icon"></i>
+                                        <div class="content">
+                                            <div class="header">Image</div>
+                                            <div class="description">An image is a unique file like a piece of art, a picture, profile, etc. Formats are .png, .jpg or .gif</div>
+                                        </div>
+                                        </span>
+                                        <span class="item">
+                                        <i class="angle double right  icon"></i>
+                                        <div class="content">
+                                            <div class="header">Video</div>
+                                            <div class="description">Is a recording, animation, short movie, etc. For videos you can choose multiple files, but all files should correspond to same asset with different format, i.e. .mp4 and .ogv. This is because some video formats are more suitable than others on different devices.</div>
+                                        </div>
+                                        </span>
+                                        <span class="item">
+                                        <i class="angle double right  icon"></i>
+                                        <div class="content">
+                                            <div class="header">Audio</div>
+                                            <div class="description">A song, podcast, effects, etc. You can choose multiple files, but all files should correspond to same asset, i.e. .mp3 and .ogg.</div>
+                                        </div>
+                                        </span>
+                                        <span class="item">
+                                        <i class="angle double right  icon"></i>
+                                        <div class="content">
+                                            <div class="header">Documents</div>
+                                            <div class="description">This is a unique file that correspond to a property, license, loan, debt or any other document you need.</div>
+                                        </div>
+                                        </span>
+                                    </div>    
+                                </div>    
+                            </label>
+                            <select id="wpsc-media-type" name="wpsc-media-type" class="ui compact selection dropdown">
+                                <option value="none" {{#wpsc_media_type_image}}selected{{/wpsc_media_type_image}}>Choose your media type</option>
+                                <option value="image" {{#wpsc_media_type_image}}selected{{/wpsc_media_type_image}}>Image</option>
+                                <option value="video" {{#wpsc_media_type_video}}selected{{/wpsc_media_type_video}}>Video</option>
+                                <option value="audio" {{#wpsc_media_type_audio}}selected{{/wpsc_media_type_audio}}>Audio</option>
+                                <option value="document" {{#wpsc_media_type_document}}selected{{/wpsc_media_type_document}}>Document</option>
+                            </select>    
+                            <a href="#" class="ui button" id="nft-add-media">Add media</a>
+
+                            <div class="ui divider"></div>
+
+                        </div>
+
+                        <div class="field">
+                            <label>
+                                Recipient
+                                <span class="ui icon showfluid"><i class="small help icon circular"></i></span>
+                                <div class="ui flowing popup transition hidden">
+                                    This will be the owner of the item created
+                                </div>        
+                            </label>
+                            <div class="ui action input">
+                                <input id="wpsc-nft-owner" name="wpsc-nft-owner" type="text" placeholder="0x..." value="{{wpsc_nft_owner}}">    
+                                <button class="ui button wpsc-open-qr-scanner" data-input-name="wpsc-nft-owner">Scan</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button id="save-nft-item" class="ui button" type="submit" data-modal="wpsc-mint-modal">Save & Mint</button>
+                        </div>
+
+                        <div class="ui divider"></div>
+
+                        <div class="ui container">
+                            <div id="wpsc-result-message-container" class="ui warning message">
+                                <i class="close icon"></i>
+                                <p>
+                                    <div id="wpsc-result-message"></div>
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="six wide column">
+                    <div  id="wpsc-nft-media-preview" class="ui sticky">
+                        <div id="wpsc-nft-media-preview-media-real"></div>
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+
+    </div>
+
+    <script>
+    jQuery('.ui.dropdown').dropdown();
+    jQuery('.message .close')
+    .on('click', function() {
+        jQuery("#wpsc-result-message-container").fadeOut(500);
+    })
+    ;
+    </script>
+
+    <div id="wpsc-mint-modal" class="ui basic modal">
+
+        <div class="ui center aligned inverted segment">
+
+            <h3 class="ui header">
+                <img src="{{mint-icon}}" class="ui image">
+                {{{mint}}}
+            </h3>
+
+            <p>{{{mint-tooltip}}}</p>
+
+            <div id="wpsc-wallet-mint-account-message"></div>
+
+            <div class="ui hidden divider"></div>
+
+            <div class="actions">
+                <button id="wpsc-mint" class="ui green basic inverted button">
+                    <i class="tint icon"></i>{{{mint}}}
+                </button>
+                <div id="wpsc-wallet-mint-cancel-button" class="ui red basic cancel inverted button">
+                    <i class="remove icon"></i>
+                    {{{cancel}}}
+                </div>
+            </div>
+
+            <div id="wpsc-progress-mint" class="ui icon black message hidden">
+                <div class="content">
+                    <div class="header">
+                        {{{tx-in-progress}}}
+                    </div>
+                    <p class="wpsc-small">
+                        <img class="ui mini left floated image" src="{{deploy-icon}}">
+                        {{{click-confirm}}} {{{please-patience}}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

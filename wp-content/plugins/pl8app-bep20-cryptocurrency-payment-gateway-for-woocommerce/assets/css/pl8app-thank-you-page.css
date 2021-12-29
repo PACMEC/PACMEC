@@ -1,0 +1,46 @@
+span.all-copy {
+	-webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+span.no-copy {
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.qr-code-container {
+	background-color: #ffffff;
+	padding:8px;
+}
+.clipboard:before {
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip{
+    font-size: 10px;
+    background-color:#333;
+    color:#fff;
+    padding:5px;
+    border-radius:5px;
+}
+
+.Pay-metamask-button {
+    width: 186px;
+    height: 52px;
+    background-size: 100%;
+    background-image: url('../img/1_pay_mm_off.png');
+    cursor: pointer;
+}
+
+.Pay-metamask-button:hover {
+    background-image: url('../img/1_pay_mm_over.png');
+}
+
+.Pay-metamask-button:active {
+    background-image: url('../img/1_pay_mm_off.png');
+}

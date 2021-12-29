@@ -1,0 +1,178 @@
+          <input type="hidden" name="wpsc-readonly" value="1">
+          <div class="wpsc">
+            <div class="ui inverted segment">
+              <div class="ui inverted segment">
+                <h1 class="ui header">
+                  <i class="circle icon"></i>
+                  {{{smart-contract}}}
+                </h1>
+                <button class="ui grey button right floated">{{{learn-more}}}</button>
+                <p>{{{smart-contract-desc}}}</p>
+              </div>
+            </div>
+
+            <!-- This section is going to be shown when a contract was deployed -->
+            <div class="ui secondary segment center aligned">
+              <h3 class="ui dividing header left aligned">
+                <div class="content">{{{token-data}}}</div>
+              </h3>
+
+              <div class="ui segment center aligned">
+
+                <img class="ui centered rounded image" src="{{{wpsc_nft_id_blockie}}}">
+
+                <div class="ui centered grey card">
+
+                  <div class="content">
+
+                    <div class="ui small {{{color}}} label fluid">
+                      <i class="{{{icon}}} icon"></i>{{{network_val}}}
+                    </div>
+
+                    <div class="ui divider"></div>
+
+                    <span class="ui circular massive label">
+                      # {{{wpsc_nft_id}}}
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <div class="wpsc-address" id="wpscTokenIDDiv">
+                  <div class="ui labeled button" tabindex="0">
+                    <div class="ui button" onclick="copyToClipboard('{{etherscan}}token/{{wpsc_collection_contract}}?a={{wpsc_nft_id}}', 'wpscTokenIDDiv')">
+                      <span class="desktop-only">
+                        <i class="ethereum icon"></i>
+                        {{{token-id}}}
+                      </span>
+                      <span class="no-desktop">
+                        <i class="ethereum icon"></i>
+                      </span>
+                    </div>
+                    <span class="ui basic left pointing label">
+                      <a href="javascript:void(0);" onclick="copyToClipboard('{{etherscan}}token/{{wpsc_collection_contract}}?a={{wpsc_nft_id}}', 'wpscTokenIDDiv')"><i class="icon copy"></i></a>
+                      <a href="{{etherscan}}token/{{wpsc_collection_contract}}?a={{wpsc_nft_id}}" target="_blank">
+                        <span class="big-desktop-only">
+                          {{wpsc_collection_contract}}?a={{wpsc_nft_id}}
+                          <i class="icon external alternate"></i>
+                        </span>
+                        <span class="no-big-desktop">
+                          {{wpsc_collection_contract_short}}?a={{wpsc_nft_id}}
+                        </span>        
+                      </a>
+                    </span>
+                  </div>
+                </div>
+
+                <br/>
+
+                <div class="wpsc-address" id="wpscTokenIDDiv">
+                  <div class="ui labeled button" tabindex="0">
+                    <div class="ui button">
+                      <span>
+                        <img src="{{collection-icon}}" style="vertical-align: bottom;">
+                        {{{collection}}}
+                      </span>
+                    </div>
+                    <span class="ui basic left pointing label">
+                      <a href="{{{collection-link}}}">
+                        <span>
+                          {{collection-name}}
+                        </span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="ui dividing header left aligned">
+                <div class="content">{{{item-creator}}}</div>
+              </h3>
+
+              <div class="ui segment center aligned">
+                <div class="wpsc-address-owner" id="wpscOwnerDiv">
+                  <img class="wpscBlockies" src="{{{wpsc_creator_blockie}}}">
+                  <br/>
+                  <div class="ui labeled button" tabindex="0">
+                    <div class="ui button" onclick="copyToClipboard('{{wpsc_creator}}', 'wpscOwnerDiv')">
+
+                      <span class="desktop-only">
+                        <i class="user icon"></i>
+                        {{{owner-text}}}
+                      </span>
+                      <span class="no-desktop">
+                        <i class="user icon"></i>
+                      </span>
+
+                    </div>
+                    <span class="ui basic left pointing label">
+                      <a href="javascript:void(0);" onclick="copyToClipboard('{{wpsc_creator}}', 'wpscOwnerDiv')"><i class="icon copy"></i></a>
+                      <a href="{{etherscan}}address/{{wpsc_creator}}" target="_blank">
+                        <span class="big-desktop-only">
+                          {{wpsc_creator}}
+                          <i class="icon external alternate"></i>
+                        </span>
+                        <span class="no-big-desktop">{{wpsc_creator-short}}</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="ui divider"></div>
+
+                <div class="wpsc-address-txid" id="wpscTxIdDiv">
+                  <div class="ui labeled button" tabindex="0">
+                    <div class="ui button"  onclick="copyToClipboard('{{wpsc_txid}}', 'wpscTxIdDiv')">
+                      <span class="desktop-only">
+                        <i class="pencil icon"></i>
+                        {{{txid-text}}}
+                      </span>
+                      <span class="no-desktop">
+                        <i class="pencil icon"></i>
+                      </span>
+                    </div>
+                    <span class="ui basic left pointing label">
+                      <a href="javascript:void(0);" onclick="copyToClipboard('{{wpsc_txid}}', 'wpscTxIdDiv')"><i class="icon copy"></i></a>
+                      <a href="{{etherscan}}tx/{{wpsc_txid}}" target="_blank">
+                        <span class="big-desktop-only">
+                          {{wpsc_txid}}
+                          <i class="icon external alternate"></i>
+                        </span>
+                        <span class="no-big-desktop">{{txid-short}}</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="ui dividing header left aligned">
+                <div class="content">{{{token-uri-endpoint}}}</div>
+              </h3>
+
+              <div class="ui segment center aligned">
+
+                <pre class="wpsc-code prettyprint">{{{endpoint-json}}}</pre> 
+
+                <div class="ui divider"></div>
+
+                <div id="wpsc_abi_div">
+                  <a href="javascript:void(0);" class="ui tiny button" onclick="copyToClipboard('{{endpoint}}', 'wpsc_abi_div')">
+                    <i class="copy icon"></i>
+                    {{{endpoint-label}}}
+                  </a>
+                  <span class="wpsc-small">
+                    <a href="{{endpoint}}" target="_blank">
+                      {{endpoint}}
+                      <i class="external icon"></i>
+                    </a>
+                  </span>
+               </div>
+
+              </div>
+
+
+            </div>
+          </div>

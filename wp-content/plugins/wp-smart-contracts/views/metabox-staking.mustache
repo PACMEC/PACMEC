@@ -1,0 +1,320 @@
+          <input id="tmpTx" type="hidden">
+          <input id="tmpNewNft" type="hidden">
+          <input id="tmpDefAcc" type="hidden">
+          <input id="tmpNetVer" type="hidden">
+
+          <input id="wpsc-name" name="wpsc-name" type="hidden" value="{{wpsc_name}}">
+          <input id="wpsc-symbol" name="wpsc-symbol" type="hidden" value="{{wpsc_symbol}}">
+          <input id="wpsc-decimals" name="wpsc-decimals" type="hidden" value="{{wpsc_decimals}}">
+
+          <input type="hidden" id="wpsc-name2"      name="wpsc-name2"     value="{{wpsc_name2}}">
+          <input type="hidden" id="wpsc-symbol2"    name="wpsc-symbol2"   value="{{wpsc_symbol2}}">
+          <input type="hidden" id="wpsc-decimals2"  name="wpsc-decimals2" value="{{wpsc_decimals2}}">
+      
+          <div class="wpsc">
+            <input type="hidden" id="wpsc-change">
+            {{#readonly}}
+              <input type="hidden" name="wpsc-readonly" value="true">
+              <input type="hidden" name="wpsc-readonly-stake" value="true">
+              {{{ico-info}}}
+            {{/readonly}}
+            <div class="ui inverted segment">
+              <div class="ui inverted segment">
+                <h1 class="ui header">
+                  <i class="settings icon"></i>
+                  {{{nft-spec}}}
+                </h1>
+                <a class="ui grey button right floated" href="https://wpsmartcontracts.com/docs/" target="_blank">
+                  {{{learn-more}}}
+                </a>
+                <p>{{{nft-spec-desc}}}</p>
+              </div>
+            </div>
+            <div class="ui secondary segment">
+              <div class="grouped fields">
+                <h3 class="ui dividing header">{{{flavor}}}</h3>
+                <div class="ui stackable two column grid">
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-grape}}}">
+                      <h3 class="ui dividing header">{{{nft-marketplace-auction}}}</h3>
+                      <p>{{{nft-marketplace-auction-desc}}}</p>
+                      <h5 class="ui dividing header">{{{features}}}</h5>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{ownable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{ownable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{transferable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{transferable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-mintable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-mintable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <div class="ui fitted toggle checkbox">
+                        <input tabindex="0" type="radio" name="wpsc-flavor" id="wpsc-ube" class="wpsc-radio-ico" value="ube"
+                          {{{wpsc-flavor}}}
+                          checked="checked"
+                          {{#readonly}}readonly disabled="disabled"{{/readonly}}
+                        >
+                        <label></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column" id="wpsc-flavor-last-column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-custom}}}">
+                      <h3 class="ui dividing header">{{{erc-20-custom}}}</h3>
+                      <p>{{{custom-message}}}</p>
+                      <p><a href="https://wpsmartcontracts.com/contact-us" target="_blank" class="ui blue button">{{{contact-us}}}</a></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <div class="ui secondary segment">
+              <h3 class="ui dividing header">
+                {{{stake-options}}}
+                <div class="sub header">
+                  {{{stake-options-desc}}}
+                </div>
+              </h3>
+              <div class="ui stackable two column grid">
+
+                {{^is_almond}}
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        {{{token}}}
+                        <div class="sub header">
+                        {{{token-desc}}}
+                        <span class="ui icon" data-tooltip="{{{token-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                        <div class="ui warning mini message">
+                          <div class="header">
+                            Warning!
+                          </div>
+                          <div class="ui bulleted list">
+                            <div class="item">You must use a valid ERC-20 or BEP-20 compliant token or equivalent on the network of your choice</div>
+                            <div class="item">Are you using a reflection token? If so, you must exclude the stake contract in your reflection token</div>
+                            <div class="item">This is a one time setting, you will not be able to change this setting later</div>
+                          </div>
+                        </div>
+                      </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-token-div">
+                      <input name="wpsc-token" type="text" value="{{{wpsc_token}}}" {{#readonly}}readonly{{/readonly}}>
+                      <i class="ethereum icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        {{{apy}}}
+                        <div class="sub header">
+                        {{{apy-desc}}}
+                        <span class="ui icon" data-tooltip="{{{apy-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-apy-div">
+                      <input name="wpsc-apy-before" type="hidden" value="{{{wpsc_apy}}}">
+                      <input name="wpsc-apy" type="text" value="{{{wpsc_apy}}}">
+                      <i class="percent icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        {{{mst}}}
+                        <div class="sub header">
+                        {{{mst-desc}}}
+                        <span class="ui icon" data-tooltip="{{{mst-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-mst-div">
+
+                      <input name="wpsc-mst-before" type="hidden" value="{{{wpsc_mst}}}">
+                      <input name="wpsc-mst" type="text" value="{{{wpsc_mst}}}">
+
+                      <i class="hourglass start icon"></i>
+                    </div>
+                  </div>
+
+                {{/is_almond}}
+
+                {{#is_almond}}
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        {{{token}}}
+                        <div class="sub header">
+                        {{{token-desc}}}
+                        <span class="ui icon" data-tooltip="{{{token-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                        <div class="ui warning mini message">
+                          <div class="header">
+                            Warning!
+                          </div>
+                          <div class="ui bulleted list">
+                            <div class="item">You must use a valid ERC-20 or BEP-20 compliant token or equivalent on the network of your choice</div>
+                            <div class="item">Are you using a reflection token? If so, you must exclude the stake contract in your reflection token</div>
+                            <div class="item">This is a one time setting, you will not be able to change this setting later</div>
+                          </div>
+                        </div>
+                      </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-token-div">
+                      <input name="wpsc-token-before" type="hidden" value="{{{wpsc_token}}}" readonly>
+                      <input name="wpsc-token" type="text" value="{{{wpsc_token}}}">
+                      <i class="ethereum icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        Secondary Token
+                        <div class="sub header">
+                        Token to gain interest
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-mst-div">
+                      <input name="wpsc-token2-before" type="hidden" value="{{{wpsc_token2}}}">
+                      <input name="wpsc-token2" type="text" value="{{{wpsc_token2}}}">
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        APY Staking Token
+                        <div class="sub header">
+                        Interest rate for first token
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-mst-div">
+                      <input name="wpsc_apy-before" type="hidden" value="{{{wpsc_apy}}}">
+                      <input name="wpsc-apy" type="text" value="{{{wpsc_apy}}}">
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        APY Secondary Token
+                        <div class="sub header">
+                        Interest rate for secondary token
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-mst-div">
+                      <input name="wpsc_apy2-before" type="hidden" value="{{{wpsc_apy2}}}">
+                      <input name="wpsc-apy2" type="text" value="{{{wpsc_apy2}}}">
+                    </div>
+                  </div>
+
+<!--
+                    <div class="column">
+                    <h4 class="ui header">
+                        Ratio of Token 1 : Token 2
+                        <div class="sub header">
+                        Example: 1:10 ratio
+                        </div>
+                    </h4>
+                    <div class="ui input" id="wpsc-mst-div">
+-->
+                      <input name="wpsc-ratio1-before" type="hidden" value="{{{wpsc_ratio1}}}">
+                      <input name="wpsc-ratio1" type="hidden" value="{{{wpsc_ratio1}}}"> 
+                      <!-- <span style="font-size: 28px;padding: 10px;">:</span> -->
+                      <input name="wpsc-ratio2-before" type="hidden" value="{{{wpsc_ratio2}}}">
+                      <input name="wpsc-ratio2" type="hidden" value="{{{wpsc_ratio2}}}">
+<!--
+                    </div>
+                  </div>
+-->
+
+                  <div class="column">
+                    <h4 class="ui header">
+                        {{{mst}}}
+                        <div class="sub header">
+                        {{{mst-desc}}}
+                        <span class="ui icon" data-tooltip="{{{mst-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                        </div>
+                    </h4>
+                    <div class="ui fluid icon input" id="wpsc-mst-div">
+
+                      <input name="wpsc-mst-before" type="hidden" value="{{{wpsc_mst}}}">
+                      <input name="wpsc-mst" type="text" value="{{{wpsc_mst}}}">
+
+                      <i class="hourglass start icon"></i>
+                    </div>
+                  </div>
+
+                {{/is_almond}}
+
+                <div class="column">
+                  <h4 class="ui header">
+                      {{{penalty}}}
+                      <div class="sub header">
+                      {{{penalty-desc}}}
+                      <span class="ui icon" data-tooltip="{{{penalty-desc-tooltip}}}"></i>
+                        <i class="small help icon circular"></i>
+                      </span>
+                      </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-penalty-div">
+                    <input name="wpsc-penalty-before" type="hidden" value="{{{wpsc_penalty}}}">
+                    <input name="wpsc-penalty" type="text" value="{{{wpsc_penalty}}}">
+                    <i class="percent icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                      {{{minimum}}}
+                      <div class="sub header">
+                      {{{minimum-desc}}}
+                      </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-minimum-div">
+                    <input name="wpsc-minimum-before" type="hidden" value="{{{wpsc_minimum}}}">
+                    <input name="wpsc-minimum" type="text" value="{{{wpsc_minimum}}}">
+                    <i class="hand lizard outline icon"></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+<div id="wpsc-update-modal" class="ui modal">
+  <div class="ui inverted segment">
+    <div class="ui center aligned icon header">
+      <div class="ui big image">
+        <img src="http://localhost/wpsc/wp-content/plugins/wp-smart-contracts/assets/img/deploy-identicon.gif">
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui sub header" style="color: white;">Smart Contract Update</div>
+      <div class="ui divider"></div>
+      <p>If you agree and wish to proceed, please click "CONFIRM" transaction in the Metamask Window, otherwise click "REJECT".</p>
+      <p>Please be patient. It can take several minutes. Don't close or reload this window.</p>
+    </div>
+  </div>
+</div>

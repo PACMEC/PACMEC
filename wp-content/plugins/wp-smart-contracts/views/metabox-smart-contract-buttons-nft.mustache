@@ -1,0 +1,141 @@
+<div class="wpsc">
+
+  <input type="hidden" id="wpsc-collection-contract" name="wpsc-collection-contract">
+  <input type="hidden" id="wpsc-network" name="wpsc-network">
+  <input type="hidden" id="wpsc-txid" name="wpsc-txid">
+  <input type="hidden" id="wpsc-creator" name="wpsc-creator">
+  <input type="hidden" id="wpsc-creator-blockie" name="wpsc-creator-blockie">
+  <input type="hidden" id="wpsc-nft-id" name="wpsc-nft-id">
+  <input type="hidden" id="wpsc-nft-id-blockie" name="wpsc-nft-id-blockie">
+  <input type="hidden" id="wpsc-nft-url" name="wpsc-nft-url">
+
+  <div class="ui inverted segment">
+    <div class="ui inverted segment">
+      <h1 class="ui header">
+        <i class="circle icon"></i>
+        {{{smart-contract}}}
+      </h1>
+      <a class="ui grey button right floated" href="https://wpsmartcontracts.com/docs/" target="_blank">
+        {{{learn-more}}}
+      </a>
+      <p>{{{smart-contract-desc}}}</p>
+    </div>
+  </div>
+
+  <div class="ui secondary segment ">
+    <div class="ui stackable two column grid">
+      <div class="column" id="wpsc-item-collection-div">
+        <h3 class="ui dividing header">{{{collection-smart-contract}}}</h3>
+        <h4 class="ui header">
+          <div class="sub header">
+            {{{select-collection}}}
+            {{{choose-collection-tooltip}}}
+          </div>
+        </h4>
+        <input type="hidden" name="wpsc-nft-endpoint" id="wpsc-nft-endpoint" value="{{wpsc-nft-endpoint}}">
+        <input type="hidden" name="wpsc-nft-post-id" id="wpsc-nft-post-id" value="{{wpsc-nft-post-id}}">
+        <select id="wpsc-item-collection" name="wpsc-item-collection" class="ui selection dropdown">
+            <option value="0">{{{choose-collection}}}</option>
+            {{#collections}}
+            <option value="{{ID}}" data-contract="{{deployed}}" data-network="{{network}}" {{^deployed}}disabled{{/deployed}} {{#selected}}selected{{/selected}}>{{{post_title}}} {{^deployed}}(Not deployed){{/deployed}}</option>
+            {{/collections}}
+        </select>
+      </div>
+      <div class="column">
+        <h3 class="ui dividing header">{{{recipient}}}</h3>
+        <h4 class="ui header">
+          <div class="sub header">
+            {{{select-owner}}}
+            {{{recipient-tooltip}}}
+          </div>
+        </h4>
+        <div class="ui fluid icon input" id="wpsc-nft-owner-div">
+            <input id="wpsc-nft-owner" name="wpsc-nft-owner" type="text" value="{{{wpsc_nft_owner}}}">
+            <i class="ethereum icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ui basic segment deployer-connect-with-metamask-div" style="display: none;">
+
+    <p>
+      <img src="{{fox}}" class="ui small left floated image">
+      {{{text}}}
+    </p>
+    <a class="ui big blue button" id="connect-metamask-in-admin">
+      {{{connect-to-metamask}}}
+    </a>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+  </div>
+
+  <div class="ui stackable grid">
+    <div class="eight wide column">
+       <div id="wpsc-mint-nft-item" class="ui placeholder segment" style="">
+          <div class="ui one column center aligned grid">
+             <div class="middle aligned row">
+                <div class="column">
+                   <div class="ui icon header">
+                      Mint your Item to the Blockchain
+                   </div>
+                   <p>
+                      <span id="wpsc-selected-evm"></span>
+                   </p>
+                   <div class="ui hidden divider"></div>
+                   <button id="wpsc-deploy-contract-button-nft-item" class="ui labeled icon green button big">
+                   <i class="cloud upload icon"></i>
+                   Mint
+                   </button>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+
+ </div>
+
+  <div id="wpsc-deploy-contract" class="ui basic modal">
+
+    <span id="wpsc-deploy-contract-image"></span>
+    <h4 class="ui header">
+      <i class="tint icon"></i>
+      <div class="content">
+        {{{ethereum-deploy}}}
+        <span id="wpsc-deployer-ethereum-network" class="ui label"></span>
+      </div>
+      <span id="wpsc-nft-information" class="ui inverted header centered"></span>
+    </h4>
+
+    <div id="wpsc-deployer-warning"></div>
+
+    <div id="wpsc-nft-mint-div">
+
+      <div class="ui icon warning message">
+        <i class="warning sign icon"></i>
+        <div class="content">
+          <div class="header">
+            {{{warning-2}}}
+          </div>
+          <p>{{{warning-1}}}</p>
+        </div>
+      </div>
+
+      <h3 class="ui inverted header">{{{warning-3}}}</h3>
+
+    </div>
+
+    <div class="actions">
+      <div id="wpsc-deploy-cancel-button" class="ui red basic cancel inverted button">
+        <i class="remove icon"></i>{{{no-letme-check}}}</div>
+      <div id="wpsc-deploy-ok-mint" class="ui green inverted button" data-type="nft-collection">
+        <i class="checkmark icon"></i>
+        {{{yes-proceed}}}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

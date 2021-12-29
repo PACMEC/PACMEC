@@ -1,0 +1,61 @@
+<input type="hidden" id="wpsc-contract-flavor" name="wpsc-contract-flavor" value="{{wpsc-contract-flavor}}">
+<input type="hidden" id="wpsc-nft-marketplace-contract" name="wpsc-nft-marketplace-contract" value="{{wpsc-nft-marketplace-contract}}">
+<input type="hidden" id="wpsc-collection-id" name="wpsc-collection-id" value="{{collection-id}}">
+<input type="hidden" id="wpsc-nft-current-page" value="0">
+<input type="hidden" id="wpsc-nft-items-per-page" value="{{nft-items-per-page}}">
+<input type="hidden" id="wpsc-nft-option" value="{{wpsc-nft-option}}">
+<input type="hidden" id="wpsc-nft-etherscan" value="{{etherscan}}">
+<input type="hidden" id="wpsc-nft-params-nft-ids" value="{{wpsc-nft-params-nft-ids}}">
+<input type="hidden" id="wpsc-nft-network" value="{{wpsc-nft-network}}">
+
+<input type="hidden" id="wpsc-suika-token" value="">
+<input type="hidden" id="wpsc-suika-token-decimals" value="">
+<input type="hidden" id="wpsc-suika-token-symbol" value="">
+
+<div id="wpsc-nft-my-items"></div>
+ 
+ <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+        <div id="content" class="site-content">
+            <div class="ui basic container segment">
+
+                {{{view-metamask}}}
+
+                {{{nft-view-menu}}}
+
+                <div class="ui medium breadcrumb">
+                    <i class="home icon divider"></i>
+                    <a href="{{collection-link}}" class="active section">{{{collection-name}}}</a>
+                    {{#breadcrumb-level2}}
+                        <i class="right angle icon divider"></i>
+                        <div class="active section">{{breadcrumb-level2}}</div>
+                    {{/breadcrumb-level2}}
+                </div>
+
+                <div class="ui hidden divider"></div>
+
+                {{#page-title}}
+                <h1 class="ui dividing header">
+                    {{{page-title}}}
+                </h1>
+                {{/page-title}}
+
+                <div id="wpsc-nft-generic-message"></div>
+
+                {{{custom-title}}}
+
+                <div class="ui hidden divider"></div>
+
+                <div id="wpsc-nft-items-container" class="ui three stackable cards"></div>
+
+                <div class="ui basic container segment" id="wpsc-nft-load-more" style="display: none;">
+                    <button class="ui right labeled icon right floated button">
+                        <i class="right arrow icon"></i>
+                        Load more
+                    </button>
+                </div> 
+
+            </div>
+        </div>
+    </main>
+</div>

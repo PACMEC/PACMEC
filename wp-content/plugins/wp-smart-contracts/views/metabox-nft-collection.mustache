@@ -1,0 +1,576 @@
+          <input id="tmpTx" type="hidden">
+          <input id="tmpNewNft" type="hidden">
+          <input id="tmpDefAcc" type="hidden">
+          <input id="tmpNetVer" type="hidden">
+          <div class="wpsc">
+            <input type="hidden" id="wpsc-change">
+            {{#readonly}}
+              <input type="hidden" name="wpsc-readonly" value="true">
+              <input type="hidden" name="wpsc-readonly-nft" value="true">
+              {{{ico-info}}}
+            {{/readonly}}
+            <div class="ui inverted segment">
+              <div class="ui inverted segment">
+                <h1 class="ui header">
+                  <i class="settings icon"></i>
+                  {{{nft-spec}}}
+                </h1>
+                <a class="ui grey button right floated" href="https://wpsmartcontracts.com/docs/" target="_blank">
+                  {{{learn-more}}}
+                </a>
+                <p>{{{nft-spec-desc}}}</p>
+              </div>
+            </div>
+            <div class="ui secondary segment">
+              <div class="grouped fields">
+                <h3 class="ui dividing header">{{{flavor}}}</h3>
+                <div class="ui stackable two column grid">
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-mochi}}}">
+                      <h3 class="ui dividing header">{{{nft-standard}}}</h3>
+                      <p>{{{nft-standard-desc}}}</p>
+                      <h5 class="ui dividing header">{{{features}}}</h5>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{ownable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{ownable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{transferable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{transferable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-mintable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-mintable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-metadata}}}
+                        <span class="ui icon" data-tooltip="{{{nft-metadata-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-enumerable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-enumerable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-media}}}
+                        <span class="ui icon" data-tooltip="{{{nft-media-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-vanities}}}
+                        <span class="ui icon" data-tooltip="{{{nft-vanities-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-burn}}}
+                          <span class="ui icon" data-tooltip="{{{nft-burn-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <div class="ui fitted toggle checkbox">
+                        <input tabindex="0" type="radio" name="wpsc-flavor" id="wpsc-mochi" class="wpsc-radio-nft" value="mochi"
+                          {{{wpsc-flavor}}}
+                          {{#is-mochi}}checked="checked"{{/is-mochi}}
+                          {{#readonly}}readonly disabled="disabled"{{/readonly}}
+                        >
+                        <label></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-matcha}}}">
+                      <h3 class="ui dividing header">{{{nft-marketplace-auction}}}</h3>
+                      <p>{{{nft-marketplace-auction-desc}}}</p>
+                      <h5 class="ui dividing header">{{{features}}}</h5>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{ownable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{ownable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{transferable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{transferable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-mintable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-mintable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-metadata}}}
+                        <span class="ui icon" data-tooltip="{{{nft-metadata-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-enumerable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-enumerable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-media}}}
+                        <span class="ui icon" data-tooltip="{{{nft-media-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-vanities}}}
+                        <span class="ui icon" data-tooltip="{{{nft-vanities-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-buy-sell}}}
+                          <span class="ui icon" data-tooltip="{{{nft-buy-sell-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-auction}}}
+                          <span class="ui icon" data-tooltip="{{{nft-auction-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-buy-native}}}
+                          <span class="ui icon" data-tooltip="{{{nft-buy-native-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <div class="ui fitted toggle checkbox">
+                        <input tabindex="0" type="radio" name="wpsc-flavor" id="wpsc-matcha" class="wpsc-radio-nft" value="matcha"
+                          {{{wpsc-flavor}}}
+                          {{#is-matcha}}checked="checked"{{/is-matcha}}
+                          {{#readonly}}readonly disabled="disabled"{{/readonly}}
+                        >
+                        <label></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-suika}}}">
+                      <h3 class="ui dividing header">{{{nft-marketplace-token}}}</h3>
+                      <p>{{{nft-marketplace-token-desc}}}</p>
+                      <h5 class="ui dividing header">{{{features}}}</h5>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{ownable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{ownable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{transferable-nft}}}
+                        <span class="ui icon" data-tooltip="{{{transferable-nft-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-mintable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-mintable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-metadata}}}
+                        <span class="ui icon" data-tooltip="{{{nft-metadata-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-enumerable}}}
+                        <span class="ui icon" data-tooltip="{{{nft-enumerable-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-media}}}
+                        <span class="ui icon" data-tooltip="{{{nft-media-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <i class="check icon"></i>
+                        {{{nft-vanities}}}
+                        <span class="ui icon" data-tooltip="{{{nft-vanities-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-burn}}}
+                          <span class="ui icon" data-tooltip="{{{nft-burn-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-buy-sell}}}
+                          <span class="ui icon" data-tooltip="{{{nft-buy-sell-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-auction}}}
+                          <span class="ui icon" data-tooltip="{{{nft-auction-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-buy-token}}}
+                          <span class="ui icon" data-tooltip="{{{nft-buy-token-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>
+                          <i class="check icon"></i>
+                          {{{nft-royalties}}}
+                          <span class="ui icon" data-tooltip="{{{nft-royalties-tooltip}}}"></i>
+                            <i class="small help icon circular"></i>
+                          </span>
+                        </strong>
+                      </p>
+                      <div class="ui fitted toggle checkbox">
+                        <input tabindex="0" type="radio" name="wpsc-flavor" id="wpsc-suika" class="wpsc-radio-nft" value="suika"
+                          {{{wpsc-flavor}}}
+                          {{#is-suika}}checked="checked"{{/is-suika}}
+                          {{#readonly}}readonly disabled="disabled"{{/readonly}}
+                        >
+                        <label></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column" id="wpsc-flavor-last-column">
+                    <div class="ui raised segment">
+                      <img class="ui medium image" src="{{{img-custom}}}">
+                      <h3 class="ui dividing header">{{{erc-20-custom}}}</h3>
+                      <p>{{{custom-message}}}</p>
+                      <p><a href="https://wpsmartcontracts.com/contact-us" target="_blank" class="ui blue button">{{{contact-us}}}</a></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <div class="ui secondary segment">
+              <h3 class="ui dividing header">
+                {{{marketplace-options}}}
+                <div class="sub header">
+                  {{{marketplace-options-desc}}}
+                </div>
+              </h3>
+              <div class="ui stackable two column grid">
+
+                <div class="column">
+                  <h4 class="ui header">
+                      {{{symbol}}}*
+                      <div class="sub header">
+                        {{{symbol-desc}}}
+                        {{{symbol-desc-tooltip}}}
+                      </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-symbol-div">
+                      <input name="wpsc-symbol" type="text" value="{{{wpsc_symbol}}}" {{#readonly}}readonly disabled="disabled"{{/readonly}}>
+                      <i class="tag icon"></i>
+                  </div>
+              </div>
+
+              <div class="column">
+                <h4 class="ui header">
+                    {{{name}}}*
+                    <div class="sub header">
+                      {{{name-desc}}}
+                      {{{name-desc-tooltip}}}
+                    </div>
+                </h4>
+                <div class="ui fluid icon input" id="wpsc-name-div">
+                    <input name="wpsc-name" type="text" value="{{{wpsc_name}}}" {{#readonly}}readonly disabled="disabled"{{/readonly}}>
+                    <i class="key icon"></i>
+                </div>
+              </div>
+
+                <div class="column wpsc-marketplace-option">
+                  <h4 class="ui header">
+                    {{{commission}}}*
+                    <div class="sub header">
+                      {{{commission-desc}}} 
+                      {{{commission-tooltip}}}
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-commission-div">
+                    <input name="wpsc-commission-before" type="hidden" value="{{{wpsc_commission}}}">
+                    <input name="wpsc-commission" type="number" min="0" max="100" value="{{{wpsc_commission}}}">
+                    <i class="percent icon"></i>
+                  </div>
+                </div>
+
+                <div class="column wpsc-marketplace-option-suika">
+                  <h4 class="ui header">
+                    {{{royalties}}}*
+                    <div class="sub header">
+                      {{{royalties-desc}}} 
+                      {{{royalties-tooltip}}}
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-royalties-div">
+                    <input name="wpsc-royalties-before" type="hidden" value="{{{wpsc_royalties}}}">
+                    <input name="wpsc-royalties" type="number" min="0" max="100" value="{{{wpsc_royalties}}}">
+                    <i class="percent icon"></i>
+                  </div>
+                </div>
+
+                <div class="column wpsc-marketplace-option">
+                  <h4 class="ui header">
+                      {{{wallet}}}
+                      <div class="sub header">
+                      {{{wallet-desc}}}
+                      <span class="ui icon" data-tooltip="{{{wallet-desc-tooltip}}}"></i>
+                        <i class="small help icon circular"></i>
+                      </span>
+                      </div>
+                  </h4>
+                  <div class="ui fluid icon input" id="wpsc-wallet-div">
+                    <input name="wpsc-wallet-before" type="hidden" value="{{{wpsc_wallet}}}">
+                    <input name="wpsc-wallet" type="text" value="{{{wpsc_wallet}}}">
+                    <i class="ethereum icon"></i>
+                  </div>
+                </div>
+
+                <div class="column wpsc-marketplace-option-suika">
+                  <h4 class="ui header">
+                      {{{token}}}
+                      <div class="sub header">
+                        {{{token-desc}}}
+                        <span class="ui icon" data-tooltip="{{{token-desc-tooltip}}}"></i>
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </div>
+                  </h4>
+                  <div class="ui warning mini message">
+                    <strong>Warning!</strong> Are you using a reflection token? If so, you must exclude the NFT contract in your reflection token
+                  </div>
+                  <div class="ui fluid icon input" id="wpsc-token-div">
+                    <input name="wpsc-token-before" type="hidden" value="{{{wpsc_token}}}">
+                    <input name="wpsc-token" type="text" value="{{{wpsc_token}}}">
+                    <i class="ethereum icon"></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="ui secondary segment">
+              <h3 class="ui dividing header">
+                {{{marketplace-security}}}
+              </h3>
+              <div class="ui stackable two column grid">
+
+                <div class="column">
+                  <div>
+                    <input name="wpsc-anyone-can-mint-before" type="hidden"
+                      {{#wpsc_anyone_can_mint}}value="true"{{/wpsc_anyone_can_mint}}
+                      {{^wpsc_anyone_can_mint}}value="false"{{/wpsc_anyone_can_mint}}
+                    >
+                    <label>
+                      <strong>
+                        {{{anyone-can-mint}}}
+                        {{{anyone-can-mint-tooltip}}}  
+                      </strong>
+                    </label>
+                    <div>
+                      {{{anyone-can-mint-desc}}}
+                    </div>
+                    <select id="wpsc-anyone-can-mint" name="wpsc-anyone-can-mint" class="wpsc-dropdown">
+                      <option value="false" {{^wpsc_anyone_can_mint}}selected{{/wpsc_anyone_can_mint}}>Only contract owner</option>
+                      <option value="true" {{#wpsc_anyone_can_mint}}selected{{/wpsc_anyone_can_mint}}>Anyone</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="column">
+                  <div>
+                    <input name="wpsc-anyone-can-mint-before" type="hidden"
+                      {{#wpsc_anyone_can_mint}}value="true"{{/wpsc_anyone_can_mint}}
+                      {{^wpsc_anyone_can_mint}}value="false"{{/wpsc_anyone_can_mint}}
+                    >
+                    <label>
+                      <strong>
+                        {{{anyone-can-mint-wp}}}
+                        {{{anyone-can-mint-tooltip-wp}}}  
+                      </strong>
+                    </label>
+                    <div>
+                      {{{anyone-can-mint-desc-wp}}}
+                    </div>
+                    <div class="ui divider"></div>
+                    {{#roles}}
+                      <label>
+                        <input type="checkbox" name="roles[]" value="{{role}}" {{#checked}}checked{{/checked}}> {{role}}
+                      </label><br/>
+                    {{/roles}}
+                  </div>
+                </div>
+                
+                <div class="column">
+                  <div class="ui toggle checkbox">
+                    <input name="wpsc-anyone-can-author" type="checkbox" tabindex="0"
+                      {{#wpsc_anyone_can_author}}checked="checked"{{/wpsc_anyone_can_author}}
+                    >
+                    <label>
+                      <strong>
+                        {{{anyone-can-author-any-nft}}}
+                        {{{anyone-can-author-any-nft-tooltip}}}  
+                      </strong>
+                      <div class="sub header">
+                        {{{anyone-can-author-any-nft-desc}}}
+                      </div>
+                    </label>
+                  </div>
+                </div>       
+                
+              </div>
+
+            </div>
+
+            <div class="ui secondary segment wpsc-marketplace-option">
+              <h3 class="ui dividing header">Colors</h3>
+              <div class="ui stackable three column grid">
+                <div class="column wpsc-color-hide">
+                  <div class="ui">
+                    <label>
+                      <strong>
+                        {{{font-main-color}}}
+                        {{{font-main-color-tooltip}}}
+                      </strong>
+                      <div class="sub header wpsc-small">
+                        {{{font-main-color-desc}}}
+                      </div>
+                    </label>
+                    <input id='color-picker-1' name="wpsc-font-main-color" type="input" value="{{wpsc_font_main_color}}" style="background: {{wpsc_font_main_color}};">
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui">
+                    <label>
+                      <strong>
+                        {{{graph-bg-color}}}
+                        {{{graph-bg-color-tooltip}}}
+                      </strong>
+                      <div class="sub header wpsc-small">
+                        {{{graph-bg-color-desc}}}
+                      </div>
+                    </label>
+                    <input id='color-picker-8' name="wpsc-graph-bg-color" type="input" value="{{wpsc_graph_bg_color}}" style="background: {{wpsc_graph_bg_color}};">
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui">
+                    <label>
+                      <strong>
+                        {{{graph-line-color}}}
+                        {{{graph-line-color-tooltip}}}
+                      </strong>
+                      <div class="sub header wpsc-small">
+                        {{{graph-line-color-desc}}}
+                      </div>
+                    </label>
+                    <input id='color-picker-9' name="wpsc-graph-line-color" type="input" value="{{wpsc_graph_line_color}}" style="background: {{wpsc_graph_line_color}};">
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+
+<script>
+  if (jQuery.isFunction(jQuery('#example1').calendar)) {
+    jQuery('#example1').calendar();
+  }
+  jQuery(document).ready(function($){
+    $('#color-picker-1').wpColorPicker();
+    $('#color-picker-2').wpColorPicker();
+    $('#color-picker-3').wpColorPicker();
+    $('#color-picker-4').wpColorPicker();
+    $('#color-picker-5').wpColorPicker();
+    $('#color-picker-6').wpColorPicker();
+    $('#color-picker-7').wpColorPicker();
+    $('#color-picker-8').wpColorPicker();
+    $('#color-picker-9').wpColorPicker();
+  });
+</script>
+
+<div id="wpsc-update-modal" class="ui modal">
+  <div class="ui inverted segment">
+    <div class="ui center aligned icon header">
+      <div class="ui big image">
+        <img src="http://localhost/wpsc/wp-content/plugins/wp-smart-contracts/assets/img/deploy-identicon.gif">
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui sub header" style="color: white;">Smart Contract Update</div>
+      <div class="ui divider"></div>
+      <p>If you agree and wish to proceed, please click "CONFIRM" transaction in the Metamask Window, otherwise click "REJECT".</p>
+      <p>Please be patient. It can take several minutes. Don't close or reload this window.</p>
+    </div>
+  </div>
+</div>

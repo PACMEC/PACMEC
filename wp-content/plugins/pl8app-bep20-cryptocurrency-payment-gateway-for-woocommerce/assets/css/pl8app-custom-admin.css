@@ -1,0 +1,60 @@
+
+#adminmenu #toplevel_page_pl8apppro_options div.wp-menu-image:before {
+    font-family: pl8app !important;
+    background-image: url(../img/pl8app_logo.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#adminmenu #menu-posts-pl8app_custom_crypto div.wp-menu-image:before {
+    font-family: pl8app !important;
+    background-image: url(../img/pl8app_logo.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pl8app_crypto_currencies_row {
+    padding: 5px 20px 5px 162px;
+    margin: 9px 0;
+    line-height: 24px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.control-label{
+    float: left;
+    width: 150px;
+    padding: 0;
+    margin: 0 0 0 -150px;
+}
+
+.pl8app_crypto_currencies_row .input-field{
+    width: 80%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.pl8app_crypto_currencies_row .description{
+    display: block;
+    clear: both;
+    margin-left: 0;
+    padding: 0;
+    margin: 10px 0 0 7px;
+    font-size: 13px;
+}
+
+
+
+/*.redux-sidebar {*/
+    /*display: none !important;*/
+/*}*/
+/*.redux-container .redux-main {*/
+    /*margin-left: 0px !important;*/
+/*}*/

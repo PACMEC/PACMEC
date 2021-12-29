@@ -1,0 +1,419 @@
+<div id="wpsc-stake-container" class="ui basic container segment wpsc-coin-view">
+
+    <input type="hidden" id="wpsc-contract-flavor" value="{{wpsc-contract-flavor}}">
+    <input type="hidden" id="wpsc-stake-contract" value="{{wpsc-contract}}">
+    <input type="hidden" id="wpsc-network" name="wpsc-nft-network" value="{{wpsc-network}}">
+    <input type="hidden" id="wpsc-stake-token" name="wpsc-stake-token" value="{{wpsc-token}}">
+    <input type="hidden" id="wpsc-token-symbol" name="wpsc-token-symbol" value="{{wpsc-symbol}}">
+    <input type="hidden" id="wpsc-token-symbol2" name="wpsc-token-symbol" value="{{wpsc-symbol2}}">
+    <input type="hidden" id="wpsc-token-decimals" name="wpsc-token-decimals" value="{{wpsc-decimals}}">
+    <input type="hidden" id="wpsc-token-decimals2" name="wpsc-token-decimals2" value="{{wpsc-decimals2}}">
+
+    {{{view-metamask}}}
+
+	<div id="wpsc-generic-message"></div>
+
+	<div class="ui two stackable cards">
+		<div class="ui raised card">
+			<div class="content">
+				<h3 class="ui block header">
+                    {{#page-thumbnail}}
+					    <img class="tiny ui image" src="{{page-thumbnail}}">
+                    {{/page-thumbnail}}
+					{{{page-title}}}
+				</h3>
+				<div class="ui divider"></div>
+				{{{page-content}}}
+			</div>
+			<div class="extra content">
+				<div class="ui mini labels">
+					<span class="ui {{color}} label"><i class="square icon"></i>{{network_val}}</span>
+					<span class="ui violet label"><i class="square icon"></i>{{wpsc-contract-flavor-beautified}}</span>
+					<div class="ui image label">
+						<img src="{{blockie}}">
+						Smart Contract
+						<div class="detail">
+							<a href="{{etherscan}}/address/{{wpsc-contract}}" target="_blank">{{wpsc-contract-short}}</a>
+							<i class="copy icon" onclick="copyToClipboard('{{wpsc-contract}}', 'wpsc-nft-collection-contract')"></i>
+							<span id="wpsc-nft-collection-contract"></span><span id="wpsc-copy-msg-wpsc-nft-collection-contract" style="display: none;">Copied!</span><span id="wpsc-copy-msg-wpsc-nft-collection-contract" style="display: none;">Copied!</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui raised card">
+			<div class="content" style="text-align: center;">
+				<h3 class="ui block centered header">{{wpsc-name}} ({{wpsc-symbol}})</h3>
+				<div class="ui image label" id="wpscContractAddressDiv">
+					{{wpsc-symbol}}
+					<div class="detail">
+						<i class="copy icon" onclick="copyToClipboard('{{wpsc-token}}', 'wpsc-nft-collection-contract-2')"></i>
+						<a href="{{etherscan}}/address/{{wpsc-token}}" target="_blank">
+                        {{wpsc-token-short}}
+						<i class="icon external alternate"></i>
+						</a>
+						<img id="wpsc-add-to-metamask" src="{{fox}}" class="ui mini image" data-address="{{wpsc-token}}" data-symbol="{{wpsc-symbol}}" data-name="{{wpsc-name}}" title="Add token to Metamask" data-network="{{network_val}}" data-decimals="{{wpsc-decimals}}">
+						<span id="wpsc-nft-collection-contract-2"></span>
+					</div>
+				</div>
+
+				{{#is-almond}}
+				<div class="ui divider"></div>
+				<div class="ui image label" id="wpscContractAddressDiv">
+					{{wpsc-symbol2}}
+					<div class="detail">
+						<i class="copy icon" onclick="copyToClipboard('{{wpsc-token2}}', 'wpsc-nft-collection-contract-3')"></i>
+						<a href="{{etherscan}}/address/{{wpsc-token2}}" target="_blank">
+                        {{wpsc-token-short2}}
+						<i class="icon external alternate"></i>
+						</a>
+						<img id="wpsc-add-to-metamask" src="{{fox}}" class="ui mini image" data-address="{{wpsc-token2}}" data-symbol="{{wpsc-symbol2}}" 
+							data-name="{{wpsc-name2}}" title="Add token to Metamask" data-network="{{network_val}}" data-decimals="{{wpsc-decimals2}}">
+						<span id="wpsc-nft-collection-contract-3"></span>
+					</div>
+				</div>
+				{{/is-almond}}
+
+				<div class="ui hidden divider"></div>
+				<div class="ui image label">
+					Locked Balance
+					<div class="detail" id="wpsc-locked-balance"></div>
+				</div>
+				<div class="ui hidden divider"></div>
+				<div class="ui image label wpsc-admin-only" style="display: none;">
+					Approved funds
+					<div class="detail" id="wpsc-approved-funds"></div>
+					<a href="javascript:void(0);" style="padding-left: 18px;" id="wpsc-approve-button">Approve</a>
+				</div>
+				{{#is-almond}}
+					<div class="ui hidden divider"></div>
+					<div class="ui image label wpsc-admin-only" style="display: none;">
+						Approved funds for secondary token
+						<div class="detail" id="wpsc-approved-funds2"></div>
+						<a href="javascript:void(0);" style="padding-left: 18px;" id="wpsc-approve-button2">Approve</a>
+					</div>
+				{{/is-almond}}
+			</div>
+
+			{{#is-almond}}
+			<input type="hidden" id="wpsc-token2" name="wpsc-token2" value="{{wpsc-token2}}">
+			<input type="hidden" id="wpsc-apy2" name="wpsc-apy2" value="{{wpsc-apy2}}">
+			<input type="hidden" id="wpsc-ratio1" name="wpsc-ratio1" value="{{wpsc-ratio1}}">
+			<input type="hidden" id="wpsc-ratio2" name="wpsc-ratio2" value="{{wpsc-ratio2}}">
+			{{/is-almond}}
+
+            <div class="extra content">
+				<div class="ui center aligned">
+					{{^is-almond}}
+					<span class="ui violet image mini label">
+						<i class="percent icon"></i>APY
+						<div class="detail">{{wpsc_apy}}%</div>
+					</span>
+					{{/is-almond}}
+					{{#is-almond}}
+					<span class="ui violet image mini label">
+						<i class="percent icon"></i>APY 
+						<div class="detail">{{wpsc_apy}}%</div>
+					</span>
+					<span class="ui violet image mini label">
+						<i class="percent icon"></i>APY2
+						<div class="detail">{{wpsc-apy2}}%</div>
+					</span>
+					{{/is-almond}}
+					<span class="ui violet image mini label">
+						<i class="percent icon"></i>Penalization
+						<div class="detail">{{wpsc_penalty}}%</div>
+					</span>
+					<span class="ui violet image mini label">
+						<i class="hourglass start icon"></i>Maturity
+						<div class="detail">{{wpsc_mst}} days</div>
+					</span>
+					<span class="ui violet image mini label">
+						<i class="hand lizard outline icon"></i>Minimum
+						<div class="detail">{{wpsc-symbol}} {{wpsc_minimum}}</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui raised aligned segment" id="wpsc-block-explorer-txlist">
+		<h3 class="ui block header left aligned">
+			<i class="suitcase icon"></i>Stakes
+		</h3>
+		<div class="ui hidden divider"></div>
+		<div class="ui stackable grid large screen only">
+			<div class="twelve wide column">
+				<div class="ui fluid search focus">
+					<div class="ui icon fluid input">
+						<input type="text" placeholder="Account to search" id="wpsc-block-explorer-search"
+							data-subdomain="rinkeby" autocomplete="off">
+						<i id="wpsc-do-search" class="circular search link icon"></i>
+					</div>
+					<div id="wpsc-block-explorer-search-error"></div>
+				</div>
+			</div>
+			<div class="four wide column">
+				<a id="wpsc-create-link" href="javascript:void(0);" class="ui mini blue button" data-modal="wpsc-create-modal">
+				<i class="check icon"></i>Create Stake
+				</a>
+			</div>
+		</div>
+		<h4 id="wpsc-filter-exp" class="ui header"></h4>
+		<div id="wpsc_account_balance"></div>
+		<div id="wpsc_account_roles"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui stackable grid large screen only">
+			<div class="six wide column">
+				<h6 class="ui block header left aligned">
+					<i class="calendar icon"></i>
+					<div class="content">
+						Dates
+					</div>
+				</h6>
+			</div>
+			<div class="six wide column">
+				<h6 class="ui block header left aligned">
+					<i class="percent icon"></i>
+					<div class="content">
+						Stake amounts ({{wpsc-symbol}})
+					</div>
+				</h6>
+			</div>
+			<div class="two wide column">
+				<h6 class="ui block header left aligned">
+					Status
+				</h6>
+			</div>
+			<div class="two wide column">
+				<h6 class="ui block header left aligned">
+					Actions
+				</h6>
+			</div>
+		</div>
+		<div id="wpsc-block-explorer-rows">
+			<div class="ui hidden divider"></div>
+		</div>
+	</div>
+</div>
+
+<div id="wpsc-buy-modal-token" class="ui basic modal">
+	<div class="ui center aligned inverted segment">
+		<div class="ui two steps">
+			<div id="wpsc-buy-token-step-1" class="disabled step">
+			  <i class="thumbs up outline icon"></i>
+				<div class="content">
+					<div class="title">Step 1</div>
+					<div class="description">Approve funds</div>
+				</div>
+			</div>
+			<div id="wpsc-buy-token-step-2" class="disabled step">
+				<i class="handshake outline icon"></i>
+				<div class="content">
+					<div class="title">Step 2</div>
+					<div class="description">Create Stake</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="wpsc-buy-token-form" class="ui inverted form">
+			<div class="three fields">
+				<div class="field"></div>
+				<div class="field">
+					<label>Amount to stake in {{wpsc-symbol}}</label>
+					<input id="wpsc-buy-token-amount" name="wpsc-buy-token-amount" type="text">
+				</div>
+				<div class="field"></div>
+			</div>
+		</div>
+		<div class="ui hidden divider"></div>
+		<div id="wpsc-nft-buy-token-message"></div>
+		<div id="wpsc-msg-box-0000000" class="ui warning compact mini message transition">
+			<div class="ui  header">
+				Minimum amount
+			</div>
+			<p>{{wpsc-symbol}} {{wpsc_minimum}}</p>
+		</div>
+		<div class="ui hidden divider"></div>
+
+		<div class="actions">
+			<div id="wpsc-approve-go-button" class="ui green basic inverted button">
+				<i class="thumbs up outline icon"></i>
+				Approve funds
+			</div>
+			<div id="wpsc-buy-with-token-go-button" class="ui green basic inverted button">
+				<i class="handshake icon"></i>
+				Create Stake
+			</div>
+			<div id="wpsc-buy-token-cancel-button" class="ui red basic cancel inverted button">
+				<i class="remove icon"></i>
+				Cancel
+			</div>
+		</div>
+		<div id="wpsc-buy-token-progress" class="ui icon black message hidden">
+			<div class="content">
+				<div class="header">
+					{{{tx-in-progress}}}
+				</div>
+				<p class="wpsc-small">
+					<img class="ui mini left floated image" src="{{deploy-icon}}">
+					{{{click-confirm}}} {{{please-patience}}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wpsc-end-stake" class="ui basic modal">
+	<div class="ui center aligned inverted segment">
+		<h3 class="ui header">
+			<i class="suitcase icon"></i>
+			Stake
+		</h3>
+		<div id="wpsc-stake-form">
+			<div class="ui hidden divider"></div>
+			<div  id="wpsc-stake-warning-message" class="ui warning message">
+				<div class="header">
+					Warning!
+				</div>
+				You are ending your stake earlier, which means that you will pay a penalty for this action.
+			</div>
+
+			<div id="wpsc-no-funds-warning" class="ui negative small left aligned message" style="text-align: left; display: none;">
+				<div class="ui dividing header">
+					Warning. Potencial Risk!
+				</div>
+				<p>The stake smart contract has no liquidity to pay interest!. You must contact the website owner to resolve this situation.</p>
+				<p>If you want to make an emergency withdrawal of your funds, you can continue, but note that no interest will be paid to you, you will only recover the deposited funds and the stake will be closed.</p>
+				<p>Are you completely sure you want to continue with the withdraw?</p>
+			</div>
+
+			<div id="wpsc-stake-message">
+				Are you sure you want to end your Stake of <span id="wpsc-stake-amount-confirmation" class="ui label"></span> started at <span id="wpsc-stake-date-confirmation" class="ui label"></span>?
+			</div>
+			<div class="ui hidden divider"></div>
+			<div  id="wpsc-end-stake-message"></div>
+			<div class="ui hidden divider"></div>
+			<div class="ui fluid action input">
+				<button class="ui teal right labeled icon button" id="wpsc-end-stake-button" style="margin: auto;">
+					<i class="play icon"></i>End the stake now
+				</button>
+			</div>
+		</div>
+		<div class="ui hidden divider"></div>
+		<div class="actions">
+			<div id="wpsc-end-stake-cancel-button" class="ui red basic cancel inverted button">
+				<i class="remove icon"></i>
+				{{{cancel}}}
+			</div>
+		</div>
+		<div id="wpsc-end-stake-progress" class="ui icon black message hidden">
+			<div class="content">
+				<div class="header">
+					{{{tx-in-progress}}}
+				</div>
+				<p class="wpsc-small">
+					<img class="ui mini left floated image" src="{{deploy-icon}}">
+					{{{click-confirm}}} {{{please-patience}}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wpsc-approve-modal" class="ui basic modal">
+	<div class="ui center aligned inverted segment">
+		<h3 class="ui header">
+			<i class="suitcase icon"></i>
+			Stake
+		</h3>
+		<p>Approve funds for your Stake Contract</p>
+		<div id="wpsc-stake-approve-form">
+			<div class="ui fluid action input">
+				<input name="wpsc-approve-amount" type="text" value="" placeholder="Amount to approve">
+				<button class="ui teal right labeled icon button" id="wpsc-approve-stake">
+				<i class="check icon"></i>Approve
+				</button>
+			</div>
+
+			<div class="ui hidden divider"></div>
+
+			<p>Approved funds will not be deducted from your account until they are needed to pay interest.</p>
+			<p>If you have approved funds previously, it will be replaced by the amount that you approve now.</p>
+			<p>If you want to remove the previously approved amount, just approve 0 funds.</p>
+	
+			<div id="wpsc-stake-message"></div>
+
+		</div>
+
+		<div class="ui hidden divider"></div>
+
+		<div id="wpsc-stake-approve-message"></div>
+
+		<div class="actions">
+			<div id="wpsc-approve-cancel-button" class="ui red basic cancel inverted button">
+				<i class="remove icon"></i>
+				{{{cancel}}}
+			</div>
+		</div>
+		<div id="wpsc-approve-progress" class="ui icon black message hidden">
+			<div class="content">
+				<div class="header">
+					{{{tx-in-progress}}}
+				</div>
+				<p class="wpsc-small">
+					<img class="ui mini left floated image" src="{{deploy-icon}}">
+					{{{click-confirm}}} {{{please-patience}}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wpsc-approve-modal2" class="ui basic modal">
+	<div class="ui center aligned inverted segment">
+		<h3 class="ui header">
+			<i class="suitcase icon"></i>
+			Stake
+		</h3>
+		<p>Approve funds for your secondary token</p>
+		<div id="wpsc-stake-approve-form2">
+			<div class="ui fluid action input">
+				<input name="wpsc-approve-amount2" type="text" value="" placeholder="Amount to approve">
+				<button class="ui teal right labeled icon button" id="wpsc-approve-stake2">
+				<i class="check icon"></i>Approve
+				</button>
+			</div>
+
+			<div class="ui hidden divider"></div>
+
+			<p>Approved funds will not be deducted from your account until they are needed to pay interest.</p>
+			<p>If you have approved funds previously, it will be replaced by the amount that you approve now.</p>
+			<p>If you want to remove the previously approved amount, just approve 0 funds.</p>
+	
+			<div id="wpsc-stake-message"></div>
+
+		</div>
+
+		<div class="ui hidden divider"></div>
+
+		<div id="wpsc-stake-approve-message2"></div>
+
+		<div class="actions">
+			<div id="wpsc-approve-cancel-button2" class="ui red basic cancel inverted button">
+				<i class="remove icon"></i>
+				{{{cancel}}}
+			</div>
+		</div>
+		<div id="wpsc-approve-progress2" class="ui icon black message hidden">
+			<div class="content">
+				<div class="header">
+					{{{tx-in-progress}}}
+				</div>
+				<p class="wpsc-small">
+					<img class="ui mini left floated image" src="{{deploy-icon}}">
+					{{{click-confirm}}} {{{please-patience}}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

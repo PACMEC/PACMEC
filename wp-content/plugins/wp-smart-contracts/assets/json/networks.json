@@ -1,0 +1,202 @@
+{
+	"1": {
+		"code": 1,
+		"color": "green",
+		"name": "mainnet",
+		"title": "Main Network",
+		"network": "main",
+		"url": "//api.etherscan.io/api",
+        "url2": "https://etherscan.io/",
+		"color-html": "#21ba45",
+		"icon": "ethereum",
+		"coin-symbol": "Ξ"
+	},
+	"3": {
+		"code": 3,
+		"color": "pink",
+		"name": "ropsten",
+		"title": "Ropsten",
+		"network": "ropsten",
+		"url": "//api-ropsten.etherscan.io/api",
+        "url2": "https://ropsten.etherscan.io/",
+		"color-html": "#e03997",
+		"icon": "circle",
+		"coin-symbol": "Ξ"
+	},
+	"4": {
+		"code": 4,
+		"color": "yellow",
+		"name": "rinkeby",
+		"title": "Rinkeby",
+		"network": "rinkeby",
+		"url": "//api-rinkeby.etherscan.io/api",
+        "url2": "https://rinkeby.etherscan.io/",
+		"color-html": "#fbbd08",
+		"icon": "circle",
+		"coin-symbol": "Ξ"
+	},
+	"42": {
+		"code": 42,
+		"color": "purple",
+		"name": "kovan",
+		"title": "Kovan",
+		"network": "kovan",
+		"url": "//api-kovan.etherscan.io/api",
+        "url2": "https://kovan.etherscan.io/",
+		"color-html": "#a333c8",
+		"icon": "circle",
+		"coin-symbol": "Ξ"
+	},
+	"5": {
+		"code": 5,
+		"color": "blue",
+		"name": "goerli",
+		"title": "Goerli",
+		"network": "goerli",
+		"url": "//api-goerli.etherscan.io/api",
+        "url2": "https://goerli.etherscan.io/",
+		"color-html": "#69b2f1",
+		"icon": "circle",
+		"coin-symbol": "Ξ"
+	},
+	"77": {
+		"code": 77,
+		"color": "grey",
+		"name": "xdaitest",
+		"title": "xDai Testnet",
+		"network": "xdaitest",
+		"url": "//blockscout.com/poa/sokol/",
+        "url2": "https://blockscout.com/poa/sokol/",
+		"color-html": "#999999",
+		"icon": "square",
+		"coin-symbol": "xDai",
+        "metamask_parameters": [{
+          "chainId": "0x4D",
+          "chainName": "xDai Testnet",
+          "nativeCurrency": {
+            "name": "xDai",
+            "symbol": "xDai",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://sokol.poa.network/"],
+          "blockExplorerUrls": ["https://blockscout.com/poa/sokol"]
+        }]
+	},
+	"100": {
+		"code": 100,
+		"color": "teal",
+		"name": "xdai",
+		"title": "xDai",
+		"network": "xdai",
+		"url": "//blockscout.com/poa/xdai/",
+        "url2": "https://blockscout.com/poa/xdai/",
+		"color-html": "#48a9a6",
+		"icon": "square",
+		"coin-symbol": "xDai",
+        "metamask_parameters": [{
+          "chainId": "0x64",
+          "chainName": "xDai Mainnet",
+          "nativeCurrency": {
+            "name": "xDai",
+            "symbol": "xDai",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://rpc.xdaichain.com/"],
+          "blockExplorerUrls": ["https://blockscout.com/xdai/mainnet"]
+        }]
+	},
+	"97": {
+		"code": 97,
+		"color": "yellow",
+		"name": "bsctest",
+		"title": "Binance Smart Chain Testnet",
+		"network": "bsctest",
+		"url": "//testnet.bscscan.com/",
+        "url2": "https://testnet.bscscan.com/",
+		"color-html": "#f0b915",
+		"icon": "certificate",
+		"coin-symbol": "BNB",
+		"web3Provider": "https://data-seed-prebsc-1-s1.binance.org:8545",
+        "metamask_parameters": [{
+          "chainId": "0x61",
+          "chainName": "Binance Smart Chain Testnet",
+          "nativeCurrency": {
+            "name": "BNB",
+            "symbol": "BNB",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://data-seed-prebsc-1-s1.binance.org:8545/"],
+          "blockExplorerUrls": ["https://testnet.bscscan.com/"]
+        }]
+	},
+	"56": {
+		"code": 56,
+		"color": "yellow",
+		"name": "bsc",
+		"title": "Binance Smart Chain",
+		"network": "bsc",
+		"url": "//bscscan.com/",
+        "url2": "https://bscscan.com/",
+		"color-html": "#f0b915",
+		"icon": "certificate",
+		"coin-symbol": "BNB",
+		"web3Provider": "https://bsc-dataseed1.binance.org:443",
+        "metamask_parameters": [{
+          "chainId": "0x38",
+          "chainName": "Binance Smart Chain Mainnet",
+          "nativeCurrency": {
+            "name": "BNB",
+            "symbol": "BNB",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://bsc-dataseed.binance.org/"],
+          "blockExplorerUrls": ["https://bscscan.com"]
+        }]
+	},
+	"80001": {
+		"code": 80001,
+		"color": "blue",
+		"name": "matictest",
+		"title": "Mumbai Matic Tesnet",
+		"network": "matictest",
+		"url": "//mumbai.polygonscan.com/",
+        "url2": "https://mumbai.polygonscan.com/",
+		"color-html": "#69b2f1",
+		"icon": "square",
+		"coin-symbol": "Matic",
+        "metamask_parameters": [{
+          "chainId": "0x13881",
+          "chainName": "Mumbai Matic Testnet",
+          "nativeCurrency": {
+            "name": "Matic",
+            "symbol": "Matic",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://rpc-mumbai.maticvigil.com/"],
+          "blockExplorerUrls": ["https://mumbai.polygonscan.com/"]
+        }]
+	},
+	"137": {
+		"code": 137,
+		"color": "blue",
+		"name": "matic",
+		"title": "Polygon (Matic)",
+		"network": "matic",
+		"url": "//polygonscan.com/",
+        "url2": "https://polygonscan.com/",
+		"color-html": "#69b2f1",
+		"icon": "square",
+		"coin-symbol": "Matic",
+        "metamask_parameters": [{
+          "chainId": "0x89",
+          "chainName": "Polygon (Matic) Mainnet",
+          "nativeCurrency": {
+            "name": "Matic",
+            "symbol": "Matic",
+            "decimals": 18
+          },
+          "rpcUrls": ["https://rpc-mainnet.maticvigil.com/"],
+          "blockExplorerUrls": ["https://polygonscan.com"]
+        }]
+	}
+}

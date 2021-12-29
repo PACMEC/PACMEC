@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Detail-Copy-2" transform="translate(-631.000000, -55.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group" transform="translate(506.000000, 41.000000)">
+                <g id="arrow" transform="translate(129.500000, 20.500000) rotate(-180.000000) translate(-129.500000, -20.500000) translate(125.000000, 14.000000)">
+                    <path d="M2.63096677,6.15843425 L7.84475041,1.81389973 C8.27802055,1.44997038 8.33541772,0.804195118 7.97312523,0.369555338 C7.61083273,-0.0650844416 6.96527856,-0.124917029 6.52927533,0.235733454 L0.368985468,5.369334 C0.135146374,5.56469911 0,5.85371559 0,6.1584257 C0,6.4631358 0.135146374,6.75215228 0.368985468,6.94751739 L6.52927533,12.0811008 C6.96514427,12.4435306 7.61220936,12.3843947 7.97516062,11.9489599 C8.33811188,11.5135251 8.27975048,10.8663896 7.84475041,10.5029174 L2.63096677,6.15843425 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

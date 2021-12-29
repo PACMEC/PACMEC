@@ -1,0 +1,66 @@
+{{#draw_div}}
+<div class="ui stackable grid wpsc-stake-row" id="stake-row-{{index}}">
+{{/draw_div}}
+    <div class="seven wide column">
+        <div class="ui teal progress active" data-percent="{{percent}}" id="hardcap-progress-bar" style="margin-bottom: 20px;">
+            <div class="custom-input" id="customInput" style="opacity: 1;background-color: grey;">
+                <div class="input-trail" style="width: {{percent}}%;"></div>
+                <div class="input-thumb" style="left: calc({{percent}}% - 30px);"></div>
+                <div class="text-value">{{percent}}%</div>
+                <div class="label" style="color: #626262;">
+                    <span id="npercent" style="color: black;">{{percent}}%</span>
+                    {{{from}}} {{#to}} to {{{to}}}{{/to}}</div>
+            </div>
+            <div class="bar" style="transition-duration: 300ms; width: {{percent}}%;"></div>
+        </div>
+    </div>
+    <div class="five wide column">
+        <span class="ui mini teal label" title="Amount">
+            <i class="database icon"></i>
+            {{amount}}
+        </span>
+        <span class="ui mini {{#penalized}}red{{/penalized}}{{^penalized}}teal{{/penalized}} label" title="{{#penalized}}Penalization{{/penalized}}{{^penalized}}Interest{{/penalized}}">
+            <i class="{{#penalized}}minus circle{{/penalized}}{{^penalized}}plus circle{{/penalized}} icon"></i>
+            <span id="wpsc-interest-{{index}}">{{#penalized}}{{penalization}}{{/penalized}}{{^penalized}}{{symbol}} {{gains}}{{/penalized}}</span>
+        </span>
+        <span class="ui mini teal label" title="Total">
+            <i class="calculator icon"></i>
+            <span id="wpsc-amount-{{index}}">{{symbol}} {{total}}</span>
+        </span>
+        {{#gains2}}
+        <br>
+        <span class="ui violet label" title="Interest 2">
+            <i class="plus circle icon"></i>
+            <span id="wpsc-interest2-{{index}}">{{symbol2}} {{gains2}}</span>
+        </span>
+        {{/gains2}}
+        {{#opened}}
+        <br>
+        <span id="wpsc-countdown-{{index}}" style="font-size: 10px; color: #a9d5de; /*background-image: linear-gradient(to right, transparent , #eaf6f9);*/ height: 20px; min-width: 200px;"></span>
+        {{/opened}}
+    </div>
+    <div class="two wide column">
+        <span class="ui {{#mature}}green{{/mature}}{{^mature}}olive{{/mature}} mini label" {{#opened}}data-stake-id="{{index}}"{{/opened}}>
+            {{#opened}}Opened{{/opened}}{{^opened}}Ended{{/opened}}
+        </span>
+    </div>
+    <div class="two wide column">
+        {{#opened}}
+        {{#canend}}
+        <a 
+            class="ui {{#mature}}blue{{/mature}}{{^mature}}red{{/mature}} mini label end-stake" 
+            data-stake-id="{{index}}" 
+            {{#mature}}data-mature="yes"{{/mature}}{{^mature}}data-mature="no"{{/mature}}
+            {{^mature}}data-stake-warning="yes"{{/mature}}
+            data-stake-amount="{{symbol}} {{amount}}"
+            data-stake-date="{{from}}"
+        >
+            End stake
+        </a>
+        {{/canend}}
+        {{/opened}}
+    </div>
+
+{{#draw_div}}
+</div>
+{{/draw_div}}

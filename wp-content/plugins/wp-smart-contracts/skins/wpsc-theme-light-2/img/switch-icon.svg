@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="22px" viewBox="0 0 33 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-758.000000, -243.000000)" fill="#656565" fill-rule="nonzero">
+            <g id="iconfinder_switch_227555" transform="translate(758.000000, 243.000000)">
+                <path d="M22,0 L11,0 C4.9259375,0 0,4.9259375 0,11 C0,17.0740625 4.9259375,22 11,22 L22,22 C28.0740625,22 33,17.0740625 33,11 C33,4.9259375 28.0740625,0 22,0 Z M22,19.25 L11,19.25 C6.44359375,19.25 2.75,15.5564063 2.75,11 C2.75,6.44359375 6.44359375,2.75 11,2.75 L22,2.75 C26.5564063,2.75 30.25,6.44359375 30.25,11 C30.25,15.5564063 26.5564063,19.25 22,19.25 Z M11.5,6 C8.462625,6 6,8.462625 6,11.5 C6,14.537375 8.462625,17 11.5,17 C14.537375,17 17,14.537375 17,11.5 C17,8.462625 14.537375,6 11.5,6 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

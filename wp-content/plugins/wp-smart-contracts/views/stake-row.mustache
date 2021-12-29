@@ -1,0 +1,64 @@
+{{#draw_div}}
+<div class="ui stackable grid wpsc-stake-row" id="stake-row-{{index}}">
+{{/draw_div}}
+
+    <div class="six wide column">
+        <div class="ui progress" data-percent="{{percent}}" id="progress-{{index}}">
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <div class="small label" style="font-size: 14px;">{{{from}}} {{#to}} to {{{to}}}{{/to}}</div>
+        </div>
+    </div>
+    <div class="six wide column">
+        <span class="ui teal small label" title="Amount">
+            <i class="database icon"></i>
+            {{amount}}
+        </span>
+        <span class="ui {{#penalized}}red{{/penalized}}{{^penalized}}teal{{/penalized}} small label" title="{{#penalized}}Penalization{{/penalized}}{{^penalized}}Interest{{/penalized}}">
+            <i class="{{#penalized}}minus circle{{/penalized}}{{^penalized}}plus circle{{/penalized}} icon"></i>
+            <span id="wpsc-interest-{{index}}">{{#penalized}}{{penalization}}{{/penalized}}{{^penalized}}{{symbol}} {{gains}}{{/penalized}}</span>
+        </span>
+        <span class="ui teal small label" title="Total">
+            <i class="calculator icon"></i>
+            <span id="wpsc-amount-{{index}}">{{symbol}} {{total}}</span>
+        </span>
+
+        {{#gains2}}
+        <br>
+        <span class="ui violet small label" title="Interest 2">
+            <i class="plus circle icon"></i>
+            <span id="wpsc-interest2-{{index}}">{{symbol2}} {{gains2}}</span>
+        </span>
+        {{/gains2}}
+
+        {{#opened}}
+        <br>
+        <span id="wpsc-countdown-{{index}}" style="font-size: 10px; color: #a9d5de; /*background-image: linear-gradient(to right, transparent , #eaf6f9);*/ height: 20px; min-width: 200px;"></span>
+        {{/opened}}    
+    </div>
+    <div class="two wide column">
+        <span class="ui {{#mature}}green{{/mature}}{{^mature}}olive{{/mature}} small label {{#opened}}wpsc-end-stake{{/opened}}" {{#opened}}data-stake-id="{{index}}"{{/opened}}>{{#opened}}Opened{{/opened}}{{^opened}}Ended{{/opened}}</span>
+    </div>
+    <div class="two wide column">
+        {{#opened}}
+        {{#canend}}
+        <a 
+            class="ui {{#mature}}blue{{/mature}}{{^mature}}red{{/mature}} small label end-stake" 
+            data-stake-id="{{index}}" 
+            {{#mature}}data-mature="yes"{{/mature}}{{^mature}}data-mature="no"{{/mature}}
+            {{^mature}}data-stake-warning="yes"{{/mature}}
+            data-stake-amount="{{symbol}} {{amount}}"
+            data-stake-date="{{from}}"
+        >
+            End stake
+        </a>
+        {{/canend}}
+        {{/opened}}
+    </div>
+
+    <div class="ui hidden divider"></div>
+
+{{#draw_div}}
+</div>
+{{/draw_div}}

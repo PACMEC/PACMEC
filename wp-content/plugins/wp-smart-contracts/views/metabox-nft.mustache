@@ -1,0 +1,62 @@
+<div class="wpsc">
+
+    <input type="hidden" id="wpsc-change">
+    
+    <div class="ui inverted segment">
+        <div class="ui inverted segment">
+          <h1 class="ui header">
+            <img src="{{creature-png}}">
+            NFT Media
+          </h1>
+          <a class="ui grey button right floated" href="https://wpsmartcontracts.com/docs/" target="_blank">
+            Learn More
+          </a>
+          <p>Create a unique Item to sell as NFT.</p>
+        </div>
+    </div>
+    
+    <div class="ui secondary segment ">
+        <div class="ui stackable two column grid">
+          <div class="column">
+            <h3 class="ui dividing header">Media</h3>
+            <h4 class="ui header">
+              <div class="sub header">
+                Do you want to sell a picture, audio or video? add your media file here. 
+              </div>
+            </h4>
+            <select id="wpsc-media-type" name="wpsc-media-type" class="ui selection dropdown">
+                <option value="none" {{#wpsc_media_type_image}}selected{{/wpsc_media_type_image}}>Choose your media type</option>
+                <option value="image" {{#wpsc_media_type_image}}selected{{/wpsc_media_type_image}}>Image</option>
+                <option value="video" {{#wpsc_media_type_video}}selected{{/wpsc_media_type_video}}>Video</option>
+                <option value="audio" {{#wpsc_media_type_audio}}selected{{/wpsc_media_type_audio}}>Audio</option>
+                <option value="document" {{#wpsc_media_type_document}}selected{{/wpsc_media_type_document}}>Document</option>
+            </select>
+            <a href="#" class="ui button" id="nft-add-media">Add media</a>
+            <div class="ui divider"></div>
+            <h4 class="ui dividing header">{{{nft-media-desc-1}}}</h4>
+            <div class="ui tiny list">
+              <span class="item">
+                <i class="angle double right icon"></i>
+                <div class="content">
+                  <div class="header">{{{nft-media-desc-2}}}</div>
+                  <div class="description">
+                    <p>
+                      Learn more on how to <a href="https://wpsmartcontracts.com/docs/doc-settings.php" target="_blank">setup your IPFS account</a> and 
+                      <a href="https://wpsmartcontracts.com/docs/doc-item-ipfs.php" target="_blank">store your assets on IPFS</a>.
+                    </p>
+                  </div>
+                </div>
+              </span>
+            </div>
+
+          </div>
+          <div class="column">
+            <h3 class="ui dividing header">Preview</h3>
+            <div id="wpsc-nft-media-preview-media-real"></div>
+            <input type="hidden" id="wpsc-nft-media-json" name="wpsc-media-json" value="{{wpsc_nft_media_json}}">
+          </div>
+        </div>
+
+      </div>
+
+  </div>

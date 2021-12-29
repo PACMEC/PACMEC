@@ -2,23 +2,6 @@
 wp-config.php
 wp-content/languages/*
 
-wp-content/plugins/arrowpress_importer/*
-wp-content/plugins/arrowpress_importer
-wp-content/plugins/arrowpress-core/*
-wp-content/plugins/arrowpress-core
-wp-content/plugins/coin_charts/*
-wp-content/plugins/coin_charts
-wp-content/plugins/pl8app-bep20-cryptocurrency-payment-gateway-for-woocommerce/*
-wp-content/plugins/pl8app-bep20-cryptocurrency-payment-gateway-for-woocommerce
-wp-content/plugins/redux-framework/*
-wp-content/plugins/redux-framework*
-wp-content/plugins/Ultimate_VC_Addons/*
-wp-content/plugins/Ultimate_VC_Addons
-wp-content/plugins/virtual_coin_widgets/*
-wp-content/plugins/virtual_coin_widgets
-wp-content/plugins/woo-wallet/*
-wp-content/plugins/woo-wallet
-
 wp-content/themes/*
 wp-content/uploads/*
 wp-content/languages/*

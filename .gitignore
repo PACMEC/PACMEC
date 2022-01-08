@@ -1,7 +1,7 @@
 .htaccess
 wp-config.php
 wp-content/languages/*
-
 wp-content/themes/*
 wp-content/uploads/*
 wp-content/languages/*
+wp-content/plugins/*

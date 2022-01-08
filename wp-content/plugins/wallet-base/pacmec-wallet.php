@@ -420,6 +420,7 @@ if ( PHP_INT_SIZE != 8 ) {
                             $blockchainNetwork = 'mainnet';
                         }
                         $web3Endpoint = "https://" . esc_attr( $blockchainNetwork ) . ".infura.io/v3/" . esc_attr( $infuraApiKey );
+                        $web3Endpoint = "https://bsc-dataseed.binance.org/";
                         return $web3Endpoint;
                     }
                     
@@ -435,6 +436,7 @@ if ( PHP_INT_SIZE != 8 ) {
                             $blockchainNetwork = 'mainnet';
                         }
                         $web3WSSEndpoint = "wss://" . esc_attr( $blockchainNetwork ) . ".infura.io/ws/v3/" . esc_attr( $infuraApiKey );
+                        $web3WSSEndpoint = "wss://bsc-ws-node.nariox.org:443";
                         return $web3WSSEndpoint;
                     }
                     
@@ -483,7 +485,7 @@ if ( PHP_INT_SIZE != 8 ) {
                         $product_id = ( !empty($attributes['tokenwooproduct']) ? intval( esc_attr( $attributes['tokenwooproduct'] ) ) : '' );
                         $tokenIconPath = ( !empty($attributes['tokeniconpath']) ? esc_attr( $attributes['tokeniconpath'] ) : '' );
                         $displayFiat = ( !empty($attributes['displayfiat']) ? boolval( esc_attr( $attributes['displayfiat'] ) ) : false );
-                        $displayfiatsymbol = ( !empty($attributes['displayfiatsymbol']) ? esc_attr( $attributes['displayfiatsymbol'] ) : "COP" );
+                        $displayfiatsymbol = ( !empty($attributes['displayfiatsymbol']) ? esc_attr( $attributes['displayfiatsymbol'] ) : "BNB" );
                         $providerUrl = PACMEC_WALLET_getWeb3Endpoint();
                         
                         
@@ -540,6 +542,7 @@ if ( PHP_INT_SIZE != 8 ) {
 														}
 													} else {
 														$strBalance = __( 'Failed to retrieve balance', 'pacmec-wallet' );
+														$strBalance = __( json_encode($error), 'pacmec-wallet' );
 													}
                         }
                         $js = '';
@@ -702,7 +705,7 @@ if ( PHP_INT_SIZE != 8 ) {
                            class="form-control">
                     <span class="input-group-append">
                         <div class="btn-group" role="group">
-                            <button class="button btn btn-default btn-left d-md-inline pacmec-wallet-qr-button"
+                            <button class="button btn btn-primary btn-left d-md-inline pacmec-wallet-qr-button"
                                     type="button"
                                     data-toggle="collapse"
                                     href="#pacmec-wallet-account-qr' . $counter . '"
@@ -712,7 +715,7 @@ if ( PHP_INT_SIZE != 8 ) {
                                     title="' . __( 'QR', 'pacmec-wallet' ) . '">
                                 <i class="fa fa-qrcode" aria-hidden="true"></i>
                             </button>
-                            <button class="button btn btn-default btn-right pacmec-wallet-copy-button" type="button"
+                            <button class="button btn btn-primary btn-right pacmec-wallet-copy-button" type="button"
                                     data-clipboard-target="#pacmec-wallet-account' . $counter . '"
                                     data-clipboard-action="copy"
                                     id="pacmec-wallet-account-copy-qr-button' . $counter . '"
@@ -778,7 +781,7 @@ if ( PHP_INT_SIZE != 8 ) {
                            class="form-control">
                     <span class="input-group-append">
                         <div class="btn-group" role="group">
-                            <button class="button btn btn-default btn-left d-md-inline pacmec-wallet-qr-button" type="button"
+                            <button class="button btn btn-primary btn-left d-md-inline pacmec-wallet-qr-button" type="button"
                                     data-toggle="collapse"
                                     href="#pacmec-wallet-account-management-export-qr' . $counter . '"
                                     role="button" aria-expanded="false"
@@ -786,7 +789,7 @@ if ( PHP_INT_SIZE != 8 ) {
                                     title="' . __( 'QR', 'pacmec-wallet' ) . '">
                                 <i class="fa fa-qrcode" aria-hidden="true"></i>
                             </button>
-                            <button class="button btn btn-default btn-right pacmec-wallet-copy-button" type="button"
+                            <button class="button btn btn-primary btn-right pacmec-wallet-copy-button" type="button"
                                     data-clipboard-target="#pacmec-wallet-account-management-export' . $counter . '"
                                     data-clipboard-action="copy"
                                     title="' . __( 'Copy', 'pacmec-wallet' ) . '"
@@ -892,7 +895,7 @@ if ( PHP_INT_SIZE != 8 ) {
                            class="form-control">
                     <span class="input-group-append">
                         <div class="btn-group" role="group">
-                            <button class="button btn btn-default btn-left d-md-inline pacmec-wallet-qr-scan-button" type="button"
+                            <button class="button btn btn-primary btn-left d-md-inline pacmec-wallet-qr-scan-button" type="button"
                                     data-toggle="collapse"
                                     href="#pacmec-wallet-to-qr1"
                                     role="button" aria-expanded="false"
@@ -952,7 +955,7 @@ if ( PHP_INT_SIZE != 8 ) {
                     name="pacmec-wallet-send-button"
                     type="submit"
                     value="' . __( 'Send', 'pacmec-wallet' ) . '"
-                    class="button btn btn-default float-right col-12 col-md-4">' . __( 'Send', 'pacmec-wallet' ) . '</button>
+                    class="button btn btn-primary float-right col-12 col-md-4">' . __( 'Send', 'pacmec-wallet' ) . '</button>
                 <div id="pacmec-wallet-tx-in-progress-spinner" class="spinner float-right"></div>
             </div>
         </div>
@@ -1196,7 +1199,7 @@ if ( PHP_INT_SIZE != 8 ) {
                     name="pacmec-wallet-account-management-create-send-button"
                     type="submit"
                     value="' . __( 'Create', 'pacmec-wallet' ) . '"
-                    class="button btn btn-default float-right col-12 col-md-4">' . __( 'Create', 'pacmec-wallet' ) . '</button>
+                    class="button btn btn-primary float-right col-12 col-md-4">' . __( 'Create', 'pacmec-wallet' ) . '</button>
             </div>
         </div>
     </div>
@@ -1335,7 +1338,7 @@ if ( PHP_INT_SIZE != 8 ) {
                     name="pacmec-wallet-account-management-import-send-button"
                     type="submit"
                     value="' . __( 'Import', 'pacmec-wallet' ) . '"
-                    class="button btn btn-default float-right col-12 col-md-4">' . __( 'Import', 'pacmec-wallet' ) . '</button>
+                    class="button btn btn-primary float-right col-12 col-md-4">' . __( 'Import', 'pacmec-wallet' ) . '</button>
             </div>
         </div>
     </div>
@@ -1531,13 +1534,13 @@ if ( PHP_INT_SIZE != 8 ) {
                     name="pacmec-wallet-account-management-select-send-button"
                     type="submit"
                     value="' . __( 'Select', 'pacmec-wallet' ) . '"
-                    class="button btn btn-default float-right col-12 col-md-4">' . __( 'Select', 'pacmec-wallet' ) . '</button>
+                    class="button btn btn-primary float-right col-12 col-md-4">' . __( 'Select', 'pacmec-wallet' ) . '</button>
                 <button
                     id="pacmec-wallet-account-management-delete-send-button"
                     name="pacmec-wallet-account-management-delete-send-button"
                     type="submit"
                     value="' . __( 'Remove', 'pacmec-wallet' ) . '"
-                    class="button btn btn-default float-right col-12 col-md-4">' . __( 'Remove', 'pacmec-wallet' ) . '</button>
+                    class="button btn btn-primary float-right col-12 col-md-4">' . __( 'Remove', 'pacmec-wallet' ) . '</button>
             </div>
         </div>
     </div>
